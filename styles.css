@@ -108,10 +108,6 @@ nav a:hover {
     margin-top: 10px;
 }
 
-.subjects-button.active + .lessons-content {
-    display: block;
-}
-
 .lesson {
     padding: 10px;
     background: #f1f1f1;
@@ -120,7 +116,7 @@ nav a:hover {
 }
 
 /* Grade Calculator */
-.grade-calculator {
+#grade-calculator {
     padding: 20px;
     background: #fff;
     border-radius: 10px;
@@ -129,13 +125,13 @@ nav a:hover {
     margin: 20px auto;
 }
 
-.grade-calculator label {
+#grade-calculator label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-.grade-calculator input {
+#grade-calculator input {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 10px;
@@ -143,7 +139,7 @@ nav a:hover {
     border-radius: 5px;
 }
 
-.grade-calculator button {
+#grade-calculator button {
     padding: 10px 20px;
     background-color: #28a745;
     color: #fff;
@@ -153,7 +149,7 @@ nav a:hover {
     font-size: 1em;
 }
 
-.grade-calculator button:hover {
+#grade-calculator button:hover {
     background-color: #218838;
 }
 
