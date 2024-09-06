@@ -6,46 +6,15 @@ body {
     padding: 0;
 }
 
-header {
-    background: #007bff;
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Gallery/Posting Section */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+/* Ensure sections have some margin/padding */
+section {
+    margin: 20px;
     padding: 20px;
-    background: url('https://img.freepik.com/free-photo/photorealistic-galaxy-background_23-2151064436.jpg') no-repeat center center;
-    background-size: cover;
-}
-
-.gallery img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    transition: transform 0.3s ease;
+    background: #fff;
     border-radius: 8px;
 }
 
-.gallery img:hover {
-    transform: scale(1.1);
-}
-
-/* Confession Section */
+/* Confessions Section */
 .confessions {
     padding: 20px;
     background: #f9f9f9;
@@ -82,6 +51,28 @@ nav a:hover {
     color: #888;
 }
 
+/* Gallery Section */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    background: url('https://img.freepik.com/free-photo/photorealistic-galaxy-background_23-2151064436.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
 /* Lessons Section */
 .lessons {
     padding: 20px;
@@ -116,7 +107,7 @@ nav a:hover {
 }
 
 /* Grade Calculator */
-#grade-calculator {
+.grade-calculator {
     padding: 20px;
     background: #fff;
     border-radius: 10px;
@@ -125,13 +116,13 @@ nav a:hover {
     margin: 20px auto;
 }
 
-#grade-calculator label {
+.grade-calculator label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-#grade-calculator input {
+.grade-calculator input {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 10px;
@@ -139,7 +130,7 @@ nav a:hover {
     border-radius: 5px;
 }
 
-#grade-calculator button {
+.grade-calculator button {
     padding: 10px 20px;
     background-color: #28a745;
     color: #fff;
@@ -149,7 +140,7 @@ nav a:hover {
     font-size: 1em;
 }
 
-#grade-calculator button:hover {
+.grade-calculator button:hover {
     background-color: #218838;
 }
 
