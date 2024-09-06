@@ -1,106 +1,31 @@
-// Picture Posting
-document.getElementById('pictureForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log('Picture form submitted');
-    const fileInput = document.getElementById('pictureInput');
-    const gallery = document.getElementById('pictureGallery');
-    const file = fileInput.files[0];
+const express = require('express');
+const app = express();
+const path = require('path');
+const multer = require('multer');
 
-    if (file) {
-        const formData = new FormData();
-        formData.append('picture', file);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-        fetch('/upload-picture', {
-            method: 'POST',
-            body: formData
-        }).then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(message => {
-            alert(message);
-            const img = document.createElement('img');
-            img.src = URL.createObjectURL(file);
-            gallery.appendChild(img);
-            fileInput.value = ''; // Clear input
-        })
-        .catch(error => console.error('Error:', error));
-    } else {
-        alert('Please select a file to upload.');
-    }
+// Configure multer for file uploads
+const upload = multer({ dest: 'uploads/' });
+
+// Picture upload route
+app.post('/upload-picture', upload.single('picture'), (req, res) => {
+    res.send('Picture uploaded successfully');
 });
 
-// Load Confessions
-function loadConfessions() {
-    fetch('/confessions')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(confessions => {
-            const confessionList = document.getElementById('confessionList');
-            confessionList.innerHTML = '';
-            confessions.forEach(confession => {
-                const confessionDiv = document.createElement('div');
-                confessionDiv.className = 'confession';
-                confessionDiv.innerHTML = `
-                    <p>${confession.text}</p>
-                    <p class="date">${new Date(confession.createdAt).toLocaleString()}</p>
-                `;
-                confessionList.appendChild(confessionDiv);
-            });
-        })
-        .catch(error => console.error('Error:', error));
-}
-
-// Anonymous Confession Space
-document.getElementById('confessionForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log('Confession form submitted');
-    const confessionText = document.getElementById('confessionText').value;
-
-    fetch('/confession', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: confessionText })
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-    })
-    .then(message => {
-        alert(message);
-        loadConfessions(); // Reload confessions
-    })
-    .catch(error => console.error('Error:', error));
+// Confession routes
+app.post('/confession', (req, res) => {
+    // Handle confession saving logic here
+    res.send('Confession posted successfully');
 });
 
-// Grade Calculator
-document.getElementById('gradeForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const quizGrade = parseFloat(document.getElementById('quizGrade').value);
-    const taskGrade = parseFloat(document.getElementById('taskGrade').value);
-    const assessmentGrade = parseFloat(document.getElementById('assessmentGrade').value);
-
-    const finalGrade = (quizGrade * 0.30) + (taskGrade * 0.40) + (assessmentGrade * 0.30);
-    document.getElementById('finalGrade').textContent = 'Your Final Grade: ' + finalGrade.toFixed(2) + '%';
+app.get('/confessions', (req, res) => {
+    // Send list of confessions here
+    res.json([]);
 });
 
-// Toggle Lessons
-function toggleLessons(subjectId) {
-    document.querySelectorAll('.lessons-content').forEach(el => {
-        if (el.id === subjectId) {
-            el.style.display = el.style.display === 'block' ? 'none' : 'block';
-        } else {
-            el.style.display = 'none';
-        }
-    });
-}
+// Serve static files (like your HTML, CSS, and client-side JS)
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Initial load of confessions
-loadConfessions();
+app.listen(3000, () => console.log('Server running on port 3000'));
