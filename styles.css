@@ -1,148 +1,119 @@
+/* General Styles */
 body {
-    background-image: url("review_bg.jpg");
-    background-size: cover;
-    background-position: center;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #333;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-}
-
-.logo {
-    max-width: 100px;
-    height: auto;
-}
-
-h1 {
-    margin: 0;
-    font-size: 24px;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 .container {
-    position: relative;
-    max-width: 800px;
-    margin: 20px auto;
+    width: 80%;
+    margin: 0 auto;
     padding: 20px;
-    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.subject-option {
-    flex: 1;
+h1 {
     text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); 
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    color: #444;
 }
 
-.subject-option img {
-    max-width: 150px;
-    height: auto;
+form {
+    margin: 20px 0;
 }
 
-.subject-option button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #333; 
+input[type="text"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
-.subject-option button:hover {
-    background-color: #555; 
+input[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
-footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #fff;
-    background-color: rgba(94, 94, 94, 0.8);
-    padding: 20px;
-}
-
-.sidebar {
-    background-color: #333;
-    color: #fff;
-    width: 200px;
-    height: 100%;
-    position: fixed;
-    left: -200px;
-    top: 0;
-    padding-top: 20px;
-    transition: left 0.3s ease;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar li {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.sidebar li:hover {
-    background-color: #555;
-}
-
-.menu-icon div {
-    width: 30px;
-    height: 3px;
-    background-color: #000000;
-    margin: 6px 0;
-    transition: transform 0.3s ease;
-}
-
-
-.menu-icon.open div:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-icon.open div:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-icon.open div:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-
-.quiz-container {
+.confession-list {
     margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
 }
 
-.quiz-question {
+.confession-list p {
+    background-color: #e9ecef;
+    border-left: 5px solid #007bff;
+    padding: 10px;
+    border-radius: 4px;
     margin-bottom: 10px;
 }
 
-.quiz-answer {
-    margin-bottom: 5px;
-}
-
-.quiz-result {
+/* Picture Upload Section */
+.picture-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
-    font-weight: bold;
 }
 
+.picture-upload img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Reviewer Page Styles */
+.reviewer-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reviewer-page h2 {
+    color: #444;
+}
+
+.lesson-card,
+.quiz-card,
+.grade-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-card h3,
+.quiz-card h3,
+.grade-card h3 {
+    margin-top: 0;
+}
+
+.lesson-card p,
+.quiz-card p,
+.grade-card p {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+}
