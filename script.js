@@ -28,7 +28,12 @@ document.getElementById('pictureForm').addEventListener('submit', function(event
 // Load Confessions
 function loadConfessions() {
     fetch('/confessions')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(confessions => {
             const confessionList = document.getElementById('confessionList');
             confessionList.innerHTML = '';
@@ -54,7 +59,12 @@ document.getElementById('confessionForm').addEventListener('submit', function(ev
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: confessionText })
-    }).then(response => response.text())
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
       .then(message => {
           alert(message);
           loadConfessions(); // Reload confessions
@@ -83,3 +93,8 @@ function toggleLessons(subjectId) {
         }
     });
 }
+
+// Initial load of confessions
+window.onload = function() {
+    loadConfessions();
+};
