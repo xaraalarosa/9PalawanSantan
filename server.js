@@ -13,10 +13,10 @@ mongoose.connect('mongodb://localhost:27017/education-hub')
         console.error('MongoDB connection error:', err);
     });
 
-// Schema and Model for Confessions
+// Schema and Model for Confessions with TTL (expireAfterSeconds: 86400 = 24 hours)
 const confessionSchema = new mongoose.Schema({
     text: String,
-    createdAt: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now, expires: 86400 } // TTL set to 24 hours
 });
 
 const Confession = mongoose.model('Confession', confessionSchema);
@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 3001; // Changed port to 3001
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
