@@ -22,10 +22,10 @@ document.getElementById('pictureForm').addEventListener('submit', function(event
         .then(message => {
             alert(message);
             const img = document.createElement('img');
-            img.src = `/uploads/${file.name}`; // Updated to correctly display the image
-            img.style.width = '100px'; // or any size you prefer
-            gallery.appendChild(img);
-            fileInput.value = ''; // Clear input
+            img.src = message; // Use the URL returned by the server
+            img.style.width = '100px'; // Set the image size
+            gallery.appendChild(img); // Add the image to the gallery
+            fileInput.value = ''; // Clear the input
         })
         .catch(error => console.error('Error:', error));
     } else {
@@ -33,31 +33,7 @@ document.getElementById('pictureForm').addEventListener('submit', function(event
     }
 });
 
-
-function loadConfessions() {
-    fetch('/confessions')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(confessions => {
-            const confessionList = document.getElementById('confessionList');
-            confessionList.innerHTML = '';
-            confessions.forEach(confession => {
-                const confessionDiv = document.createElement('div');
-                confessionDiv.className = 'confession';
-                confessionDiv.innerHTML = `
-                    <p>${confession.text}</p>
-                    <p class="date">${new Date(confession.createdAt).toLocaleString()}</p>
-                `;
-                confessionList.appendChild(confessionDiv);
-            });
-        })
-        .catch(error => console.error('Error:', error));
-}
-// Anonymous Confession Space
+// Confession Form Submission
 document.getElementById('confessionForm').addEventListener('submit', function(event) {
     event.preventDefault();
     console.log('Confession form submitted');
@@ -76,7 +52,7 @@ document.getElementById('confessionForm').addEventListener('submit', function(ev
     .then(message => {
         alert(message);
         loadConfessions(); // Reload confessions
-        document.getElementById('confessionText').value = ''; // Clear input
+        document.getElementById('confessionText').value = ''; // Clear the input
     })
     .catch(error => console.error('Error:', error));
 });
@@ -109,4 +85,28 @@ function toggleLessons(subjectId) {
 }
 
 // Initial load of confessions
+function loadConfessions() {
+    fetch('/confessions')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(confessions => {
+            const confessionList = document.getElementById('confessionList');
+            confessionList.innerHTML = '';
+            confessions.forEach(confession => {
+                const confessionDiv = document.createElement('div');
+                confessionDiv.className = 'confession';
+                confessionDiv.innerHTML = `
+                    <p>${confession.text}</p>
+                    <p class="date">${new Date(confession.createdAt).toLocaleString()}</p>
+                `;
+                confessionList.appendChild(confessionDiv);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
 loadConfessions();

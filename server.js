@@ -21,22 +21,22 @@ const confessionSchema = new mongoose.Schema({
 
 const Confession = mongoose.model('Confession', confessionSchema);
 
-// Middleware
-app.use(express.static('public'));
-app.use(express.json()); // To handle JSON data from the frontend
-
 // Multer configuration for handling file uploads
 const upload = multer({ 
-    dest: 'public/uploads/', // Ensure this path is accessible
+    dest: path.join(__dirname, 'public', 'uploads'), // Ensure the path is correct
     limits: { fileSize: 5 * 1024 * 1024 } // Limit file size to 5MB
 });
+
+// Middleware
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json()); // To handle JSON data from the frontend
 
 // Route for uploading pictures
 app.post('/upload-picture', upload.single('picture'), (req, res) => {
     if (!req.file) {
         return res.status(400).send('No file uploaded.');
     }
-    res.send(`Picture uploaded successfully: /uploads/${req.file.filename}`);
+    res.send(`/uploads/${req.file.filename}`); // Serve the file path correctly
 });
 
 // Route for posting confessions
