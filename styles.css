@@ -47,15 +47,15 @@ nav a:hover {
 
 /* Confession Section */
 .confessions {
-    padding: 30px; /* Increased padding */
+    padding: 20px;
     background: #f9f9f9;
 }
 
 .confession {
     position: relative;
     max-width: 600px;
-    margin: 20px auto; /* Increased margin for more space */
-    padding: 20px; /* Increased padding for better readability */
+    margin: 20px auto; /* Increased margin */
+    padding: 20px; /* Increased padding */
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -80,39 +80,6 @@ nav a:hover {
 .confession .date {
     font-size: 0.9em;
     color: #888;
-}
-
-/* Lessons Section */
-.lessons {
-    padding: 20px;
-}
-
-.subjects-button {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.subjects-button:hover {
-    background-color: #0056b3;
-}
-
-.lessons-content {
-    display: none;
-    margin-top: 10px;
-}
-
-.lesson {
-    padding: 10px;
-    background: #f1f1f1;
-    margin: 5px 0;
-    border-radius: 5px;
 }
 
 /* Grade Calculator */

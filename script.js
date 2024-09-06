@@ -22,7 +22,7 @@ document.getElementById('pictureForm').addEventListener('submit', function(event
         .then(message => {
             alert(message);
             const img = document.createElement('img');
-            img.src = `/uploads/${file.name}`; // Update to match the file name
+            img.src = `/uploads/${file.name}`; // Updated to correctly display the image
             img.style.width = '100px'; // or any size you prefer
             gallery.appendChild(img);
             fileInput.value = ''; // Clear input
@@ -33,7 +33,7 @@ document.getElementById('pictureForm').addEventListener('submit', function(event
     }
 });
 
-// Load Confessions
+
 function loadConfessions() {
     fetch('/confessions')
         .then(response => {
@@ -57,7 +57,6 @@ function loadConfessions() {
         })
         .catch(error => console.error('Error:', error));
 }
-
 // Anonymous Confession Space
 document.getElementById('confessionForm').addEventListener('submit', function(event) {
     event.preventDefault();
