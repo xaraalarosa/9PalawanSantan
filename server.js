@@ -1,91 +1,72 @@
-// Picture Posting
-document.getElementById('pictureForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log('Picture form submitted');
-    const fileInput = document.getElementById('pictureInput');
-    const gallery = document.getElementById('pictureGallery');
-    const file = fileInput.files[0];
+const express = require('express');
+const multer = require('multer');
+const mongoose = require('mongoose');
+const path = require('path');
+const app = express();
 
-    if (file) {
-        const formData = new FormData();
-        formData.append('picture', file);
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/education-hub', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch(err => {
+        console.error('MongoDB connection error:', err);
+    });
 
-        fetch('/upload-picture', {
-            method: 'POST',
-            body: formData
-        }).then(response => response.text())
-          .then(message => {
-              alert(message);
-              const img = document.createElement('img');
-              img.src = URL.createObjectURL(file);
-              gallery.appendChild(img);
-              fileInput.value = ''; // Clear input
-          })
-          .catch(error => console.error('Error:', error));
-    } else {
-        alert('Please select a file to upload.');
+// Schema and Model for Confessions with TTL (expireAfterSeconds: 86400 = 24 hours)
+const confessionSchema = new mongoose.Schema({
+    text: String,
+    createdAt: { type: Date, default: Date.now, expires: 86400 } // TTL set to 24 hours
+});
+
+const Confession = mongoose.model('Confession', confessionSchema);
+
+// Middleware
+app.use(express.static('public'));
+app.use(express.json()); // To handle JSON data from the frontend
+
+// Multer configuration for handling file uploads
+const upload = multer({ 
+    dest: 'uploads/', 
+    limits: { fileSize: 5 * 1024 * 1024 } // Limit file size to 5MB
+});
+
+// Route for uploading pictures
+app.post('/upload-picture', upload.single('picture'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).send('No file uploaded.');
+    }
+    res.send('Picture uploaded successfully.');
+});
+
+// Route for posting confessions
+app.post('/confession', async (req, res) => {
+    try {
+        const confession = new Confession({ text: req.body.text });
+        await confession.save();
+        res.send('Confession posted successfully.');
+    } catch (err) {
+        res.status(500).send('Error saving confession.');
     }
 });
 
-// Load Confessions
-function loadConfessions() {
-    fetch('/confessions')
-        .then(response => response.json())
-        .then(confessions => {
-            const confessionList = document.getElementById('confessionList');
-            confessionList.innerHTML = '';
-            confessions.forEach(confession => {
-                const confessionDiv = document.createElement('div');
-                confessionDiv.className = 'confession';
-                confessionDiv.innerHTML = `
-                    <p>${confession.text}</p>
-                    <p class="date">${new Date(confession.createdAt).toLocaleString()}</p>
-                `;
-                confessionList.appendChild(confessionDiv);
-            });
-        })
-        .catch(error => console.error('Error:', error));
-}
-
-// Anonymous Confession Space
-document.getElementById('confessionForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log('Confession form submitted');
-    const confessionText = document.getElementById('confessionText').value;
-
-    fetch('/confession', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: confessionText })
-    }).then(response => response.text())
-      .then(message => {
-          alert(message);
-          loadConfessions(); // Reload confessions
-      })
-      .catch(error => console.error('Error:', error));
+// Route to get all confessions
+app.get('/confessions', async (req, res) => {
+    try {
+        const confessions = await Confession.find();
+        res.json(confessions);
+    } catch (err) {
+        res.status(500).send('Error retrieving confessions.');
+    }
 });
 
-// Grade Calculator
-document.getElementById('gradeForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const quizGrade = parseFloat(document.getElementById('quizGrade').value);
-    const taskGrade = parseFloat(document.getElementById('taskGrade').value);
-    const assessmentGrade = parseFloat(document.getElementById('assessmentGrade').value);
-
-    const finalGrade = (quizGrade * 0.30) + (taskGrade * 0.40) + (assessmentGrade * 0.30);
-    document.getElementById('finalGrade').textContent = 'Your Final Grade: ' + finalGrade.toFixed(2) + '%';
+// Serve the frontend
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Toggle Lessons
-function toggleLessons(subjectId) {
-    document.querySelectorAll('.lessons-content').forEach(el => {
-        if (el.id === subjectId) {
-            el.style.display = el.style.display === 'block' ? 'none' : 'block';
-        } else {
-            el.style.display = 'none';
-        }
-    });
-}
-
-// Initial load of confessions
-loadConfessions();
+// Start the server
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

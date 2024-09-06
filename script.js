@@ -1,27 +1,34 @@
 // Picture Posting
 document.getElementById('pictureForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    console.log('Picture form submitted');
     const fileInput = document.getElementById('pictureInput');
     const gallery = document.getElementById('pictureGallery');
     const file = fileInput.files[0];
 
     if (file) {
-        // Upload picture to server
         const formData = new FormData();
         formData.append('picture', file);
 
         fetch('/upload-picture', {
             method: 'POST',
             body: formData
-        }).then(response => response.text())
-          .then(message => {
-              alert(message);
-              const img = document.createElement('img');
-              img.src = URL.createObjectURL(file);
-              gallery.appendChild(img);
-              fileInput.value = ''; // Clear input
-          })
-          .catch(error => console.error('Error:', error));
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(message => {
+            alert(message);
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(file);
+            gallery.appendChild(img);
+            fileInput.value = ''; // Clear input
+        })
+        .catch(error => console.error('Error:', error));
+    } else {
+        alert('Please select a file to upload.');
     }
 });
 
@@ -30,7 +37,7 @@ function loadConfessions() {
     fetch('/confessions')
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.json();
         })
@@ -53,6 +60,7 @@ function loadConfessions() {
 // Anonymous Confession Space
 document.getElementById('confessionForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    console.log('Confession form submitted');
     const confessionText = document.getElementById('confessionText').value;
 
     fetch('/confession', {
@@ -61,15 +69,15 @@ document.getElementById('confessionForm').addEventListener('submit', function(ev
         body: JSON.stringify({ text: confessionText })
     }).then(response => {
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.text();
     })
-      .then(message => {
-          alert(message);
-          loadConfessions(); // Reload confessions
-      })
-      .catch(error => console.error('Error:', error));
+    .then(message => {
+        alert(message);
+        loadConfessions(); // Reload confessions
+    })
+    .catch(error => console.error('Error:', error));
 });
 
 // Grade Calculator
@@ -95,6 +103,4 @@ function toggleLessons(subjectId) {
 }
 
 // Initial load of confessions
-window.onload = function() {
-    loadConfessions();
-};
+loadConfessions();
