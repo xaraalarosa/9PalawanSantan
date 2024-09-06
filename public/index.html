@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Confession Space -->
+        <h1>Confession Space</h1>
+        <form id="confessionForm">
+            <textarea id="confessionText" rows="4" placeholder="Write your confession here..." required></textarea>
+            <input type="submit" value="Post Confession">
+        </form>
+        <div class="confession-list" id="confessionList"></div>
+
+        <!-- Picture Upload -->
+        <h1>Picture Upload</h1>
+        <form id="pictureForm" class="picture-upload">
+            <input type="file" id="pictureInput" required>
+            <input type="submit" value="Upload Picture">
+            <img id="uploadedPicture" src="" alt="Uploaded Picture" style="display: none;">
+        </form>
+
+        <!-- Grade Calculator -->
+        <h1>Grade Calculator</h1>
+        <form id="gradeForm">
+            <label for="quizGrade">Quiz Grade (out of 100):</label>
+            <input type="number" id="quizGrade" min="0" max="100" required>
+
+            <label for="taskGrade">Performance Task Grade (out of 100):</label>
+            <input type="number" id="taskGrade" min="0" max="100" required>
+
+            <label for="assessmentGrade">Quarterly Assessment Grade (out of 100):</label>
+            <input type="number" id="assessmentGrade" min="0" max="100" required>
+
+            <input type="submit" value="Calculate Final Grade">
+        </form>
+        <p id="finalGrade"></p>
+
+        <!-- Lessons Section -->
+        <h1>Lessons</h1>
+        <div class="lessons-container" id="lessonsContainer"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
