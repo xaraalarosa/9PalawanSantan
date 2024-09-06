@@ -24,7 +24,7 @@
             <input type="file" id="pictureInput" accept="image/*">
             <button type="submit">Post Picture</button>
         </form>
-        <div id="pictureGallery"></div>
+        <div id="pictureGallery" class="gallery"></div>
     </section>
 
     <!-- Anonymous Confession Space -->
@@ -34,18 +34,27 @@
             <textarea id="confessionText" placeholder="Write your confession here..." required></textarea>
             <button type="submit">Post Confession</button>
         </form>
-        <div id="confessionList"></div>
+        <div id="confessionList" class="confessions"></div>
     </section>
 
     <!-- Reviewer Section -->
     <section id="reviewer">
         <h2>Reviewer and Quizzes</h2>
         <p>Review lessons and take practice quizzes!</p>
-        <ul>
-            <li><a href="#">Lesson 1: Topic A</a></li>
-            <li><a href="#">Lesson 2: Topic B</a></li>
-            <li><a href="#">Lesson 3: Topic C</a></li>
-        </ul>
+        <div class="lessons">
+            <button class="subjects-button" onclick="toggleLessons('math')">Math</button>
+            <button class="subjects-button" onclick="toggleLessons('science')">Science</button>
+
+            <div id="math" class="lessons-content">
+                <div class="lesson">Algebra</div>
+                <div class="lesson">Geometry</div>
+            </div>
+
+            <div id="science" class="lessons-content">
+                <div class="lesson">Biology</div>
+                <div class="lesson">Chemistry</div>
+            </div>
+        </div>
     </section>
 
     <!-- Grade Calculator -->
@@ -63,7 +72,7 @@
 
             <button type="submit">Calculate Final Grade</button>
         </form>
-        <div id="finalGrade"></div>
+        <div id="finalGrade" class="result"></div>
     </section>
 
     <script src="script.js"></script>

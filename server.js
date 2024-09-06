@@ -2,10 +2,14 @@ const express = require('express');
 const multer = require('multer');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors'); // CORS middleware
 const app = express();
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/education-hub')
+// Enable CORS for external requests
+app.use(cors());
+
+// Connect to MongoDB using your local IP address
+mongoose.connect('mongodb://192.168.1.16:27017/education-hub')
     .then(() => {
         console.log('Connected to MongoDB');
     })
@@ -13,11 +17,14 @@ mongoose.connect('mongodb://localhost:27017/education-hub')
         console.error('MongoDB connection error:', err);
     });
 
-// Schema and Model for Confessions with TTL (expireAfterSeconds: 86400 = 24 hours)
+// Schema and Model for Confessions with TTL
 const confessionSchema = new mongoose.Schema({
     text: String,
-    createdAt: { type: Date, default: Date.now, expires: 86400 } // TTL set to 24 hours
+    createdAt: { type: Date, default: Date.now }
 });
+
+// Create the TTL index to expire confessions after 24 hours
+confessionSchema.index({ createdAt: 1 }, { expireAfterSeconds: 86400 });
 
 const Confession = mongoose.model('Confession', confessionSchema);
 
@@ -65,7 +72,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Start the server
+// Start the server on port 3001
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
