@@ -31,6 +31,9 @@ const upload = multer({
     limits: { fileSize: 5 * 1024 * 1024 } // Limit file size to 5MB
 });
 
+// Serve the uploads directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // Route for uploading pictures
 app.post('/upload-picture', upload.single('picture'), (req, res) => {
     if (!req.file) {

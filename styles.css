@@ -47,15 +47,15 @@ nav a:hover {
 
 /* Confession Section */
 .confessions {
-    padding: 20px;
+    padding: 30px; /* Increased padding */
     background: #f9f9f9;
 }
 
 .confession {
     position: relative;
     max-width: 600px;
-    margin: 10px auto;
-    padding: 15px;
+    margin: 20px auto; /* Increased margin for more space */
+    padding: 20px; /* Increased padding for better readability */
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
