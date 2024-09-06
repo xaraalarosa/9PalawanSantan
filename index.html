@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Education Hub</h1>
+        <nav>
+            <a href="#post-pictures">Post Pictures</a>
+            <a href="#confessions">Confession Space</a>
+            <a href="#reviewer">Reviewer</a>
+            <a href="#grade-calculator">Grade Calculator</a>
+        </nav>
+    </header>
+
+    <!-- Picture Posting Section -->
+    <section id="post-pictures">
+        <h2>Post Pictures</h2>
+        <form id="pictureForm">
+            <input type="file" id="pictureInput" accept="image/*">
+            <button type="submit">Post Picture</button>
+        </form>
+        <div id="pictureGallery"></div>
+    </section>
+
+    <!-- Anonymous Confession Space -->
+    <section id="confessions">
+        <h2>Confession Space</h2>
+        <form id="confessionForm">
+            <textarea id="confessionText" placeholder="Write your confession here..." required></textarea>
+            <button type="submit">Post Confession</button>
+        </form>
+        <div id="confessionList"></div>
+    </section>
+
+    <!-- Reviewer Section -->
+    <section id="reviewer">
+        <h2>Reviewer and Quizzes</h2>
+        <p>Review lessons and take practice quizzes!</p>
+        <ul>
+            <li><a href="#">Lesson 1: Topic A</a></li>
+            <li><a href="#">Lesson 2: Topic B</a></li>
+            <li><a href="#">Lesson 3: Topic C</a></li>
+        </ul>
+    </section>
+
+    <!-- Grade Calculator -->
+    <section id="grade-calculator">
+        <h2>Grade Calculator</h2>
+        <form id="gradeForm">
+            <label for="quizGrade">Quiz Grade (%)</label>
+            <input type="number" id="quizGrade" max="100" min="0" required>
+
+            <label for="taskGrade">Performance Task Grade (%)</label>
+            <input type="number" id="taskGrade" max="100" min="0" required>
+
+            <label for="assessmentGrade">Quarterly Assessment Grade (%)</label>
+            <input type="number" id="assessmentGrade" max="100" min="0" required>
+
+            <button type="submit">Calculate Final Grade</button>
+        </form>
+        <div id="finalGrade"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
