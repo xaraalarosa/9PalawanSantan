@@ -7,6 +7,16 @@ document.getElementById('pictureForm').addEventListener('submit', function(event
     const file = fileInput.files[0];
 
     if (file) {
+        // Validate file size (max 5MB) and type (only JPEG or PNG)
+        if (file.size > 5 * 1024 * 1024) {
+            alert('File is too large (max 5MB)');
+            return;
+        }
+        if (!['image/jpeg', 'image/png'].includes(file.type)) {
+            alert('Invalid file type (only JPEG and PNG allowed)');
+            return;
+        }
+
         const formData = new FormData();
         formData.append('picture', file);
 
@@ -20,7 +30,7 @@ document.getElementById('pictureForm').addEventListener('submit', function(event
             return response.text();
         })
         .then(message => {
-            alert(message);
+            alert('Picture uploaded successfully!');
             const img = document.createElement('img');
             img.src = message; // Use the URL returned by the server
             img.style.width = '100px'; // Set the image size
