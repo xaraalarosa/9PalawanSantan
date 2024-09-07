@@ -45,8 +45,7 @@ app.post('/upload-picture', upload.single('picture'), (req, res) => {
     if (!req.file) {
         return res.status(400).send('No file uploaded.');
     }
-    // Sending the file path as a relative URL
-    res.send(`/uploads/${req.file.filename}`);
+    res.send(`/uploads/${req.file.filename}`); // Send relative URL
 });
 
 // Route for posting confessions
