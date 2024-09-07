@@ -1,70 +1,29 @@
 // Picture Posting
 document.getElementById('pictureForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    console.log('Picture form submitted');
     const fileInput = document.getElementById('pictureInput');
     const gallery = document.getElementById('pictureGallery');
     const file = fileInput.files[0];
-
+    
     if (file) {
-        // Validate file size (max 5MB) and type (only JPEG or PNG)
-        if (file.size > 5 * 1024 * 1024) {
-            alert('File is too large (max 5MB)');
-            return;
-        }
-        if (!['image/jpeg', 'image/png'].includes(file.type)) {
-            alert('Invalid file type (only JPEG and PNG allowed)');
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append('picture', file);
-
-        fetch('/upload-picture', {
-            method: 'POST',
-            body: formData
-        }).then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(message => {
-            alert('Picture uploaded successfully!');
-            const img = document.createElement('img');
-            img.src = message; // Use the URL returned by the server
-            img.style.width = '100px'; // Set the image size
-            gallery.appendChild(img); // Add the image to the gallery
-            fileInput.value = ''; // Clear the input
-        })
-        .catch(error => console.error('Error:', error));
-    } else {
-        alert('Please select a file to upload.');
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        gallery.appendChild(img);
+        fileInput.value = ''; // Clear input
     }
 });
 
-// Confession Form Submission
+// Anonymous Confession Space
 document.getElementById('confessionForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    console.log('Confession form submitted');
     const confessionText = document.getElementById('confessionText').value;
+    const confessionList = document.getElementById('confessionList');
+    
+    const confession = document.createElement('p');
+    confession.textContent = confessionText;
+    confessionList.appendChild(confession);
 
-    fetch('/confession', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: confessionText })
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-    })
-    .then(message => {
-        alert(message);
-        loadConfessions(); // Reload confessions
-        document.getElementById('confessionText').value = ''; // Clear the input
-    })
-    .catch(error => console.error('Error:', error));
+    document.getElementById('confessionText').value = ''; // Clear text area
 });
 
 // Grade Calculator
@@ -74,25 +33,10 @@ document.getElementById('gradeForm').addEventListener('submit', function(event) 
     const taskGrade = parseFloat(document.getElementById('taskGrade').value);
     const assessmentGrade = parseFloat(document.getElementById('assessmentGrade').value);
 
-    if (isNaN(quizGrade) || isNaN(taskGrade) || isNaN(assessmentGrade)) {
-        alert('Please enter valid numbers for all grades.');
-        return;
-    }
-
     const finalGrade = (quizGrade * 0.30) + (taskGrade * 0.40) + (assessmentGrade * 0.30);
     document.getElementById('finalGrade').textContent = 'Your Final Grade: ' + finalGrade.toFixed(2) + '%';
 });
 
-// Toggle Lessons
-function toggleLessons(subjectId) {
-    document.querySelectorAll('.lessons-content').forEach(el => {
-        if (el.id === subjectId) {
-            el.style.display = el.style.display === 'block' ? 'none' : 'block';
-        } else {
-            el.style.display = 'none';
-        }
-    });
-}
 
 // Initial load of confessions
 function loadConfessions() {
