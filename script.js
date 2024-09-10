@@ -29,13 +29,27 @@ document.getElementById('confessionForm').addEventListener('submit', function(ev
 // Grade Calculator
 document.getElementById('gradeForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const quizGrade = parseFloat(document.getElementById('quizGrade').value);
-    const taskGrade = parseFloat(document.getElementById('taskGrade').value);
-    const assessmentGrade = parseFloat(document.getElementById('assessmentGrade').value);
 
-    const finalGrade = (quizGrade * 0.30) + (taskGrade * 0.40) + (assessmentGrade * 0.30);
+    // Get user inputs
+    const quizGrade = parseFloat(document.getElementById('quizGrade').value);
+    const maxQuizGrade = parseFloat(document.getElementById('maxQuizGrade').value);
+    const taskGrade = parseFloat(document.getElementById('taskGrade').value);
+    const maxTaskGrade = parseFloat(document.getElementById('maxTaskGrade').value);
+    const assessmentGrade = parseFloat(document.getElementById('assessmentGrade').value);
+    const maxAssessmentGrade = parseFloat(document.getElementById('maxAssessmentGrade').value);
+
+    // Calculate percentage grades
+    const quizPercentage = (quizGrade / maxQuizGrade) * 100;
+    const taskPercentage = (taskGrade / maxTaskGrade) * 100;
+    const assessmentPercentage = (assessmentGrade / maxAssessmentGrade) * 100;
+
+    // Calculate final grade
+    const finalGrade = (quizPercentage * 0.30) + (taskPercentage * 0.40) + (assessmentPercentage * 0.30);
+    
+    // Display final grade
     document.getElementById('finalGrade').textContent = 'Your Final Grade: ' + finalGrade.toFixed(2) + '%';
 });
+
 
 
 // Initial load of confessions

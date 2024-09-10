@@ -62,22 +62,37 @@
     </section>
 
     <!-- Grade Calculator -->
-    <section id="grade-calculator">
-        <h2>Grade Calculator</h2>
-        <form id="gradeForm">
-            <label for="quizGrade">Quiz Grade (%)</label>
-            <input type="number" id="quizGrade" max="100" min="0" required>
+<section id="grade-calculator">
+    <h2>Grade Calculator</h2>
+    <form id="gradeForm">
+        <!-- Quiz Grade -->
+        <label for="quizGrade">Quiz Grade</label>
+        <input type="number" id="quizGrade" min="0" required>
 
-            <label for="taskGrade">Performance Task Grade (%)</label>
-            <input type="number" id="taskGrade" max="100" min="0" required>
+        <label for="maxQuizGrade">Max Quiz Grade</label>
+        <input type="number" id="maxQuizGrade" min="0" required>
 
-            <label for="assessmentGrade">Quarterly Assessment Grade (%)</label>
-            <input type="number" id="assessmentGrade" max="100" min="0" required>
+        <!-- Task Grade -->
+        <label for="taskGrade">Performance Task Grade</label>
+        <input type="number" id="taskGrade" min="0" required>
 
-            <button type="submit">Calculate Final Grade</button>
-        </form>
-        <div id="finalGrade" class="result"></div>
-    </section>
+        <label for="maxTaskGrade">Max Task Grade</label>
+        <input type="number" id="maxTaskGrade" min="0" required>
+
+        <!-- Assessment Grade -->
+        <label for="assessmentGrade">Quarterly Assessment Grade</label>
+        <input type="number" id="assessmentGrade" min="0" required>
+
+        <label for="maxAssessmentGrade">Max Assessment Grade</label>
+        <input type="number" id="maxAssessmentGrade" min="0" required>
+
+        <!-- Submit Button -->
+        <button type="submit">Calculate Final Grade</button>
+    </form>
+
+    <!-- Result Display -->
+    <div id="finalGrade" class="result"></div>
+</section>
 
     <script src="script.js"></script>
 </body>
