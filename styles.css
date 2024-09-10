@@ -88,28 +88,38 @@ nav a:hover {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    max-width: 500px;
+    max-width: 600px;
     margin: 20px auto;
 }
 
-#grade-calculator label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+#grade-calculator h2 {
+    text-align: center;
 }
 
-#grade-calculator input {
-    width: calc(100% - 22px);
+.grade-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.grade-row label {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.grade-row input {
+    flex: 1;
     padding: 10px;
-    margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
 #grade-calculator button {
-    padding: 10px 20px;
+    width: 100%;
+    padding: 10px;
     background-color: #28a745;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -123,4 +133,5 @@ nav a:hover {
 .result {
     margin-top: 20px;
     font-size: 1.2em;
+    text-align: center;
 }
