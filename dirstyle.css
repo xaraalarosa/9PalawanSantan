@@ -1,5 +1,5 @@
 body {
-    background-image: url("directory_bg.jpg");
+    background-image: url("review_bg.jpg");
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -27,56 +27,133 @@ h1 {
     font-size: 24px;
 }
 
+nav a {
+    margin: 0 15px;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
 .container {
-    position: relative;
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
-    overflow: hidden;
     background-color: #FFD3B6; /* Light Peach for container background */
     border-radius: 10px; /* Rounded corners for the container */
 }
 
 .directory-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .person-card {
-    background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
     border-radius: 10px;
-    padding: 20px;
-    text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    margin: 20px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .person-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Circle shape for the image */
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 2px solid #FF6F31; /* Orange border around the image */
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
 .person-card h2 {
-    margin: 10px 0 5px;
-    font-size: 20px;
+    margin: 10px 0;
+    font-size: 18px;
     color: #333;
 }
 
 .person-card p {
-    margin: 5px 0;
-    font-size: 16px;
     color: #555;
+    font-size: 14px;
+}
+
+.person-card:hover {
+    transform: scale(1.1); /* Slightly enlarge the box */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #333;
+    color: #FFF;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: -200px;
+    top: 0;
+    padding-top: 20px;
+    transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #555;
+}
+
+/* Menu icon (hamburger) */
+.menu-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.menu-icon div {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-icon.open div:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-icon.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.open div:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 footer {
     text-align: center;
     margin-top: 50px;
-    color: #FFF; /* White text for footer */
-    background-color: rgba(94, 94, 94, 0.8); /* Subtle dark background */
+    color: #FFF;
+    background-color: rgba(94, 94, 94, 0.8);
     padding: 20px;
+}
+
+footer p {
+    margin: 5px 0;
 }
