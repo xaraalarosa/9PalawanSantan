@@ -37,6 +37,32 @@ header {
     transform: translateY(-10px) rotate(-45deg);
 }
 
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: -200px;
+    top: 0;
+    padding-top: 20px;
+    transition: left 0.3s ease;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #555;
+}
+
 
 nav a {
     color: #fff;
