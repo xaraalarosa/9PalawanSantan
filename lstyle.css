@@ -28,62 +28,57 @@ h1 {
 }
 
 .container {
-    position: relative;
-    max-width: 800px;
+    max-width: 1200px; /* Container width adjusted */
     margin: 20px auto;
     padding: 20px;
-    overflow: hidden;
     background-color: #FFD3B6; /* Light Peach for container background */
-    border-radius: 10px; /* Rounded corners for the container */
+    border-radius: 10px; /* Rounded corners */
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px; /* Gap between the subject boxes */
 }
 
 .subject-option {
-    flex: 1;
+    flex: 1 1 250px; /* Flex-basis 250px to maintain size */
+    max-width: 300px; /* Limit the width of subject boxes */
     text-align: center;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* White background with some transparency */
+    background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
     border-radius: 10px;
-    margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.subject-option:hover {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 
 .subject-option img {
-    max-width: 150px;
+    max-width: 100px; /* Keep images smaller */
     height: auto;
 }
 
-.subject-option button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #FF6F31; /* Palawan Orange for button background */
-    color: #FFF; /* White text for buttons */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.subject-option button:hover {
-    background-color: #C72C41; /* Cherry Red for button hover */
+.subject-option h2 {
+    margin-top: 15px;
+    color: #FF6F31;
 }
 
 footer {
     text-align: center;
     margin-top: 50px;
-    color: #FFF; /* White text for footer */
+    color: #FFF;
     background-color: rgba(94, 94, 94, 0.8); /* Subtle dark background */
     padding: 20px;
 }
 
 .sidebar {
-    background-color: #333; /* Dark background for sidebar */
-    color: #FFF; /* White text for sidebar */
+    background-color: #333; /* Dark background */
+    color: #FFF;
     width: 200px;
     height: 100%;
     position: fixed;
@@ -110,7 +105,7 @@ footer {
 .menu-icon div {
     width: 30px;
     height: 3px;
-    background-color: #FF6F31; /* Palawan Orange for menu icon bars */
+    background-color: #FF6F31;
     margin: 6px 0;
     transition: transform 0.3s ease;
 }
@@ -125,46 +120,4 @@ footer {
 
 .menu-icon.open div:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
-}
-
-.quiz-container {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #FFF8E7; /* Warm White for quiz container */
-    border-radius: 10px;
-}
-
-.quiz-question {
-    margin-bottom: 10px;
-}
-
-.quiz-answer {
-    margin-bottom: 5px;
-}
-
-.quiz-result {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #C72C41; /* Cherry Red for result text */
-}
-
-/* styles.css or internal style */
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    transition: background-color 0.3s, transform 0.2s;
-    outline: none;
-}
-
-#start-quiz {
-    background-color: #2ecc71; /* Green background for Start Quiz */
-}
-
-#start-quiz:hover {
-    background-color: #27ae60; /* Darker green on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
 }
