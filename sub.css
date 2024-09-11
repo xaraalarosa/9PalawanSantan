@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #FF6F31; /* Palawan Orange for header background */
+    color: #FFF; /* White text for header */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #C72C41;
+    color: white;
+    height: 80vh;
+    position: fixed;
+    top: 80px; /* Adjusted for fixed header */
+    overflow: auto;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #FF6F31;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    margin-top: 80px; /* Adjusted for fixed header */
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+.lesson {
+    display: none;
+}
+
+.lesson.active {
+    display: block;
+}
+
+.inbar {
+    color: #FFF;
+}
+
+.exercise {
+    margin-bottom: 20px;
+}
+.answer {
+    color: #27ae60;
+}
+
+.example { 
+        max-width: 1200px; /* Container width adjusted */
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #FFD3B6; /* Light Peach for container background */
+        border-radius: 10px; /* Rounded corners */
+}
+
+/* Center the button and style it */
+#start-quiz {
+    display: block; /* Makes the button a block element */
+    margin: 50px auto; /* Centers the button horizontally */
+    padding: 15px 30px; /* Adds padding for better visibility */
+    font-size: 18px; /* Increases font size */
+    color: #fff; /* White text color */
+    background-color: #007BFF; /* Blue background color */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounds the corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adds transition effects */
+}
+
+#start-quiz:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+.box {
+    border: 2px solid #007BFF; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    margin: 20px; /* Margin outside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    text-align: center; /* Center-align text inside the box */
+}
