@@ -91,7 +91,7 @@ nav a:hover {
     gap: 10px;
     padding: 20px;
     overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
-    background: url('https://img.freepik.com/free-photo/photorealistic-galaxy-background_23-2151064436.jpg') no-repeat center center;
+    background: url('resources/gallerybg.jpg') no-repeat center center;
     background-size: cover;
 }
 
