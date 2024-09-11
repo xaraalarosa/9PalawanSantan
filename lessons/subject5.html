@@ -38,7 +38,12 @@
     </p>
 </div>
 
-<button href="quiz1.html">Start Flashcard Quiz</button>
+<button id="start-quiz">Start Flashcard Quiz</button>
 
+<script>
+    document.getElementById('start-quiz').addEventListener('click', () => {
+        window.location.href = 'quiz1.html'; // Redirect to the flashcard page
+    });
+</script>
 </body>
 </html>
