@@ -37,49 +37,17 @@
 
     </p>
 </div>
-<div class="quiz-container">
-    <h2>Test</h2>
-    
-    <div class="quiz-question">ama ng wikang filipino</div>
-    <div class="quiz-answer"><input type="radio" name="question1" value="a">Francisco "Balagtas" Baltazar</div>
-    <div class="quiz-answer"><input type="radio" name="question1" value="b">Jose Rizal</div>
-    <div class="quiz-answer"><input type="radio" name="question1" value="c">Manuel Quezon</div>
 
-    <div class="quiz-question">name of Palawan State University</div>
-    <div class="quiz-answer"><input type="radio" name="question2" value="a">PalawanSU</div>
-    <div class="quiz-answer"><input type="radio" name="question2" value="b">PalSu</div>
-    <div class="quiz-answer"><input type="radio" name="question2" value="c">Psu</div>
-
-    <button onclick="gradeQuiz()">Submit</button>
-    <div id="quiz-result" class="quiz-result" style="display: none;"></div>
-</div>
-
-
-<button onclick="window.location.href = 'main.html';">Back to Main</button>
+<button id="start-quiz">Start Flashcard Quiz</button>
 
 <script>
-    function gradeQuiz() {
-        var score = 0;
-        var correctAnswers = ['c', 'b'];
 
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('start-quiz').addEventListener('click', () => {
+        window.location.href = 'lessons/quiz1.html'; // Redirect to the flashcard page
+    });
+});
 
-        var selectedAnswer1 = document.querySelector('input[name="question1"]:checked');
-        if (selectedAnswer1 && selectedAnswer1.value === correctAnswers[0]) {
-            score++;
-        }
-
-        var selectedAnswer2 = document.querySelector('input[name="question2"]:checked');
-        if (selectedAnswer2 && selectedAnswer2.value === correctAnswers[1]) {
-            score++;
-        }
-
-        alert("Your Score is " + score)
-
-        var quizInputs = document.querySelectorAll('input[type="radio"]');
-        for (var i = 0; i < quizInputs.length; i++) {
-            quizInputs[i].disabled = true;
-        }
-    }
 </script>
 </body>
 </html>

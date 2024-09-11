@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Quiz</title>
+    <link rel="stylesheet" href="qstyle.css">
+</head>
+<body>
+    <div class="flashcard-quiz">
+        <div class="flashcard">
+            <div class="front">
+                <h2>Question 1</h2>
+                <p>What is the capital of France?</p>
+                <h2>Options:</h2>
+                <ul>
+                    <li class="answer" data-correct="true">Paris</li>
+                    <li class="answer">London</li>
+                    <li class="answer">Berlin</li>
+                    <li class="answer">Madrid</li>
+                </ul>
+            </div>
+            <div class="back">
+                <p class="correct-answer">Correct answer: Paris</p>
+            </div>
+        </div>
+        <div class="flashcard">
+            <div class="front">
+                <h2>Question 2</h2>
+                <p>What is the largest planet in our solar system?</p>
+                <h2>Options:</h2>
+                <ul>
+                    <li class="answer" data-correct="true">Jupiter</li>
+                    <li class="answer">Saturn</li>
+                    <li class="answer">Earth</li>
+                    <li class="answer">Mars</li>
+                </ul>
+            </div>
+            <div class="back">
+                <p class="correct-answer">Correct answer: Jupiter</p>
+            </div>
+        </div>
+        <!-- Add more flashcards as needed -->
+        <button id="next-card">Next Card</button>
+        <button id="exit-button">Exit</button>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+    const flashcards = document.querySelectorAll('.flashcard');
+    let currentCardIndex = 0;
+
+    function showCard(index) {
+        flashcards.forEach((card, i) => {
+            card.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    function flipCard(card) {
+        card.classList.toggle('flip');
+    }
+
+    flashcards.forEach(card => {
+        const answers = card.querySelectorAll('.answer');
+        answers.forEach(answer => {
+            answer.addEventListener('click', () => {
+                const isCorrect = answer.getAttribute('data-correct') === 'true';
+                answers.forEach(ans => ans.classList.remove('correct', 'incorrect')); // Remove old styles
+                answer.classList.add(isCorrect ? 'correct' : 'incorrect');
+                if (isCorrect) {
+                    flipCard(card);
+                } else {
+                    // Optionally handle incorrect answers
+                }
+            });
+        });
+        card.addEventListener('click', () => {
+            flipCard(card);
+        });
+    });
+
+    document.getElementById('next-card').addEventListener('click', () => {
+        currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+        showCard(currentCardIndex);
+    });
+
+    document.getElementById('exit-button').addEventListener('click', () => {
+        window.location.href = 'lessons/lessonmain.html'; // Redirect to the home page
+    });
+
+    // Show the first card initially
+    showCard(currentCardIndex);
+});
+
+    </script>
+</body>
+</html>
