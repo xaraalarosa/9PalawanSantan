@@ -3,110 +3,96 @@
 <head>
     <title>G8 Academy</title>
     <link rel="stylesheet" href="lstyle.css">
-    
 </head>
 <body>
     <hr>
     <div class="sidebar">
         <ul>
-            <li>Speacial Mention</li>
-                <ul>
-                    <li class="sm"><a href="index.html">HOME</a></li>
-                    <li class="sm"><a href="https://www.youtube.com/@dcode-software">dcode</a></li>
-                    <li class="sm"><a href="https://www.youtube.com/@WebDevSimplified">Web Dev Simplified</a></li>
-                </ul>
+            <li>Special Mention</li>
+            <ul>
+                <li class="sm"><a href="index.html">HOME</a></li>
+                <li class="sm"><a href="https://www.youtube.com/@dcode-software">dcode</a></li>
+                <li class="sm"><a href="https://www.youtube.com/@WebDevSimplified">Web Dev Simplified</a></li>
+            </ul>
         </ul>
     </div>
-    
+
     <div class="menu-icon" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
     </div>
-<header>
-    <img src="C:\Users\Dan Asher\OneDrive\Desktop\ICT PT\LOGO.JPg" alt="Logo" class="logo">
-    <h1>G8 ACADEMY</h1>
-</header>
-<div class="container">
-    <div class="gallery">
-        <div class="subject-option">
-            <img src="math-icon.png" alt="Math Review">
-            <h2>Mathemathics</h2>
-            <p>analyzing mathematic problems</p>
-            <button onclick="goToReview('math')">Read Review</button>
-        </div>
-        <div class="subject-option">
-            <img src="resources\subjects\eng-icon.jpg" alt="English Review">
-            <h2>English</h2>
-            <p>wow you can read english :O</p>
-            <button onclick="goToReview('english')">Read Review</button>
-        </div>
-        <div class="subject-option">
-            <img src="resources\subjects\ap-icon.jpg" alt="AP">
-            <h2>Araling Panlipunan</h2>
-            <p>rediscovering the past</p>
-            <button onclick="goToReview('ap')">Read Review</button>
-        </div>
-        <div class="subject-option">
-            <img src="resources\subjects\fil-icon.jpg" alt="FIL">
-            <h2>Filipino</h2>
-            <p>Ang wika na sariling atin</p>
-            <button onclick="goToReview('filipino')">Read Review</button>
-        </div>
-        <div class="subject-option">
-            <img src="resources\subjects\sci-icon.jpg" alt="SCI">
-            <h2>Science</h2>
-            <p>understanding the feilds of science</p>
-            <button onclick="goToReview('science')">Read Review</button>
-        </div>
-        <div class="subject-option">
-            <img src="resources\subjects\ict-icon.jpg" alt="ICT">
-            <h2>ICT</h2>
-            <p>Interesting world of computers and technology</p>
-            <button onclick="goToReview('ict')">Read Review</button>
+
+    <header>
+        <img src="logo.jpg" alt="Logo" class="logo"> <!-- Ensure this path is correct -->
+        <h1>G8 ACADEMY</h1>
+    </header>
+    
+    <div class="container">
+        <div class="gallery">
+            <div class="subject-option">
+                <a href="lessons/math.html">
+                    <img src="math-icon.png" alt="Math Review">
+                    <h2>Mathematics</h2>
+                    <p>Analyzing mathematical problems</p>
+                </a>
+            </div>
+            <div class="subject-option">
+                <a href="lessons/english.html">
+                    <img src="resources/subjects/eng-icon.jpg" alt="English Review">
+                    <h2>English</h2>
+                    <p>Wow, you can read English :O</p>
+                </a>
+            </div>
+            <div class="subject-option">
+                <a href="lessons/subject2.html">
+                    <img src="resources/subjects/ap-icon.jpg" alt="AP">
+                    <h2>Araling Panlipunan</h2>
+                    <p>Rediscovering the past</p>
+                </a>
+            </div>
+            <div class="subject-option">
+                <a href="lessons/subject1.html">
+                    <img src="resources/subjects/fil-icon.jpg" alt="FIL">
+                    <h2>Filipino</h2>
+                    <p>Ang wika na sariling atin</p>
+                </a>
+            </div>
+            <div class="subject-option">
+                <a href="lessons/science.html">
+                    <img src="resources/subjects/sci-icon.jpg" alt="SCI">
+                    <h2>Science</h2>
+                    <p>Understanding the fields of science</p>
+                </a>
+            </div>
+            <div class="subject-option">
+                <a href="lessons/ict.html">
+                    <img src="resources/subjects/ict-icon.jpg" alt="ICT">
+                    <h2>ICT</h2>
+                    <p>Interesting world of computers and technology</p>
+                </a>
+            </div>
         </div>
     </div>
-</div>
-<footer>
-    <p>All Rights Reserved 2024</p>
-    <p>Publisher: Xara</p>
-    <p>all tasks are distributed equally, this website is the result of our hardwork</p>
-</footer>
 
-<script>
-    function goToReview(subject) {
-        var basePath = 'lessons';
+    <footer>
+        <p>All Rights Reserved 2024</p>
+        <p>Publisher: Xara</p>
+        <p>All tasks are distributed equally; this website is the result of our hard work.</p>
+    </footer>
 
-
-        var subjectPaths = {
-            'math': 'math.html',
-            'english': 'english.html',
-            'ict':'ict.html',
-            'ap':'subject2.html',
-            'filipino':'subject1.html',
-            'science':'science.html'
-        };
-
-        if (subject in subjectPaths) {
-            var filePath = basePath + subjectPaths[subject];
-            window.location.href = filePath;
-        } else {
-            console.error('Invalid subject:', subject);
+    <script>
+        function toggleMenu() {
+            var sidebar = document.querySelector('.sidebar');
+            var menuIcon = document.querySelector('.menu-icon');
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-200px";
+                menuIcon.classList.remove('open');
+            } else {
+                sidebar.style.left = "0px";
+                menuIcon.classList.add('open');
+            }
         }
-    }
-
-    function toggleMenu() {
-        var sidebar = document.querySelector('.sidebar');
-        var menuIcon = document.querySelector('.menu-icon');
-        if (sidebar.style.left === "0px") {
-            sidebar.style.left = "-200px";
-            menuIcon.classList.remove('open');
-        } else {
-            sidebar.style.left = "0px";
-            menuIcon.classList.add('open');
-        }
-    }
-</script>
-
+    </script>
 </body>
 </html>
