@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const gallery = document.getElementById('pictureGallery');
 
     function loadImages() {
-        fetch('/path-to-your-images-endpoint')
+        fetch('/images') // Endpoint to fetch the list of images
             .then(response => response.json())
             .then(images => {
                 gallery.innerHTML = ''; // Clear existing images
                 images.forEach(image => {
                     const img = document.createElement('img');
-                    img.src = `resources/gallery_images${image}`;
+                    img.src = `/resources/gallery_images/${image}`; // Actual path to your images
                     img.alt = 'Gallery Image';
                     gallery.appendChild(img);
                 });
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadImages(); // Load images on page load
 });
+
 
 
 // Anonymous Confession Space
