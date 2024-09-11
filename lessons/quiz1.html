@@ -46,51 +46,50 @@
     </div>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', () => {
-    const flashcards = document.querySelectorAll('.flashcard');
-    let currentCardIndex = 0;
+            const flashcards = document.querySelectorAll('.flashcard');
+            let currentCardIndex = 0;
 
-    function showCard(index) {
-        flashcards.forEach((card, i) => {
-            card.style.display = i === index ? 'block' : 'none';
-        });
-    }
+            function showCard(index) {
+                flashcards.forEach((card, i) => {
+                    card.style.display = i === index ? 'block' : 'none';
+                });
+            }
 
-    function flipCard(card) {
-        card.classList.toggle('flip');
-    }
+            function flipCard(card) {
+                card.classList.toggle('flip');
+            }
 
-    flashcards.forEach(card => {
-        const answers = card.querySelectorAll('.answer');
-        answers.forEach(answer => {
-            answer.addEventListener('click', () => {
-                const isCorrect = answer.getAttribute('data-correct') === 'true';
-                answers.forEach(ans => ans.classList.remove('correct', 'incorrect')); // Remove old styles
-                answer.classList.add(isCorrect ? 'correct' : 'incorrect');
-                if (isCorrect) {
+            flashcards.forEach(card => {
+                const answers = card.querySelectorAll('.answer');
+                answers.forEach(answer => {
+                    answer.addEventListener('click', () => {
+                        const isCorrect = answer.getAttribute('data-correct') === 'true';
+                        answers.forEach(ans => ans.classList.remove('correct', 'incorrect')); // Remove old styles
+                        answer.classList.add(isCorrect ? 'correct' : 'incorrect');
+                        if (isCorrect) {
+                            flipCard(card);
+                        } else {
+                            // Optionally handle incorrect answers
+                        }
+                    });
+                });
+                card.addEventListener('click', () => {
                     flipCard(card);
-                } else {
-                    // Optionally handle incorrect answers
-                }
+                });
             });
+
+            document.getElementById('next-card').addEventListener('click', () => {
+                currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+                showCard(currentCardIndex);
+            });
+
+            document.getElementById('exit-button').addEventListener('click', () => {
+                window.location.href = 'lessonmain.html'; // Redirect to the home page
+            });
+
+            // Show the first card initially
+            showCard(currentCardIndex);
         });
-        card.addEventListener('click', () => {
-            flipCard(card);
-        });
-    });
-
-    document.getElementById('next-card').addEventListener('click', () => {
-        currentCardIndex = (currentCardIndex + 1) % flashcards.length;
-        showCard(currentCardIndex);
-    });
-
-    document.getElementById('exit-button').addEventListener('click', () => {
-        window.location.href = 'lessons/lessonmain.html'; // Redirect to the home page
-    });
-
-    // Show the first card initially
-    showCard(currentCardIndex);
-});
-
     </script>
 </body>
 </html>
