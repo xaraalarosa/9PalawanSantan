@@ -6,22 +6,28 @@ function toggleMenu() {
     menuIcon.classList.toggle('open');
 }
 
-
-
-// Picture Posting
-document.getElementById('pictureForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const fileInput = document.getElementById('pictureInput');
+//Gallery
+document.addEventListener('DOMContentLoaded', function() {
     const gallery = document.getElementById('pictureGallery');
-    const file = fileInput.files[0];
-    
-    if (file) {
-        const img = document.createElement('img');
-        img.src = URL.createObjectURL(file);
-        gallery.appendChild(img);
-        fileInput.value = ''; // Clear input
+
+    function loadImages() {
+        fetch('/path-to-your-images-endpoint')
+            .then(response => response.json())
+            .then(images => {
+                gallery.innerHTML = ''; // Clear existing images
+                images.forEach(image => {
+                    const img = document.createElement('img');
+                    img.src = `resources/gallery_images${image}`;
+                    img.alt = 'Gallery Image';
+                    gallery.appendChild(img);
+                });
+            })
+            .catch(error => console.error('Error loading images:', error));
     }
+
+    loadImages(); // Load images on page load
 });
+
 
 // Anonymous Confession Space
 document.getElementById('confessionForm').addEventListener('submit', function(event) {
