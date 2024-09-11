@@ -27,6 +27,18 @@ h1 {
     font-size: 24px;
 }
 
+nav a {
+    color: #FFF;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #FFD3B6; /* Light Peach for hover effect */
+}
+
+
 .container {
     max-width: 1200px; /* Container width adjusted */
     margin: 20px auto;
