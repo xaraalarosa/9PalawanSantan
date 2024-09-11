@@ -26,9 +26,9 @@ nav a:hover {
 /* Gallery/Posting Section */
 .gallery {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
     padding: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
     background: url('https://img.freepik.com/free-photo/photorealistic-galaxy-background_23-2151064436.jpg') no-repeat center center;
     background-size: cover;
 }
@@ -39,6 +39,7 @@ nav a:hover {
     height: auto;
     transition: transform 0.3s ease;
     border-radius: 8px;
+    flex-shrink: 0; /* Prevent images from shrinking in flexbox */
 }
 
 .gallery img:hover {
@@ -113,6 +114,28 @@ nav a:hover {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    /* Grade Calculator Layout */
+    .grade-row {
+        flex-direction: column; /* Stack labels and inputs vertically */
+    }
+
+    .grade-row label {
+        margin-bottom: 5px; /* Add spacing between stacked labels and inputs */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .grade-row input {
+        width: 100%; /* Make input full width */
+    }
+
+    /* Gallery */
+    .gallery {
+        flex-wrap: nowrap; /* Prevent wrapping and allow horizontal scrolling */
+    }
 }
 
 #grade-calculator button {
