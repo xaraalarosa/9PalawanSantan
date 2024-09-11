@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 gallery.innerHTML = ''; // Clear existing images
                 images.forEach(image => {
                     const img = document.createElement('img');
-                    img.src = `/resources/gallery_images/${image}`; // Actual path to your images
+                    img.src = `resources/gallery_images/${image}`; // Actual path to your images
                     img.alt = 'Gallery Image';
                     gallery.appendChild(img);
                 });
