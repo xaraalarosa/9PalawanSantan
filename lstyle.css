@@ -82,8 +82,8 @@ footer {
 }
 
 .sidebar {
-    background-color: #333; /* Dark background for sidebar */
-    color: #FFF; /* White text for sidebar */
+    background-color: #333;
+    color: #FFF;
     width: 200px;
     height: 100%;
     position: fixed;
@@ -91,6 +91,10 @@ footer {
     top: 0;
     padding-top: 20px;
     transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 0;
 }
 
 .sidebar ul {
@@ -104,15 +108,24 @@ footer {
 }
 
 .sidebar li:hover {
-    background-color: #555; /* Darker grey on hover */
+    background-color: #555;
+}
+
+/* Menu icon (hamburger) */
+.menu-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .menu-icon div {
     width: 30px;
     height: 3px;
-    background-color: #FF6F31; /* Palawan Orange for menu icon bars */
+    background-color: #000;
     margin: 6px 0;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .menu-icon.open div:nth-child(1) {

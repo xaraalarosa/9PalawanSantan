@@ -8,11 +8,27 @@ body {
 }
 
 header {
-    background: #FF6F31; /* Palawan Orange for the header */
-    color: #FFF;
-    padding: 15px 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #FF6F31; /* Palawan Orange for header background */
+    color: #FFF; /* White text for header */
 }
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #FFF; /* White text for footer */
+    background-color: rgba(94, 94, 94, 0.8); /* Subtle dark background */
+    padding: 20px;
+}
+
 
 nav a {
     color: #FFF;
