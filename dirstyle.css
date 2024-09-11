@@ -38,6 +38,11 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.profile {
+    max-width: 100px;
+    height: auto;
+}
+
 .container {
     max-width: 1000px;
     margin: 20px auto;
