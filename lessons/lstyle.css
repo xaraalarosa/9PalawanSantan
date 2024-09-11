@@ -1,0 +1,149 @@
+body {
+    background-image: url("review_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFF8E7; /* Warm White for the main background */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #FF6F31; /* Palawan Orange for header background */
+    color: #FFF; /* White text for header */
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    overflow: hidden;
+    background-color: #FFD3B6; /* Light Peach for container background */
+    border-radius: 10px; /* Rounded corners for the container */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.subject-option {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* White background with some transparency */
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.subject-option img {
+    max-width: 150px;
+    height: auto;
+}
+
+.subject-option button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #FF6F31; /* Palawan Orange for button background */
+    color: #FFF; /* White text for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subject-option button:hover {
+    background-color: #C72C41; /* Cherry Red for button hover */
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #FFF; /* White text for footer */
+    background-color: rgba(94, 94, 94, 0.8); /* Subtle dark background */
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #333; /* Dark background for sidebar */
+    color: #FFF; /* White text for sidebar */
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: -200px;
+    top: 0;
+    padding-top: 20px;
+    transition: left 0.3s ease;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #555; /* Darker grey on hover */
+}
+
+.menu-icon div {
+    width: 30px;
+    height: 3px;
+    background-color: #FF6F31; /* Palawan Orange for menu icon bars */
+    margin: 6px 0;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon.open div:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-icon.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.open div:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.quiz-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #FFF8E7; /* Warm White for quiz container */
+    border-radius: 10px;
+}
+
+.quiz-question {
+    margin-bottom: 10px;
+}
+
+.quiz-answer {
+    margin-bottom: 5px;
+}
+
+.quiz-result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #C72C41; /* Cherry Red for result text */
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>G8 Academy</title>
+    <link rel="stylesheet" href="lstyle.css">
+    
+</head>
+<body>
+    <hr>
+    <div class="sidebar">
+        <ul>
+            <li>Speacial Mention</li>
+                <ul>
+                    <li class="sm"><a href="https://www.youtube.com/@BeeCoderGames">Bee Coder</a></li>
+                    <li class="sm"><a href="https://www.youtube.com/@dcode-software">dcode</a></li>
+                    <li class="sm"><a href="https://www.youtube.com/@WebDevSimplified">Web Dev Simplified</a></li>
+                </ul>
+        </ul>
+    </div>
+    
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+<header>
+    <img src="C:\Users\Dan Asher\OneDrive\Desktop\ICT PT\LOGO.JPg" alt="Logo" class="logo">
+    <h1>G8 ACADEMY</h1>
+</header>
+<div class="container">
+    <div class="gallery">
+        <div class="subject-option">
+            <img src="math-icon.png" alt="Math Review">
+            <h2>Mathemathics</h2>
+            <p>analyzing mathematic problems</p>
+            <button onclick="goToReview('math')">Read Review</button>
+        </div>
+        <div class="subject-option">
+            <img src="eng-icon.png" alt="English Review">
+            <h2>English</h2>
+            <p>wow you can read english :O</p>
+            <button onclick="goToReview('english')">Read Review</button>
+        </div>
+        <div class="subject-option">
+            <img src="ap-icon.png" alt="AP">
+            <h2>Araling Panlipunan</h2>
+            <p>rediscovering the past</p>
+            <button onclick="goToReview('ap')">Read Review</button>
+        </div>
+        <div class="subject-option">
+            <img src="fil-icon.png" alt="">
+            <h2>Filipino</h2>
+            <p>Ang wika na sariling atin</p>
+            <button onclick="goToReview('filipino')">Read Review</button>
+        </div>
+        <div class="subject-option">
+            <img src="sci-icon.png" alt="">
+            <h2>Science</h2>
+            <p>understanding the feilds of science</p>
+            <button onclick="goToReview('science')">Read Review</button>
+        </div>
+        <div class="subject-option">
+            <img src="ict-icon.png" alt="">
+            <h2>ICT</h2>
+            <p>Interesting world of computers and technology</p>
+            <button onclick="goToReview('ict')">Read Review</button>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>All Rights Reserved 2024</p>
+    <p>Publisher: Xara</p>
+    <p>all tasks are distributed equally, this website is the result of our hardwork</p>
+</footer>
+
+<script>
+    function goToReview(subject) {
+        var basePath = 'file:///C:/Users/Dan Asher/OneDrive/Desktop/ICT PT/';
+
+
+        var subjectPaths = {
+            'math': 'math.html',
+            'english': 'english.html',
+            'ict':'ict.html',
+            'ap':'ap.html',
+            'filipino':'filipino.html',
+            'science':'science.html'
+        };
+
+        if (subject in subjectPaths) {
+            var filePath = basePath + subjectPaths[subject];
+            window.location.href = filePath;
+        } else {
+            console.error('Invalid subject:', subject);
+        }
+    }
+
+    function toggleMenu() {
+        var sidebar = document.querySelector('.sidebar');
+        var menuIcon = document.querySelector('.menu-icon');
+        if (sidebar.style.left === "0px") {
+            sidebar.style.left = "-200px";
+            menuIcon.classList.remove('open');
+        } else {
+            sidebar.style.left = "0px";
+            menuIcon.classList.add('open');
+        }
+    }
+</script>
+
+</body>
+</html>
