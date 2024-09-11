@@ -2,14 +2,10 @@
 function toggleMenu() {
     var sidebar = document.querySelector('.sidebar');
     var menuIcon = document.querySelector('.menu-icon');
-    if (sidebar.style.left === "0px") {
-        sidebar.style.left = "-200px";
-        menuIcon.classList.remove('open');
-    } else {
-        sidebar.style.left = "0px";
-        menuIcon.classList.add('open');
-    }
+    sidebar.classList.toggle('active');
+    menuIcon.classList.toggle('open');
 }
+
 
 
 // Picture Posting
