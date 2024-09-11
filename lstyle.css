@@ -1,10 +1,11 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background-image: url("review_bg.jpg");
+    background-size: cover;
+    background-position: center;
     margin: 0;
     padding: 0;
-    background: #FFF8E7; /* Warm White for the overall background */
+    font-family: Arial, sans-serif;
+    background-color: #FFF8E7; /* Warm White for the main background */
 }
 
 header {
@@ -21,6 +22,57 @@ header {
     height: auto;
 }
 
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    overflow: hidden;
+    background-color: #FFD3B6; /* Light Peach for container background */
+    border-radius: 10px; /* Rounded corners for the container */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.subject-option {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* White background with some transparency */
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.subject-option img {
+    max-width: 150px;
+    height: auto;
+}
+
+.subject-option button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #FF6F31; /* Palawan Orange for button background */
+    color: #FFF; /* White text for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subject-option button:hover {
+    background-color: #C72C41; /* Cherry Red for button hover */
+}
+
 footer {
     text-align: center;
     margin-top: 50px;
@@ -28,20 +80,6 @@ footer {
     background-color: rgba(94, 94, 94, 0.8); /* Subtle dark background */
     padding: 20px;
 }
-
-
-nav a {
-    color: #FFF;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
-    color: #FFD3B6; /* Light Peach for hover effect */
-}
-
-/* Sidebar styles */
 
 .sidebar {
     background-color: #333;
