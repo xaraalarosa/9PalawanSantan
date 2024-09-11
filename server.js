@@ -11,7 +11,7 @@ let confessions = [];
 
 // Configure multer for file uploads
 const upload = multer({
-    dest: 'uploads/', // Directory to save uploaded files
+    dest: 'resources/gallery_images/', // Directory to save uploaded files
     limits: { fileSize: 5 * 1024 * 1024 }, // Limit file size to 5MB
     fileFilter: (req, file, cb) => {
         const allowedTypes = ['image/jpeg', 'image/png'];
@@ -22,17 +22,30 @@ const upload = multer({
     }
 });
 
-// Serve static files from the 'public' directory
+// Serve static files from the 'public' and 'resources/gallery_images' directories
 app.use(express.static('public'));
+app.use('/resources/gallery_images', express.static('resources/gallery_images'));
 
 // Endpoint to handle picture uploads
 app.post('/upload-picture', upload.single('picture'), (req, res) => {
     if (req.file) {
-        const fileUrl = `/uploads/${req.file.filename}`;
+        const fileUrl = `/resources/gallery_images/${req.file.filename}`;
         res.send(fileUrl); // Send the URL of the uploaded file to the client
     } else {
         res.status(400).send('No file uploaded.');
     }
+});
+
+// Endpoint to get the list of images
+app.get('/images', (req, res) => {
+    fs.readdir('resources/gallery_images', (err, files) => {
+        if (err) {
+            return res.status(500).send('Error reading images directory.');
+        }
+        // Filter out non-image files
+        const images = files.filter(file => /\.(jpg|jpeg|png)$/.test(file));
+        res.json(images);
+    });
 });
 
 // Endpoint to handle fetching confessions
@@ -58,9 +71,10 @@ app.post('/confessions', express.json(), (req, res) => {
     }
 });
 
-// Create 'uploads' directory if it doesn't exist
-if (!fs.existsSync('uploads')) {
-    fs.mkdirSync('uploads');
+// Create 'resources/gallery_images' directory if it doesn't exist
+const galleryDir = 'resources/gallery_images';
+if (!fs.existsSync(galleryDir)) {
+    fs.mkdirSync(galleryDir, { recursive: true });
 }
 
 app.listen(port, () => {
