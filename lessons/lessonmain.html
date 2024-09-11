@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>G8 Academy</title>
-    <link rel="stylesheet" href="lstyle.css">
+    <link rel="stylesheet" href="lessons\lstyle.css">
     
 </head>
 <body>
@@ -48,19 +48,19 @@
             <button onclick="goToReview('ap')">Read Review</button>
         </div>
         <div class="subject-option">
-            <img src="resources\subjects\fil-icon.png" alt="">
+            <img src="resources\subjects\fil-icon.png" alt="FIL">
             <h2>Filipino</h2>
             <p>Ang wika na sariling atin</p>
             <button onclick="goToReview('filipino')">Read Review</button>
         </div>
         <div class="subject-option">
-            <img src="resources\subjects\sci-icon.png" alt="">
+            <img src="resources\subjects\sci-icon.png" alt="SCI">
             <h2>Science</h2>
             <p>understanding the feilds of science</p>
             <button onclick="goToReview('science')">Read Review</button>
         </div>
         <div class="subject-option">
-            <img src="resources\subjects\ict-icon.png" alt="">
+            <img src="resources\subjects\ict-icon.png" alt="ICT">
             <h2>ICT</h2>
             <p>Interesting world of computers and technology</p>
             <button onclick="goToReview('ict')">Read Review</button>
@@ -75,15 +75,15 @@
 
 <script>
     function goToReview(subject) {
-        var basePath = 'file:///C:/Users/Dan Asher/OneDrive/Desktop/ICT PT/';
+        var basePath = 'lessons/subjects';
 
 
         var subjectPaths = {
             'math': 'math.html',
             'english': 'english.html',
             'ict':'ict.html',
-            'ap':'ap.html',
-            'filipino':'filipino.html',
+            'ap':'subject2.html',
+            'filipino':'subject1.html',
             'science':'science.html'
         };
 
