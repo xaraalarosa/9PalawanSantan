@@ -20,15 +20,23 @@
     </header>
     </section>
 
-   <hr>
-   <hr>
-   <hr>
-   <hr>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
    
-<section>    
-<div class="sidebar active" id="sidebar">
-    <div class="menu-icon" onclick="toggleMenu()">HIDE</div>
+<section>  
+    
     <br><br><br><br>
+       
+<div class="sidebar active" id="sidebar">
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+   
    <h2 class="inbar">Chapter 1</h2>
 <ol>
    <li><a href="#" onclick="showLesson('lesson1')">Lesson 1.1: Quadratic Equations</a></li>
@@ -215,18 +223,25 @@ function showLesson(lessonId) {
         window.location.href = 'quiz1.html'; // Redirect to the flashcard page
     });
 
- //Sidebar Menu
- function toggleMenu() {
-    var sidebar = document.querySelector('.sidebar');
-    var content = document.querySelector('.content');
-    var menuIcon = document.querySelector('.menu-icon');
-    
-    sidebar.classList.toggle('active');
-    sidebar.classList.toggle('hidden');
-    content.classList.toggle('shifted');
-    menuIcon.classList.toggle('open');
-}
+    function toggleMenu() {
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content');
+    const menuIcon = document.querySelector('.menu-icon');
 
+    // Toggle the 'hidden' class on the sidebar
+    sidebar.classList.toggle('hidden');
+
+    // Adjust the content margin based on sidebar visibility
+    if (sidebar.classList.contains('hidden')) {
+        content.classList.add('shifted');
+        menuIcon.classList.remove('active');
+        menuIcon.style.left = '10px'; // Adjust the top value when the sidebar is hidden
+    } else {
+        content.classList.remove('shifted');
+        menuIcon.classList.add('active');
+        menuIcon.style.left = '250px'; // Adjust the top value when the sidebar is visible
+    }
+}
     </script>
 </body>
 </html>

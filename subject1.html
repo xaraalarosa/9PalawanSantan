@@ -30,10 +30,10 @@
    <h2 class="inbar">Chapter 1</h2>
 <ol>
    <li><a href="#" onclick="showLesson('lesson1')">Aralin 1</a></li>
-   <li><a href="#" onclick="showLesson('lesson2')">Lesson 2</a></li>
-   <li><a href="#" onclick="showLesson('lesson3')">Lesson 3</a></li>
-   <li><a href="#" onclick="showLesson('lesson4')">Lesson 4</a></li>
-   <li><a href="#" onclick="showLesson('test1')">Pagsasanay ng Pagsusulit</a></li>
+   <li><a href="#" onclick="showLesson('lesson2')">Aralin 2</a></li>
+   <li><a href="#" onclick="showLesson('lesson3')">Aralin 3</a></li>
+   <li><a href="#" onclick="showLesson('lesson4')">Aralin 4</a></li>
+   <li><a href="#" onclick="showLesson('test1')">Pagsusulit</a></li>
 </ol>
 </div>
 </section>
@@ -179,25 +179,39 @@
         
         
     </div>
-</section>
     <script>
-   function showLesson(lessonId) {
-            var lessons = document.querySelectorAll('.lesson');
-            lessons.forEach(function(lesson) {
-                lesson.classList.remove('active');
+
+        function showLesson(lessonId) {
+                    var lessons = document.querySelectorAll('.lesson');
+                    lessons.forEach(function(lesson) {
+                        lesson.classList.remove('active');
+                    });
+                    document.getElementById(lessonId).classList.add('active');
+                }
+        
+                document.getElementById('start-quiz').addEventListener('click', () => {
+                window.location.href = 'quiz1.html'; // Redirect to the flashcard page
             });
-            document.getElementById(lessonId).classList.add('active');
+        
+            function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content');
+            const menuIcon = document.querySelector('.menu-icon');
+        
+            // Toggle the 'hidden' class on the sidebar
+            sidebar.classList.toggle('hidden');
+        
+            // Adjust the content margin based on sidebar visibility
+            if (sidebar.classList.contains('hidden')) {
+                content.classList.add('shifted');
+                menuIcon.classList.remove('active');
+                menuIcon.style.left = '10px'; // Adjust the top value when the sidebar is hidden
+            } else {
+                content.classList.remove('shifted');
+                menuIcon.classList.add('active');
+                menuIcon.style.left = '250px'; // Adjust the top value when the sidebar is visible
+            }
         }
-
-        document.getElementById('start-quiz').addEventListener('click', () => {
-        window.location.href = 'quiz1.html'; // Redirect to the flashcard page
-    });
-
-    function toggleMenu() {
-    document.getElementById('sidebar').classList.toggle('hidden');
-    document.querySelector('.content').classList.toggle('shifted');
-    document.querySelector('.menu-icon').classList.toggle('shifted');
-}
 
     </script>
 </body>

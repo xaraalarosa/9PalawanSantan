@@ -1,49 +1,87 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Filipino</title>
-   
-    <link rel="stylesheet" href="lstyle.css">
-    <style>
-        
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title> <!-- Dynamic title -->
+    <link rel="stylesheet" href="sub.css">
 </head>
 <body>
-<header>
-    <img src="" alt="Logo" class="logo">
-    <h1>Filipino</h1>
-</header>
-<div class="subject-option">
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
+    <header>
+        <img src="resources/logo.jpg" alt="Logo" class="logo"> <!-- Static logo path -->
+        <h1>REVIEWERS</h1> <!-- Static page title -->
+        <nav>
+            <!-- Static navigation links -->
+            <a href="index.html">Home</a>
+            <a href="calc.html">Grade Calculator</a>
+            <a href="classdir.html">Class Directory</a>
+            <a href="lessonmain.html">Reviewer</a>
+        </nav>
+    </header>
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
+    <section>
+        <div class="sidebar">
+            <br><br><br><br>
+            <h2 class="inbar">Chapter 1</h2> <!-- Dynamic chapter title -->
+            <ol>
+                <!-- Retained static lesson links with onclick events -->
+                <li><a href="#" onclick="showLesson('lesson1')">Aralin 1</a></li>
+            </ol>
+        </div>
+    </section>
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
+    <section>
+        <div class="content">
+            <br><br><br><br>
+            <h2>Chapter 1</h2> <!-- Dynamic term or grading period -->
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
+            <!-- Dynamic lesson sections -->
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
+            <div id="lesson1" class="lesson">
+                <button id="start-quiz">{{QUIZ_BUTTON_TEXT}}</button>
+            </div>
+        </div>
+    </section>
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
+    <script>
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et metus vel odio fermentum aliquam. Mauris luctus orci nec lectus bibendum, id vestibulum elit dictum. Nullam nec sapien eget arcu commodo blandit. Morbi malesuada ante vitae aliquet lacinia. Nulla facilisi. Duis nec urna non risus auctor aliquet. Fusce quis felis sed ante vulputate congue. Quisque id orci sed odio fringilla blandit. Vivamus fermentum ligula vel nulla rhoncus, id dictum purus placerat. Donec non dapibus dolor. Cras auctor, nisi nec dictum lobortis, arcu dolor fermentum elit, a consequat ipsum neque a ante. Sed ut justo ac arcu vestibulum congue.
-
-
-    </p>
-</div>
-
-<button id="start-quiz">Start Flashcard Quiz</button>
-
-<script>
-    document.getElementById('start-quiz').addEventListener('click', () => {
-        window.location.href = 'quiz1.html'; // Redirect to the flashcard page
-    });
-</script>
+        function showLesson(lessonId) {
+                    var lessons = document.querySelectorAll('.lesson');
+                    lessons.forEach(function(lesson) {
+                        lesson.classList.remove('active');
+                    });
+                    document.getElementById(lessonId).classList.add('active');
+                }
+        
+                document.getElementById('start-quiz').addEventListener('click', () => {
+                window.location.href = 'quiz1.html'; // Redirect to the flashcard page
+            });
+        
+            function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content');
+            const menuIcon = document.querySelector('.menu-icon');
+        
+            // Toggle the 'hidden' class on the sidebar
+            sidebar.classList.toggle('hidden');
+        
+            // Adjust the content margin based on sidebar visibility
+            if (sidebar.classList.contains('hidden')) {
+                content.classList.add('shifted');
+                menuIcon.classList.remove('active');
+                menuIcon.style.left = '10px'; // Adjust the top value when the sidebar is hidden
+            } else {
+                content.classList.remove('shifted');
+                menuIcon.classList.add('active');
+                menuIcon.style.left = '250px'; // Adjust the top value when the sidebar is visible
+            }
+        }
+    </script>    
 </body>
 </html>
