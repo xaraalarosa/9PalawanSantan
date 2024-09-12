@@ -125,43 +125,6 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Confession Section */
-.confessions {
-    padding: 20px;
-    background: #F4A9A8; /* Pastel Pink for a gentle touch */
-}
-
-.confession {
-    position: relative;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #FFF;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.confession:before {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    left: 20px;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-bottom-color: #FFF;
-}
-
-.confession p {
-    margin: 0;
-    padding: 0;
-}
-
-.confession .date {
-    font-size: 0.9em;
-    color: #888;
-}
-
 /* Grade Calculator */
 #grade-calculator {
     padding: 20px;

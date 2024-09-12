@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="sub.css">
 </head>
 <body>
+    <section>
     <header>
         <img src="resources/logo.jpg" alt="Logo" class="logo"> <!-- Updated path -->
         <h1>REVIEWERS</h1>
@@ -17,8 +18,17 @@
             <a href="lessonmain.html">Reviewer</a>
         </nav>
     </header>
-<section>
-<div class="sidebar">
+    </section>
+
+   <hr>
+   <hr>
+   <hr>
+   <hr>
+   
+<section>    
+<div class="sidebar active" id="sidebar">
+    <div class="menu-icon" onclick="toggleMenu()">HIDE</div>
+    <br><br><br><br>
    <h2 class="inbar">Chapter 1</h2>
 <ol>
    <li><a href="#" onclick="showLesson('lesson1')">Lesson 1.1: Quadratic Equations</a></li>
@@ -44,6 +54,7 @@
 </div>
 </section>
 <section>
+    <br><br><br><br>
     <div class="content">
 
         <div id="lesson1" class="lesson">
@@ -203,6 +214,18 @@ function showLesson(lessonId) {
         document.getElementById('start-quiz').addEventListener('click', () => {
         window.location.href = 'quiz1.html'; // Redirect to the flashcard page
     });
+
+ //Sidebar Menu
+ function toggleMenu() {
+    var sidebar = document.querySelector('.sidebar');
+    var content = document.querySelector('.content');
+    var menuIcon = document.querySelector('.menu-icon');
+    
+    sidebar.classList.toggle('active');
+    sidebar.classList.toggle('hidden');
+    content.classList.toggle('shifted');
+    menuIcon.classList.toggle('open');
+}
 
     </script>
 </body>

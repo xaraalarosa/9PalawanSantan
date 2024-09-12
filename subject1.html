@@ -17,8 +17,16 @@
             <a href="lessonmain.html">Reviewer</a>
         </nav>
     </header>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
 <section>
 <div class="sidebar">
+   <br><br><br><br>
    <h2 class="inbar">Chapter 1</h2>
 <ol>
    <li><a href="#" onclick="showLesson('lesson1')">Aralin 1</a></li>
@@ -31,6 +39,10 @@
 </section>
 <section>
     <div class="content">
+
+        <br><br><br><br>
+
+        <h2>Unang MARKAHAN</h2>
 
         <div id="lesson1" class="lesson">
             <h2>Aralin 1: Mga Pang-ugnay na Hudyat sa Pagsusunod-sunod ng mga Pangyayari</h2>
@@ -180,6 +192,12 @@
         document.getElementById('start-quiz').addEventListener('click', () => {
         window.location.href = 'quiz1.html'; // Redirect to the flashcard page
     });
+
+    function toggleMenu() {
+    document.getElementById('sidebar').classList.toggle('hidden');
+    document.querySelector('.content').classList.toggle('shifted');
+    document.querySelector('.menu-icon').classList.toggle('shifted');
+}
 
     </script>
 </body>

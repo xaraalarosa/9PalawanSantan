@@ -1,10 +1,14 @@
+/* General Body Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
+/* Header Styling */
 header {
     display: flex;
     align-items: center;
@@ -22,6 +26,7 @@ header {
     height: auto;
 }
 
+/* Navigation Links */
 nav a {
     color: white;
     margin: 0 10px;
@@ -32,6 +37,21 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Remove borders from specific elements */
+#header {
+    border-bottom: none; /* Remove bottom border from the header */
+}
+
+#sidebar {
+    border-right: none; /* Remove right border from the sidebar */
+}
+
+#content {
+    border-left: none; /* Remove left border from the content area */
+}
+
+
+/* Sidebar Styling */
 .sidebar {
     width: 250px;
     background-color: #C72C41;
@@ -54,6 +74,7 @@ nav a:hover {
     background-color: #FF6F31;
 }
 
+/* Content Styling */
 .content {
     margin-left: 250px;
     padding: 20px;
@@ -61,10 +82,12 @@ nav a:hover {
     margin-top: 80px; /* Adjusted for fixed header */
 }
 
+/* Typography */
 h1, h2 {
     color: #2c3e50;
 }
 
+/* Lessons Section */
 .lesson {
     display: none;
 }
@@ -73,6 +96,7 @@ h1, h2 {
     display: block;
 }
 
+/* Miscellaneous */
 .inbar {
     color: #FFF;
 }
@@ -80,45 +104,48 @@ h1, h2 {
 .exercise {
     margin-bottom: 20px;
 }
+
 .answer {
     color: #27ae60;
 }
 
+/* Example Section */
 .example { 
-        max-width: 1200px; /* Container width adjusted */
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #FFD3B6; /* Light Peach for container background */
-        border-radius: 10px; /* Rounded corners */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFD3B6; /* Light Peach */
+    border-radius: 10px; /* Rounded corners */
 }
 
-/* Center the button and style it */
+/* Start Quiz Button */
 #start-quiz {
-    display: block; /* Makes the button a block element */
-    margin: 50px auto; /* Centers the button horizontally */
-    padding: 15px 30px; /* Adds padding for better visibility */
-    font-size: 18px; /* Increases font size */
-    color: #fff; /* White text color */
-    background-color: #007BFF; /* Blue background color */
-    border: none; /* Removes default border */
-    border-radius: 5px; /* Rounds the corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    cursor: pointer; /* Changes cursor to pointer on hover */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Adds transition effects */
+    display: block;
+    margin: 50px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007BFF; /* Blue */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #start-quiz:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight zoom-in effect on hover */
+    background-color: #0056b3; /* Darker Blue */
+    transform: scale(1.05); /* Zoom-in effect */
 }
 
+/* Box Styling */
 .box {
-    border: 2px solid #007BFF; /* Blue border */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Padding inside the box */
-    margin: 20px; /* Margin outside the box */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    text-align: center; /* Center-align text inside the box */
+    border: 2px solid #007BFF; /* Blue Border */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
 }
 
 /* Responsive Design */
@@ -149,12 +176,239 @@ h1, h2 {
     nav a {
         margin: 5px 0;
     }
+}
 
+/* Sidebar and Content Shift (for Toggle Menu) */
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #FF6F31; /* Palawan Orange */
+    color: #FFF; /* White text */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Navigation Links */
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #333;
+    color: #FFF;
+    width: 200px;
+    height: 75%; /* Adjusted for layout */
+    position: fixed;
+    left: 0; /* Sidebar is open by default */
+    top: 60px; /* Adjusted for header height */
+    padding-top: 20px;
+    transition: left 0.3s ease;
+}
+
+.sidebar.hidden {
+    left: -200px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #555;
+}
+
+/* Content Styling */
+.content {
+    margin-left: 200px; /* Adjusted for sidebar width */
+    padding: 20px;
+    margin-top: 60px; /* Adjusted for header height */
+    transition: margin-left 0.3s ease;
+}
+
+.content.shifted {
+    margin-left: 0;
+}
+
+/* Typography */
+h1, h2 {
+    color: #2c3e50;
+}
+
+/* Lessons Section */
+.lesson {
+    display: none;
+}
+
+.lesson.active {
+    display: block;
+}
+
+/* Miscellaneous */
+.inbar {
+    color: #FFF;
+}
+
+.exercise {
+    margin-bottom: 20px;
+}
+
+.answer {
+    color: #27ae60;
+}
+
+/* Example Section */
+.example { 
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFD3B6; /* Light Peach */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Start Quiz Button */
+#start-quiz {
+    display: block;
+    margin: 50px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007BFF; /* Blue */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#start-quiz:hover {
+    background-color: #0056b3; /* Darker Blue */
+    transform: scale(1.05); /* Zoom-in effect */
+}
+
+/* Box Styling */
+.box {
+    border: 2px solid #007BFF; /* Blue Border */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .sidebar {
-        padding-top: 10px;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 100px; /* Adjusted for fixed header */
     }
 
     .sidebar a {
-        padding: 8px;
+        padding: 10px;
     }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+}
+
+/* Sidebar and Content Shift (for Toggle Menu) */
+.sidebar {
+    background-color: #333;
+    color: #FFF;
+    width: 200px;
+    height: 75%; /* Adjust based on your layout */
+    position: fixed;
+    left: 0; /* Sidebar is open by default */
+    top: 60px; /* Adjust based on your header height */
+    padding-top: 20px;
+    transition: left 0.3s ease;
+    /* border-right: 2px solid #FF6F31; */ /* Removed the right border */
+}
+
+.sidebar.hidden {
+    left: -200px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #555; /* Add a bottom border to create the horizontal line */
+}
+
+.sidebar li:hover {
+    background-color: #555;
+}
+
+.content {
+    margin-left: 200px; /* Adjust based on your sidebar width */
+    padding: 20px;
+    margin-top: 60px; /* Adjust based on your header height */
+    transition: margin-left 0.3s ease;
+}
+
+.content.shifted {
+    margin-left: 0;
+}
+
+/* Menu icon */
+.menu-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* Adjust based on your layout */
+    right: -30px; /* Position it outside the sidebar */
+    z-index: 1001; /* Ensure it is above other elements */
+    font-size: 24px; /* Adjust the size of the "HIDE" text */
+    color: #FFF; /* Color of the "HIDE" text */
+    background-color: #333; /* Match the sidebar background */
+    padding: 5px 10px; /* Add some padding */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right */
 }
