@@ -1,27 +1,28 @@
 /* General Styles */
 body {
-    background-image: url("review_bg.jpg");
     background-size: cover;
     background-position: center;
+    background-color: #FFF8E7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #FFF8E7; /* Warm White for the main background */
+    flex-direction: column;
 }
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     background-color: #FF6F31; /* Palawan Orange for header background */
     color: #FFF; /* White text for header */
+    width: 100%;
+    height: 100%;
 }
-    .logo {
+.logo {
         max-width: 80px; /* Further reduce size on smaller screens */
-    }
-
-
+}
 h1 {
     margin: 0;
     font-size: 24px;
@@ -108,67 +109,112 @@ footer {
 .menu-icon.open div:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
 }
+/* Existing CSS */
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
 }
+
 .card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    padding: 20px;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    transition: transform 0.6s, box-shadow 0.3s;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.card.active {
+    display: block; /* Show only the active card */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
     text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
-.card .image {
-    background-color: #ddd;
-    height: 100px;
+
+.card:focus .card-inner,
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     border-radius: 10px;
-    margin-bottom: 10px;
 }
+
+.card-front {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure the image doesn't overflow the card */
+    border-radius: 10px;
+}
+
+.card-back {
+    background-color: #ff7300;
+    transform: rotateY(180deg);
+}
+
+.card .image {
+    width: 100%;
+    height: 100%;
+}
+
+.card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px; /* Maintain the rounded corners */
+}
+
 .card .name {
     font-weight: bold;
     margin-bottom: 10px;
 }
-.card .bday{
+
+.card .bday {
     font-family: 'Times New Roman', Times, serif;
 }
+
 .card .quote {
     color: #555;
 }
 
-/* Sidebar */
-.sidebar {
-    background-color: #333;
-    color: #FFF;
-    width: 200px;
-    height: 100%;
-    position: fixed;
-    left: -200px;
-    top: 0;
-    padding-top: 20px;
-    transition: left 0.3s ease;
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.sidebar.active {
-    left: 0;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar li {
-    padding: 10px;
+.navigation button {
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #3498db; /* Consistent button color */
+    transition: background-color 0.3s;
+    margin-right: 30px;
 }
 
-.sidebar li:hover {
-    background-color: #555;
-}
+
 
 /* Menu icon (hamburger) */
 .menu-icon {
@@ -205,6 +251,7 @@ footer {
     color: #FFF;
     background-color: rgba(94, 94, 94, 0.8);
     padding: 20px;
+    width: 100%;
 }
 
 footer p {
@@ -219,9 +266,6 @@ footer p {
     .sidebar {
         width: 180px; /* Adjust width for smaller screens */
     }
-    .card {
-        width: 180px; /* Adjust card width */
-    }
 }
 
 /* For mobile screens */
@@ -231,9 +275,6 @@ footer p {
     }
     .sidebar {
         width: 160px; /* Adjust width for mobile screens */
-    }
-    .card {
-        width: 160px; /* Adjust card width */
     }
     .subject-option {
         flex: 1 1 100%; /* Full width on smaller screens */
@@ -249,9 +290,6 @@ footer p {
     }
     .sidebar {
         width: 140px; /* Adjust width for very small screens */
-    }
-    .card {
-        width: 140px; /* Adjust card width */
     }
     .subject-option {
         padding: 10px; /* Further adjust padding for very small screens */

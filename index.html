@@ -39,12 +39,17 @@
     <!-- Picture Gallery Section -->
 <section id="picture-gallery">
     <h2>Picture Gallery</h2>
-    <div id="pictureGallery" class="gallery"></div>
+    <div class="gallery">
+        <img src="gallery\poster (1).png" alt="">
+        <img src="gallery\poster (2).png" alt="">
+        <img src="gallery\poster (3).png" alt="">
+    </div>
 </section>
 
 <div class="announcement">
 <div class="birthday" id="birthday"></div>
 </div>
+
     <br><br><br><br>
 
    
@@ -52,68 +57,62 @@
     <div class="container">
       <div class="side">
         <div class="todo" id="todo">
-                    <h2>TO DO</h2>
-                    <ul>
-                        <li>Mapeh
-                            <ul>
-                                <li>Bring Art materials (tom)</li>
-                            </ul>
-                        </li>
-                        <li>ESP
-                            <ul>
-                                <li>Sabayang Pagbigkas (next week)</li>
-                            </ul>
-                        </li>
-                        <li>English
-                            <ul>
-                                <li>Song to Celia (next week)</li>
-                            </ul>
-                        </li>
-                        <li>Science
-                            <ul>
-                                <li>Continuation of Presentation (next week)</li>
-                            </ul>
-                        </li>
-                        <li>AP
-                            <ul>
-                                <li>Patalastas sa Radyo (DD tom)</li>
-                            </ul>
-                        </li>
-                        <li>Filipino
-                            <ul>
-                                <li>Bring art materials (tom)</li>
-                            </ul>
-                        </li>
-                        <li>TLE
-                            <ul>
-                                <li>Interviewing a Successful Entrepreneur (DD on Tuesday)</li>
-                                <li>Quiz (Tuesday)</li>
-                            </ul>
-                        </li>
-                        <li>Math
-                            <ul>
-                                <li>Quiz (Tuesday)</li>
-                            </ul>
-                        </li>
-                    </ul>
-        </div>
-        <div class="todo" id="todo">
-            <h2>EVENTS</h2>
+                <h1>School Reminders</h1>
+
+                <h4 onclick="toggleDropdown('mapeh')">Mapeh</h4>
+                <ul id="mapeh" style="display:none;">
+                    <li>Bring Art materials (tom)</li>
+                </ul>
+            
+                <h4 onclick="toggleDropdown('esp')">ESP</h4>
+                <ul id="esp" style="display:none;">
+                    <li>Sabayang Pagbigkas (next week)</li>
+                </ul>
+            
+                <h4 onclick="toggleDropdown('english')">English</h4>
+                <ul id="english" style="display:none;">
+                    <li>Song to Celia (next week)</li>
+                </ul>
+            
+                <h4 onclick="toggleDropdown('science')">Science</h4>
+                <ul id="science" style="display:none;">
+                    <li>Continuation of Presentation (next week)</li>
+                </ul>
+            
+                <h4 onclick="toggleDropdown('ap')">AP</h4>
+                <ul id="ap" style="display:none;">
+                    <li>Patalastas sa Radyo (DD tom)</li>
+                </ul>
+            
+                <h4 onclick="toggleDropdown('filipino')">Filipino</h4>
+                <ul id="filipino" style="display:none;">
+                    <li>Bring art materials (tom)</li>
+                </ul>
+            
+                <h4 onclick="toggleDropdown('tle')">TLE</h4>
+                <ul id="tle" style="display:none;">
+                    <li>Interviewing a Successful Entrepreneur (DD on Tuesday)</li>
+                    <li>Quiz (Tuesday)</li>
+                </ul>
+            
+                <h4 onclick="toggleDropdown('math')">Math</h4>
+                <ul id="math" style="display:none;">
+                    <li>Quiz (Tuesday)</li>
+                </ul>
+            </div>
+        </select>
+        <div class="todo">
+            <h1>Events</h1>
             <h3>SEPTEMBER</h3>
-            <ul>
-                <li>SBG Elections
-                    <ul>
-                        <li>September 18</li>
-                    </ul>
-                </li>
-                <li>1st Quarterly Exam
-                    <ul>
-                        <li>TBH</li>
-                    </ul>
-                </li>
-            </ul>
-            <ul>
-        </div>
+                <h4>SBG Elections</h4>
+                <ul>
+                    <li>September 18</li>
+                </ul>
+                <h4>1st Quarterly Exam</h4>
+                <ul>
+                    <li>TBH</li>
+                </ul>
+            </div>
       </div>    
         <div class="section" id="news">
             <h2>NEWS</h2>
@@ -145,14 +144,7 @@
         <p>All tasks are distributed equally; this website is the result of our hard work.</p>
     </footer>
     <script>
-                function toggleMenu() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active');
-
-            const menuIcon = document.querySelector('.menu-icon');
-            menuIcon.classList.toggle('open');
-        }
-
+//birthday
        const birthdays = [
             { name: "Alice", date: "09-13" },
             { name: "Bob", date: "10-05" },
@@ -176,6 +168,16 @@
         }
 
         checkBirthdays();
+
+        //todo dropdown list
+        function toggleDropdown(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>

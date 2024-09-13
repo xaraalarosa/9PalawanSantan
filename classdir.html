@@ -39,13 +39,38 @@
     <!-- Class Directory Section -->
     <div class="container">
         <div class="card">
-            <div class="image"></div>
-            <div class="name">Name</div>
-            <div class="bday"></div>
-            <div class="quote">quote</div>
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="image"><img src="gallery/sample1.jpg" alt=""></div>
+                </div>
+                <div class="card-back">
+                    <div class="name">Dan Asher Rivera</div>
+                    <div class="bday">January 31</div>
+                    <div class="quote">Palawan Santan</div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="container"></div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="image"><img src="gallery\sample2.jpg" alt=""></div>
+                </div>
+                <div class="card-back">
+                    <div class="name">Maria Gianna Kaori Balbino</div>
+                    <div class="bday">December 8</div>
+                    <div class="quote">Palawan Santan</div>
+                </div>
+            </div>
         </div>
     </div>
-
+    
+    <div class="navigation">
+        <button id="prev-card">Back</button>
+        <button id="next-card">Next</button>
+    </div>
+</div>
     <br><br><br><br>
 
     <footer>
@@ -55,6 +80,41 @@
     </footer>
 
     <script>
+       document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    let currentCardIndex = 0;
+
+    function showCard(index) {
+        cards.forEach((card, i) => {
+            card.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    function flipCard(card) {
+        card.classList.toggle('flip');
+    }
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            flipCard(card);
+        });
+    });
+
+    document.getElementById('next-card').addEventListener('click', () => {
+        currentCardIndex = (currentCardIndex + 1) % cards.length;
+        showCard(currentCardIndex);
+    });
+
+    document.getElementById('prev-card').addEventListener('click', () => {
+        currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+        showCard(currentCardIndex);
+    });
+
+    // Show the first card initially
+    showCard(currentCardIndex);
+});
+
+        
         function toggleMenu() {
             const sidebar = document.querySelector('.sidebar');
             sidebar.classList.toggle('active');
