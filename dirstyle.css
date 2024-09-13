@@ -17,12 +17,9 @@ header {
     background-color: #FF6F31; /* Palawan Orange for header background */
     color: #FFF; /* White text for header */
 }
-
-@media (max-width: 768px) {
     .logo {
-        max-width: 60px; /* Further reduce size on smaller screens */
+        max-width: 80px; /* Further reduce size on smaller screens */
     }
-}
 
 
 h1 {
