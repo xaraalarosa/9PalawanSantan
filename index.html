@@ -11,7 +11,7 @@
             <img src="resources/logo.jpg" alt="Logo" class="logo"> <!-- Updated path -->
             <h1>PALAWAN SANTAN</h1>
         <nav>
-            <a href="classdir.html">class directory</a>
+            <a href="classdir.html">Class Directory</a>
             <a href="calc.html">Grade Calculator</a>
             <a href="lessonmain.html">Reviewer</a></nav>
         </nav>
@@ -42,7 +42,46 @@
     <div id="pictureGallery" class="gallery"></div>
 </section>
 
+<div class="announcement">
+<div class="birthday" id="birthday"></div>
+</div>
     <br><br><br><br>
+
+   
+
+    <div class="container">
+      <div class="side">
+        <div class="todo" id="todo">
+                    <h2>TO DO</h2>
+                    
+        </div>
+        <div class="todo" id="todo">
+            <h2>EVENTS</h2>
+            <ul>
+        </div>
+      </div>    
+        <div class="section" id="news">
+            <h2>NEWS</h2>
+                    <div class="news">
+                        <h1>📢 Important School Announcement: No Classes Today!</h1>
+                        <p>Dear Students, Parents, and Staff,</p>
+                        <p>We would like to inform you that <strong>there will be no classes today, [insert date here]</strong>, due to [insert reason here, e.g., unexpected weather conditions, a scheduled maintenance, a public holiday, etc.].</p>
+                        <p>Please take this time to stay safe and prepare for the upcoming lessons. Classes will resume as usual on <strong>[insert next school day here]</strong>.</p>
+                        <p>Thank you for your understanding and cooperation.</p>
+                        <p>Best regards,<br>
+                        [School Name] Administration</p>
+                                    </div>
+                    <div class="news">
+                        <h1>📢 Election Announcement</h1>
+                        <p>Dear Students, Faculty, and Staff,</p>
+                        <p>We are excited to announce the upcoming student elections for the academic year [insert year]. The election will be held on [insert date here]. This is a great opportunity for you to participate in the governance of our school and make your voice heard.</p>
+                        <p>All students are encouraged to vote and support their favorite candidates. Detailed information about the candidates and the voting process will be shared soon.</p>
+                        <p>Thank you for your attention, and we look forward to your active participation!</p>
+                        <p>Best regards,<br>
+                        [Your School Name] Administration</p>
+                    </div>
+        </div>
+    </div>
 
 
     <footer>
@@ -50,6 +89,39 @@
         <p>Publisher: Xara</p>
         <p>All tasks are distributed equally; this website is the result of our hard work.</p>
     </footer>
+    <script>
+                function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+
+            const menuIcon = document.querySelector('.menu-icon');
+            menuIcon.classList.toggle('open');
+        }
+
+       const birthdays = [
+            { name: "Alice", date: "09-13" },
+            { name: "Bob", date: "10-05" },
+            { name: "Charlie", date: "11-23" }
+        ];
+
+        function checkBirthdays() {
+            const today = new Date();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            const todayStr = `${month}-${day}`;
+
+            const birthdayDiv = document.getElementById('birthday');
+            const birthday = birthdays.find(b => b.date === todayStr);
+
+            if (birthday) {
+                birthdayDiv.innerHTML = `🎉 Happy Birthday, ${birthday.name}! 🎂`;
+            } else {
+                birthdayDiv.innerHTML = "No birthdays today.";
+            }
+        }
+
+        checkBirthdays();
+    </script>
 </body>
 </html>
 

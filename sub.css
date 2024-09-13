@@ -208,35 +208,87 @@ h1, h2 {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+    .logo {
+        max-width: 80px; /* Adjust logo size */
+    }
     .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 0;
+        width: 200px; /* Adjust sidebar width for tablets */
     }
-
-    .menu-icon {
-        left: 10px; /* Adjust for mobile view */
-    }
-
     .content {
-        margin-left: 0;
-        margin-top: 100px; /* Adjusted for fixed header */
+        margin-left: 200px; /* Adjust margin for sidebar */
     }
-
-    .sidebar a {
-        padding: 10px;
+    .menu-icon {
+        top: 120px; /* Adjust top position for tablet view */
+    }
+    #start-quiz {
+        margin: 30px auto; /* Adjust button margin for tablets */
+    }
+    .box {
+        margin: 15px; /* Adjust margin for boxes on tablets */
     }
 }
 
-@media (max-width: 480px) {
+/* For mobile screens */
+@media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 15px; /* Adjust header padding */
     }
-
-    nav a {
-        margin: 5px 0;
+    .logo {
+        max-width: 60px; /* Adjust logo size for mobile */
+    }
+    .sidebar {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Adjust height */
+        position: relative; /* Relative positioning */
+        top: 0; /* Reset top position */
+    }
+    .menu-icon {
+        left: 10px; /* Adjust left position for mobile view */
+        top: 10px; /* Adjust top position */
+    }
+    .content {
+        margin-left: 0; /* Reset margin for content */
+        margin-top: 80px; /* Adjust top margin for header */
+    }
+    .box {
+        margin: 10px; /* Adjust margin for boxes on mobile */
+    }
+    #start-quiz {
+        font-size: 16px; /* Adjust font size for mobile */
+        padding: 12px 25px; /* Adjust padding */
     }
 }
+
+/* For very small mobile screens */
+@media (max-width: 480px) {
+    header {
+        padding: 10px; /* Further adjust header padding */
+    }
+    .logo {
+        max-width: 50px; /* Further reduce logo size */
+    }
+    .sidebar {
+        width: 100%; /* Full width for very small screens */
+        height: auto; /* Adjust height */
+    }
+    .menu-icon {
+        left: 5px; /* Adjust left position */
+        top: 5px; /* Adjust top position */
+    }
+    .content {
+        margin-top: 70px; /* Adjust top margin for header */
+    }
+    .box {
+        margin: 5px; /* Further adjust margin for boxes */
+    }
+    #start-quiz {
+        font-size: 14px; /* Further adjust font size */
+        padding: 10px 20px; /* Adjust padding */
+    }
+}
+

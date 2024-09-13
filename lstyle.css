@@ -80,23 +80,6 @@ nav a:hover {
     color: #FF6F31;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .subject-option {
-        flex: 1 1 100%; /* Full width on smaller screens */
-        max-width: 100%; /* Remove max-width restriction */
-        padding: 15px; /* Adjust padding for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .subject-option {
-        padding: 10px; /* Further adjust padding for very small screens */
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Reduce shadow for smaller screens */
-    }
-}
-
-
 footer {
     text-align: center;
     margin-top: 50px;
@@ -170,3 +153,73 @@ footer {
     background-color: #0056b3; /* Darker blue on hover */
     transform: scale(1.05); /* Slight zoom-in effect on hover */
 }
+
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+    .logo {
+        max-width: 80px; /* Adjust size for tablets */
+    }
+    .container {
+        padding: 15px; /* Adjust padding for containers */
+    }
+    .gallery {
+        gap: 15px; /* Adjust gap between items in gallery */
+    }
+    .subject-option {
+        max-width: 250px; /* Adjust max-width for subject options */
+    }
+    footer {
+        padding: 15px; /* Adjust footer padding */
+    }
+    .sidebar {
+        width: 180px; /* Adjust sidebar width for tablets */
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 60px; /* Adjust size for mobile devices */
+    }
+    .container {
+        padding: 10px; /* Adjust padding for containers */
+    }
+    .gallery {
+        flex-wrap: nowrap; /* Prevent wrapping in gallery */
+    }
+    .subject-option {
+        flex: 1 1 100%; /* Full width on smaller screens */
+        max-width: 100%; /* Remove max-width restriction */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    footer {
+        padding: 10px; /* Adjust footer padding */
+    }
+    .sidebar {
+        width: 160px; /* Adjust width for mobile screens */
+    }
+}
+
+/* For very small mobile screens */
+@media (max-width: 480px) {
+    .logo {
+        max-width: 40px; /* Adjust size for very small screens */
+    }
+    .container {
+        padding: 5px; /* Further adjust padding for very small screens */
+    }
+    .gallery img {
+        max-width: 150px; /* Adjust image size in gallery */
+    }
+    .subject-option {
+        padding: 10px; /* Further adjust padding for very small screens */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+    }
+    footer {
+        padding: 5px; /* Further adjust footer padding */
+    }
+    .sidebar {
+        width: 140px; /* Adjust width for very small screens */
+    }
+}
+
