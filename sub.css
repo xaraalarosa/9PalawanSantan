@@ -16,7 +16,7 @@ header {
     background-color: #FF6F31; /* Palawan Orange for header background */
     color: #FFF; /* White text for header */
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 1002;
 }
@@ -36,22 +36,15 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Remove Borders */
-#header {
-    border-bottom: none;
-}
-
-#sidebar {
-    border-right: none;
-}
-
-#content {
-    border-left: none;
+.main{
+    display: flex;
+    width: 100%;
+    overflow-x: overlay;
 }
 
 /* Sidebar Styling */
 .sidebar {
-    width: 250px;
+    width: 10%;
     background-color: #C72C41;
     color: white;
     height: 80vh;
@@ -114,6 +107,7 @@ nav a:hover {
     width: 100%;
     border-radius: 3px;
     transition: 0.3s;
+    top: 30%;
 }
 
 .menu-icon.active .bar1 {
@@ -130,11 +124,12 @@ nav a:hover {
 
 /* Content Styling */
 .content {
-    margin-left: 250px; /* Adjust based on sidebar width */
-    padding: 20px;
+    padding-top: 20px;
     flex-grow: 1;
     margin-top: 80px; /* Adjusted for fixed header */
     transition: margin-left 0.3s ease; /* Smooth shifting */
+    width: fit-content;
+    background-color: #6b1fc1;
 }
 
 .content.shifted {
@@ -153,6 +148,8 @@ h1, h2 {
 
 .lesson.active {
     display: block;
+    background-color: #FFD3B6;
+    left: 100%;
 }
 
 /* Miscellaneous */
@@ -217,11 +214,9 @@ h1, h2 {
     .sidebar {
         width: 200px; /* Adjust sidebar width for tablets */
     }
-    .content {
-        margin-left: 200px; /* Adjust margin for sidebar */
-    }
+    
     .menu-icon {
-        top: 120px; /* Adjust top position for tablet view */
+        top: 150px; /* Adjust top position for tablet view */
     }
     #start-quiz {
         margin: 30px auto; /* Adjust button margin for tablets */
@@ -249,7 +244,7 @@ h1, h2 {
     }
     .menu-icon {
         left: 10px; /* Adjust left position for mobile view */
-        top: 10px; /* Adjust top position */
+        top: 190px; /* Adjust top position */
     }
     .content {
         margin-left: 0; /* Reset margin for content */
@@ -278,7 +273,7 @@ h1, h2 {
     }
     .menu-icon {
         left: 5px; /* Adjust left position */
-        top: 5px; /* Adjust top position */
+        top: 180px; /* Adjust top position */
     }
     .content {
         margin-top: 70px; /* Adjust top margin for header */

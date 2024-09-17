@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="sub.css">
 </head>
 <body>
-    <section>
+    <div>
     <header>
         <img src="resources/logo.jpg" alt="Logo" class="logo"> <!-- Updated path -->
         <h1>REVIEWERS</h1>
@@ -18,15 +18,15 @@
             <a href="lessonmain.html">Reviewer</a>
         </nav>
     </header>
-    </section>
+    </div>
 
     <div class="menu-icon" onclick="toggleMenu()">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
     </div>
-   
-<section>  
+<div class="main">
+<div>  
     
     <br><br><br><br>
        
@@ -54,8 +54,8 @@
     <li><a href="#" onclick="showLesson('lesson15')">Chapter Test</a></li>
 </ol>
 </div>
-</section>
-<section>
+</div>
+<div>
     <br><br><br><br>
     <div class="content">
 
@@ -200,9 +200,9 @@
         <div id="lesson15" class="lesson">
             <button id="start-quiz">Chapter Test</button>
         </div>
-
     </div>
-</section>
+</div>
+</div>
     <script>
 
 function showLesson(lessonId) {
@@ -222,6 +222,10 @@ function showLesson(lessonId) {
     const content = document.querySelector('.content');
     const menuIcon = document.querySelector('.menu-icon');
 
+    // Determine the sidebar width based on screen size
+    const screenWidth = window.innerWidth;
+    const sidebarWidth = screenWidth <= 768 ? 200 : 250;
+
     // Toggle the 'hidden' class on the sidebar
     sidebar.classList.toggle('hidden');
 
@@ -229,13 +233,23 @@ function showLesson(lessonId) {
     if (sidebar.classList.contains('hidden')) {
         content.classList.add('shifted');
         menuIcon.classList.remove('active');
-        menuIcon.style.left = '10px'; // Adjust the top value when the sidebar is hidden
+        menuIcon.style.left = '10px'; // Adjust the left value when the sidebar is hidden
     } else {
         content.classList.remove('shifted');
         menuIcon.classList.add('active');
-        menuIcon.style.left = '250px'; // Adjust the top value when the sidebar is visible
+        menuIcon.style.left = `${sidebarWidth}px`; // Adjust the left value when the sidebar is visible
     }
+
+    // Apply the sidebar width
+    sidebar.style.width = `${sidebarWidth}px`;
+    content.style.marginLeft = sidebar.classList.contains('hidden') ? '0' : `${sidebarWidth}px`;
 }
+
+// Adjust layout on window resize
+window.addEventListener('resize', toggleMenu);
+
+// Initial adjustment
+toggleMenu();
     </script>
 </body>
 </html>

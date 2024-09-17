@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Celebration</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.3/dist/confetti.browser.min.js"></script>
+    <style>
+        .photo-card {
+            display: inline-block;
+            transition: transform 2s;
+            margin: 20px;
+        }
+        .spin {
+            transform: rotateY(360deg);
+        }
+        #birthday-popup {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="birthday"></div>
+
+<div id="birthday-popup">
+    <div id="photo-card" class="photo-card">
+        <img src="gallery/sample1.jpg" alt="Photo" style="width: 200px; height: auto;">
+    </div>
+</div>
+
+<button onclick="checkBirthdays()">Check for Birthdays</button>
+
+<script>
+    const birthdays = [
+        { name: "Alice", date: "09-14" },
+        { name: "Bob", date: "10-05" },
+        { name: "Charlie", date: "11-23" }
+    ];
+
+    function checkBirthdays() {
+        const today = new Date();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        const todayStr = `${month}-${day}`;
+
+        const birthdayDiv = document.getElementById('birthday');
+        const birthday = birthdays.find(b => b.date === todayStr);
+
+        if (birthday) {
+            birthdayDiv.innerHTML = `🎉 Happy Birthday, ${birthday.name}! 🎂`;
+            showBirthdayPopup();
+            triggerConfetti();
+        } else {
+            birthdayDiv.innerHTML = "Sorry, no birthday today.";
+        }
+    }
+
+    function triggerConfetti() {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }
+
+    function showBirthdayPopup() {
+        const popup = document.getElementById('birthday-popup');
+        popup.style.display = 'block';
+        spinPhotoCard();
+    }
+
+    function spinPhotoCard() {
+        const card = document.getElementById('photo-card');
+        card.classList.add('spin');
+        setTimeout(() => {
+            card.classList.remove('spin');
+        }, 2000); // Match with the CSS transition duration
+    }
+</script>
+
+</body>
+</html>
