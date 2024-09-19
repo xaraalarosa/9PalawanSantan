@@ -26,6 +26,8 @@
             </ul>
         </ul>
     </div>
+
+       <h2>Reviewers</h2>
     
     <div class="container">
         <div class="gallery">
@@ -68,6 +70,21 @@
         </div>
     </div>
 
+    <h2>Educational Games</h2>
+
+    <div class="games">
+        <div class="play">
+            <button onclick="showIframe()"><img src="games\SG\mplay.gif" alt=""></button>
+        </div>
+        </div>
+
+        <div class="board">
+        <div class="frame">
+            <iframe id="mathFrame" src="games\SG\index.html"></iframe>
+        </div>
+        </div>
+            
+
     <footer>
         <p>All Rights Reserved 2024</p>
         <p>Publisher: Xara</p>
@@ -75,6 +92,11 @@
     </footer>
 
     <script>
+        function showIframe() {
+            document.getElementById('mathFrame').style.display = "flex";
+            document.getElementById('mathFrame').style.left = "50%";
+        }
+
         function toggleMenu() {
             var sidebar = document.querySelector('.sidebar');
             var menuIcon = document.querySelector('.menu-icon');
