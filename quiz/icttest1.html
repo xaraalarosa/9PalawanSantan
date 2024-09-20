@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Quiz Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Quiz Example</title>
+    <link rel="stylesheet" type="text/css" href="icttest1.css">
 </head>
 <body>
-    <div id="quiz-container">
-        <div id="question-container">
-            <div id="background-image"></div>
-            <div id="answer-buttons" class="btn-container hide"></div>
-            <input type="text" id="answer-input" class="hide" placeholder="Type your answer here">
-        </div>
-        <button id="next-btn" class="btn hide">Next</button>
-    </div>
-    <div id="result-container" class="hide">
-        <div id="result-background"></div>
-        <button id="restart-btn" class="btn">Restart</button>
-    </div>
-    <script src="script.js"></script>
+    <header>
+        <h1>Quiz Example</h1>
+    </header>
+
+    <main>
+        <section class="questions">
+            <h2>Questions</h2>
+            <!-- Insert quiz questions here -->
+        </section>
+
+        <section class="results">
+            <h2>Results</h2>
+            <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
+            <button id="restart">Restart Quiz</button>
+        </section>
+    </main>
+
+    <script src="icttest1.js"></script>
 </body>
 </html>

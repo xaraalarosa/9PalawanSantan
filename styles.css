@@ -110,9 +110,8 @@ nav a:hover {
 }
 
 .gallery img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
+    width: 200px;
+    height: 200px;
     transition: transform 0.3s ease;
     border-radius: 8px;
     flex-shrink: 0; /* Prevent images from shrinking in flexbox */
@@ -121,6 +120,7 @@ nav a:hover {
 .gallery img:hover {
     transform: scale(1.1);
 }
+
 
 /* Grade Calculator */
 #grade-calculator {

@@ -37,12 +37,29 @@
     
 
     <!-- Picture Gallery Section -->
-<section id="picture-gallery">
-    <h2>Picture Gallery</h2>
+    <section id="picture-gallery">
+        <h2>Picture Gallery</h2>
+        <div class="gallery">
+            <div class="image-container">
+                <img src="resources/pic (1).jpg" alt="">
+                <audio id="audio1" src="resources/simponi.mp3"></audio>
+            </div>
+            <div class="image-container">
+                <img src="resources/pic (3).jpg" alt="">
+                <audio id="audio2" src="resources/simponi.mp3"></audio>
+            </div>
+        </div>
+    </section>
+    
+<section id="picture-gallery"></section>
+    <h2>MOTIVATIONAL MEMES</h2>
     <div class="gallery">
-        <img src= alt="">
-        <img src= alt="">
-        <img src= alt="">
+        <img src="resources/meme1.jpg" alt="">
+        <img src="resources/meme2.jpg" alt="">
+        <img src="resources/meme3.jpg" alt="">
+        <img src="resources/meme4.jpg" alt="">
+        <img src="resources/meme5.jpg" alt="">
+        <img src="resources/meme6.jpg" alt="">
     </div>
 </section>
 
@@ -115,7 +132,7 @@
       </div>  
         <br><br><br><br>
         <div class="section" id="news">
-            <h2>NEWS</h2>
+            
                     <div class="news">
                         <h2>Mark Your Calendars!</h2>
                         <p>Published by: <br> <a href="https://www.facebook.com/PSULJHS?mibextid=ZbWKwL">Palawan State University Labratory Junior Highschool</a><br>20/08/2024</p>
@@ -174,6 +191,20 @@
                 element.style.display = "none";
             }
         }
+
+        document.querySelectorAll('.image-container img').forEach((img, index) => {
+    const audio = img.nextElementSibling;
+    
+    img.addEventListener('mouseover', () => {
+        audio.play();
+    });
+
+    img.addEventListener('mouseout', () => {
+        audio.pause();
+        audio.currentTime = 0; // Reset audio to start for next hover
+    });
+});
+
     </script>
 </body>
 </html>

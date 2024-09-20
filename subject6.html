@@ -40,6 +40,9 @@
 // JavaScript to handle lesson changes
 document.getElementById('lesson1').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = `
+        <object data="resources/ictlesson1.pdf" type="application/pdf" width="100%" height="500px">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="path/to/your/file.pdf">Download PDF</a>.</p>
+        </object>
         <h2>Dennis Ritchie</h2>
         <p><strong>The Creator of the C Programming Language</strong></p>
         <p>He developed the C programming language at Bell Labs from 1969 to 1973.</p>
@@ -73,6 +76,10 @@ document.getElementById('lesson1').addEventListener('click', function() {
 
 document.getElementById('lesson2').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = `
+        <object data="resources/ictlesson2.pdf" type="application/pdf" width="100%" height="500px">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="path/to/your/file.pdf">Download PDF</a>.</p>
+        </object>
+
         <h2>1. Define the Problem</h2>
         <p>Understand the problem thoroughly to avoid confusion later.<br>
         Identify key inputs and desired outputs.</p>
@@ -116,15 +123,204 @@ document.getElementById('lesson2').addEventListener('click', function() {
 });
 
 document.getElementById('lesson3').addEventListener('click', function() {
-    document.getElementById('mainDisplay').innerHTML = 
-    
-    '<h2>Lesson 3</h2><p>Content for Lesson 3.</p>';
+    document.getElementById('mainDisplay').innerHTML = `
+        <object data="resources/ictlesson3.pdf" type="application/pdf" width="100%" height="500px">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="path/to/your/file.pdf">Download PDF</a>.</p>
+        </object>
+
+        <h3>Key Concepts</h3>
+        <h4>What is a Flowchart?</h4>
+        <p>A flowchart is a diagram used to represent a process, system, or algorithm. It is commonly used to document, analyze, and communicate processes clearly.</p>
+
+        <h4>Fields Where Flowcharts Are Used</h4>
+        <ul>
+            <li>Business process mapping.</li>
+            <li>Program planning.</li>
+            <li>Process improvement.</li>
+        </ul>
+
+        <h4>Types of Flowcharts</h4>
+        <ul>
+            <li>Process Flowchart</li>
+            <li>Process Map</li>
+            <li>Functional Flowchart</li>
+            <li>Business Process Modeling (BPMN)</li>
+        </ul>
+
+        <h4>Flowchart Symbols</h4>
+
+        <h5>Terminal/Terminator Symbol</h5>
+        <ul>
+            <li><strong>Shape:</strong> Oval</li>
+            <li><strong>Indicates:</strong> Start/Stop of a process.</li>
+        </ul>
+
+        <h5>Process Symbol</h5>
+        <ul>
+            <li><strong>Shape:</strong> Rectangle</li>
+            <li><strong>Indicates:</strong> A process or action step.</li>
+        </ul>
+
+        <h5>Input/Output Symbol</h5>
+        <ul>
+            <li><strong>Shape:</strong> Parallelogram</li>
+            <li><strong>Indicates:</strong> Data input or output.</li>
+        </ul>
+
+        <h5>Decision Symbol</h5>
+        <ul>
+            <li><strong>Shape:</strong> Diamond</li>
+            <li><strong>Indicates:</strong> A decision point (e.g., Yes/No).</li>
+        </ul>
+
+        <h5>Flow Line (Arrow)</h5>
+        <p><strong>Shows:</strong> Direction of the process flow.</p>
+
+        <h4>Flowcharting Rules</h4>
+        <ul>
+            <li>Start with a Start symbol and end with an End symbol.</li>
+            <li>Use arrows to connect symbols.</li>
+            <li>Avoid intersecting flow lines.</li>
+            <li>Make the flowchart clean and easy to follow.</li>
+        </ul>
+
+        <h4>Advantages of Flowcharts</h4>
+        <ul>
+            <li>Easy to create and understand.</li>
+            <li>Useful for identifying errors.</li>
+            <li>Helps with program analysis and debugging.</li>
+        </ul>
+
+        <h4>Disadvantages of Flowcharts</h4>
+        <ul>
+            <li>Difficult to use for complex programs.</li>
+            <li>Time-consuming to create and revise.</li>
+            <li>Hard to interpret without knowing symbols.</li>
+        </ul>
+    `;
 });
+
 document.getElementById('lesson4').addEventListener('click', function() {
-    document.getElementById('mainDisplay').innerHTML = 
-    
-    '<h2>Lesson 4</h2><p>Content for Lesson 4.</p>';
+    document.getElementById('mainDisplay').innerHTML = `
+
+        <object data="resources/ictlesson4.pdf" type="application/pdf" width="100%" height="500px">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="path/to/your/file.pdf">Download PDF</a>.</p>
+        </object>
+
+        <h1>Lesson 4: C Code Structure</h1>
+
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>Identify the parts of a basic C Program</li>
+            <li>Familiarize with the different C Language Keywords</li>
+            <li>Create C Program statements</li>
+            <li>Identify the different common program errors in C</li>
+            <li>Familiarize the different common escape sequences</li>
+        </ul>
+
+        <h2>Basic C Program</h2>
+
+        <h3>Main Function</h3>
+        <ul>
+            <li>In C programming, every program starts with the <code>main()</code> function.</li>
+            <li>A function allows you to group logical series of activities or program statements under one name.</li>
+            <li>Functions are not static, meaning, they can accept inputs (data), process those inputs, and give back output (information).</li>
+            <li>What makes the <code>main()</code> function different from other typical functions is that the values it returns are returned back to the operating system.</li>
+            <li>Also called as the “Mother of all functions” or driver function, because the program execution will start at this function.</li>
+        </ul>
+
+        <pre><code>
+int main()
+{
+//program statements here
+}
+        </code></pre>
+
+        <ul>
+            <li>Bear in mind that a C program can only have one <code>main()</code> function for the program to work properly.</li>
+            <li>C language is a case-sensitive programming language. For example, the function names <code>main()</code>, <code>Main()</code>, and <code>MAIN()</code> are not the same.</li>
+        </ul>
+
+        <h2>Comments</h2>
+        <ul>
+            <li>A comment is a programmer-readable explanation or annotation in the source code of a computer program.</li>
+            <li>Comments must be useful in documenting your program code.</li>
+            <li>Two types of comments:
+                <ul>
+                    <li>Single-line comment</li>
+                    <li>Multi-line comment</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Keywords in C</h2>
+        <p>C has 32 keywords predefined by the language that cannot be used for any other purpose (e.g., <code>int</code>, <code>return</code>, <code>if</code>, <code>else</code>, etc.). All keywords must be written in lowercase.</p>
+
+        <h2>Program Statements</h2>
+        <p>Most lines in a C program are statements that control the flow of the program. Each statement must end with a semicolon (<code>;</code>):</p>
+
+        <pre><code>
+printf("Hello World\n");
+int sum = a + b;
+        </code></pre>
+
+        <h3>Program Statements That Don’t Require Semicolons</h3>
+        <ul>
+            <li>Comments</li>
+            <li>Preprocessor directives (e.g., <code>#include</code> and <code>#define</code>)</li>
+            <li>Begin and end program blocks (<code>{}</code>, function headers)</li>
+        </ul>
+
+        <h2>Escape Sequences</h2>
+        <p>Escape sequences are used to format the output in C programs. They start with a backslash (<code>\</code>) followed by a specific character.</p>
+
+        <h3>Common Escape Sequences</h3>
+        <ul>
+            <li><code>\n</code>: Creates a new line</li>
+            <li><code>\t</code>: Moves the cursor to the next tab position</li>
+            <li><code>\\</code>: Inserts a backslash</li>
+            <li><code>\"</code>: Inserts a double quote</li>
+            <li><code>\'</code>: Inserts a single quote</li>
+        </ul>
+
+        <h2>Common Errors in C Programs</h2>
+
+        <h3>1. Missing Program Block Identifiers</h3>
+        <p>Forgetting the opening <code>{</code> or closing <code>}</code> in a program block:</p>
+        <pre><code>
+int main() 
+printf("Hello");
+return 0;
+}
+        </code></pre>
+
+        <h3>2. Missing Statement Terminators</h3>
+        <p>Forgetting a semicolon at the end of a statement:</p>
+        <pre><code>
+printf("Hello World\n")
+        </code></pre>
+
+        <h3>3. Invalid Preprocessor Directive</h3>
+        <p>Using an incorrect or misspelled library name:</p>
+        <pre><code>
+#include <stdoi.h>
+        </code></pre>
+
+        <h3>4. Invalid Escape Sequences</h3>
+        <p>Using undefined escape sequences:</p>
+        <pre><code>
+printf("Invalid sequence: \m");
+        </code></pre>
+
+        <h3>5. Incorrect Comment Block</h3>
+        <p>Incorrectly terminating a comment block:</p>
+        <pre><code>
+/* Comment block starts
+but does not end correctly /*
+        </code></pre>
+    `;
 });
+
 document.getElementById('lesson5').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = 
     
