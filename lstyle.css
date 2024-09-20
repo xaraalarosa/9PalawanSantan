@@ -38,6 +38,11 @@ nav a:hover {
     color: #FFD3B6; /* Light Peach for hover effect */
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+}
+
 
 .container {
     max-width: 1200px; /* Container width adjusted */
@@ -153,6 +158,10 @@ footer {
     top: 0;
     padding-top: 20px;
     transition: left 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar{
+    display: none;
 }
 
 .sidebar ul {

@@ -1,24 +1,22 @@
-/* General Body Styles */
 body {
-    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
     margin: 0;
     padding: 0;
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    background-color: #FFF1DC; /* Warm White for the main background */
+    justify-content: center;
+    align-items: center;
 }
 
-/* Header Styling */
 header {
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 20px;
     background-color: #FF6F31; /* Palawan Orange for header background */
     color: #FFF; /* White text for header */
-    width: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 1002;
+    position: relative;
 }
 
 .logo {
@@ -26,264 +24,62 @@ header {
     height: auto;
 }
 
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
 nav a {
-    color: white;
-    margin: 0 10px;
+    font-size: larger;
+    color: #FFF;
     text-decoration: none;
+    background-color: #e07c51;
+
 }
 
 nav a:hover {
-    text-decoration: underline;
+    font-size: large;
+    color: #FFD3B6; /* Light Peach for hover effect */
 }
 
-.main{
+.navbar { 
     display: flex;
-    width: 100%;
-    overflow-x: overlay;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    padding: 10px; 
+    background-color: #f0f0f0; 
 }
 
-/* Sidebar Styling */
-.sidebar {
-    width: 10%;
-    background-color: #C72C41;
-    color: white;
-    height: 80vh;
-    position: fixed;
-    top: 80px; /* Adjusted for fixed header */
-    left: 0; /* Sidebar is open by default */
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-top: 20px;
-    transition: left 0.3s ease; /* Slide transition for toggle */
-    z-index: 1001; /* Ensure it's above other content */
+.navbar div { 
+    cursor: pointer; 
+    padding: 10px; 
+    border: 2px solid #000000; 
+    align-items: center;
+    justify-content: center;
 }
 
-.sidebar.hidden {
-    left: -250px; /* Hidden sidebar */
+.lesson-display { 
+    border: solid 2px #000; 
+    padding: 20px; 
+    margin-top: 20px; 
 }
 
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar li {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #555; /* Horizontal separator */
-}
-
-.sidebar a {
-    display: block;
-    color: white;
-    padding: 15px;
-    text-decoration: none;
-}
-
-.sidebar a:hover {
-    background-color: #FF6F31;
-}
-
-/* Menu Icon */
-.menu-icon {
-    cursor: pointer;
-    position: absolute;
-    top: 150px; /* Adjust based on your layout */
-    left: 250px; /* Position it beside the sidebar */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    z-index: 1002;
-}
-
-.menu-icon .bar1,
-.menu-icon .bar2,
-.menu-icon .bar3 {
-    background-color: #000000; /* Color of the bars */
-    height: 4px;
-    width: 100%;
-    border-radius: 3px;
-    transition: 0.3s;
-    top: 30%;
-}
-
-.menu-icon.active .bar1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.menu-icon.active .bar2 {
-    opacity: 0;
-}
-
-.menu-icon.active .bar3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Content Styling */
-.content {
-    padding-top: 20px;
-    flex-grow: 1;
-    margin-top: 80px; /* Adjusted for fixed header */
-    transition: margin-left 0.3s ease; /* Smooth shifting */
-    width: fit-content;
-    background-color: #6b1fc1;
-}
-
-.content.shifted {
-    margin-left: 0; /* Shift content when sidebar is hidden */
-}
-
-/* Typography */
-h1, h2 {
-    color: #2c3e50;
-}
-
-/* Lessons Section */
-.lesson {
-    display: none;
-}
-
-.lesson.active {
-    display: block;
-    background-color: #FFD3B6;
-    left: 100%;
-}
-
-/* Miscellaneous */
-.inbar {
-    color: #FFF;
-}
-
-.exercise {
-    margin-bottom: 20px;
-}
-
-.answer {
-    color: #27ae60;
-}
-
-/* Example Section */
-.example {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #FFD3B6; /* Light Peach */
-    border-radius: 10px; /* Rounded corners */
-}
-
-/* Start Quiz Button */
-#start-quiz {
-    display: block;
-    margin: 50px auto;
-    padding: 15px 30px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #007BFF; /* Blue */
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#start-quiz:hover {
-    background-color: #0056b3; /* Darker Blue */
-    transform: scale(1.05); /* Zoom-in effect */
-}
-
-/* Box Styling */
-.box {
-    border: 2px solid #007BFF; /* Blue Border */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center;
-}
-
-/* Responsive Design */
-
-/* For tablets and smaller screens */
 @media (max-width: 1024px) {
     .logo {
-        max-width: 80px; /* Adjust logo size */
-    }
-    .sidebar {
-        width: 200px; /* Adjust sidebar width for tablets */
-    }
-    
-    .menu-icon {
-        top: 150px; /* Adjust top position for tablet view */
-    }
-    #start-quiz {
-        margin: 30px auto; /* Adjust button margin for tablets */
-    }
-    .box {
-        margin: 15px; /* Adjust margin for boxes on tablets */
+        max-width: 80px; /* Adjust size for tablets */
     }
 }
 
 /* For mobile screens */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px; /* Adjust header padding */
-    }
     .logo {
-        max-width: 60px; /* Adjust logo size for mobile */
-    }
-    .sidebar {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Adjust height */
-        position: relative; /* Relative positioning */
-        top: 0; /* Reset top position */
-    }
-    .menu-icon {
-        left: 10px; /* Adjust left position for mobile view */
-        top: 190px; /* Adjust top position */
-    }
-    .content {
-        margin-left: 0; /* Reset margin for content */
-        margin-top: 80px; /* Adjust top margin for header */
-    }
-    .box {
-        margin: 10px; /* Adjust margin for boxes on mobile */
-    }
-    #start-quiz {
-        font-size: 16px; /* Adjust font size for mobile */
-        padding: 12px 25px; /* Adjust padding */
+        max-width: 60px; /* Adjust size for mobile devices */
     }
 }
 
 /* For very small mobile screens */
 @media (max-width: 480px) {
-    header {
-        padding: 10px; /* Further adjust header padding */
-    }
     .logo {
-        max-width: 50px; /* Further reduce logo size */
-    }
-    .sidebar {
-        width: 100%; /* Full width for very small screens */
-        height: auto; /* Adjust height */
-    }
-    .menu-icon {
-        left: 5px; /* Adjust left position */
-        top: 180px; /* Adjust top position */
-    }
-    .content {
-        margin-top: 70px; /* Adjust top margin for header */
-    }
-    .box {
-        margin: 5px; /* Further adjust margin for boxes */
-    }
-    #start-quiz {
-        font-size: 14px; /* Further adjust font size */
-        padding: 10px 20px; /* Adjust padding */
+        max-width: 40px; /* Adjust size for very small screens */
     }
 }
-

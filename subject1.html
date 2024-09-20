@@ -1,77 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filipino</title>
-    <link rel="stylesheet" href="sub.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson Layout</title>
+<link rel="stylesheet" href="sub.css">
+  
 </head>
 <body>
+
     <header>
-        <img src="resources/logo.jpg" alt="Logo" class="logo"> <!-- Updated path -->
-        <h1>REVIEWERS</h1>
+        <h1>FILIPINO</h1>
+        <div class="navhed">
         <nav>
             <a href="index.html">Home</a>
             <a href="calc.html">Grade Calculator</a>
             <a href="classdir.html">Class Directory</a>
             <a href="lessonmain.html">Reviewer</a>
+        </div>
         </nav>
     </header>
 
-    <div class="menu-icon" onclick="toggleMenu()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </div>
-
-<section>
-<div class="sidebar">
-   <br><br><br><br>
-   <h2 class="inbar">Chapter 1</h2>
-<ol>
-   <li><a href="#" onclick="showLesson('lesson1')">Aralin 1</a></li>
-   <li><a href="#" onclick="showLesson('lesson2')">Aralin 2</a></li>
-   <li><a href="#" onclick="showLesson('lesson3')">Aralin 3</a></li>
-   <li><a href="#" onclick="showLesson('lesson4')">Aralin 4</a></li>
-   <li><a href="#" onclick="showLesson('test1')">Pagsusulit</a></li>
-</ol>
+<div class="navbar">
+    <div id="lesson1">Lesson 1</div>
+    <div id="lesson2">Lesson 2</div>
+    <div id="lesson3">Lesson 3</div>
+    <div id="lesson4">Lesson 4</div>
+    <div id="test1">Practice Test</div>
+    <!-- Add more lessons as needed -->
 </div>
-</section>
-<section>
-    <div class="content">
 
-        <br><br><br><br>
+<div class="lesson-display" id="mainDisplay">
+    <!-- Content will be loaded here based on the lesson selected -->
+    <h2>Welcome to the Lessons</h2>
+    <p>Select a lesson from the navigation bar to view its content.</p>
+</div>
 
-        <h2>Unang MARKAHAN</h2>
+<script>
+// JavaScript to handle lesson changes
+document.getElementById('lesson1').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+        <h2>Aralin 1: Mga Pang-ugnay na Hudyat sa Pagsusunod-sunod ng mga Pangyayari</h2>
+        <p><strong>Mga Halimbawa ng Pang-ugnay:</strong></p>
+        <ul>
+            <li><strong>Una</strong>: Ginagamit sa pagsisimula ng isang serye ng mga pangyayari.</li>
+            <li><strong>Pangalawa</strong>: Sumusunod sa unang pangyayari.</li>
+            <li><strong>Pagkatapos</strong>: Nagpapakita ng susunod na hakbang o pangyayari.</li>
+            <li><strong>Sa wakas</strong>: Ginagamit sa pagtatapos ng serye ng mga pangyayari.</li>
+        </ul>
+        <p><strong>Halimbawa ng Pangungusap:</strong></p>
+        <ul class="example">
+            <li><strong>Una</strong>, nagising ako ng maaga.</li>
+            <li><strong>Pangalawa</strong>, naghanda ako ng almusal.</li>
+            <li><strong>Pagkatapos</strong>, pumasok ako sa paaralan.</li>
+            <li><strong>Sa wakas</strong>, natapos ang araw ko ng masaya.</li>
+        </ul>
+        <h3>Konotatibo at Denotatibo</h3>
+        <p><strong>Denotatibo:</strong> Ito ang literal na kahulugan ng isang salita na makikita sa diksyunaryo.</p>
+        <p><strong>Konotatibo:</strong> Ito ang pahiwatig o emosyonal na kahulugan na ikinakabit sa isang salita bukod sa literal na kahulugan nito.</p>
+        <p><strong>Halimbawa:</strong></p>
+        <ul class="example">
+            <li><strong>Puso</strong> (Denotatibo: organ na nagpapadaloy ng dugo sa katawan; Konotatibo: simbolo ng pag-ibig)</li>
+            <li><strong>Bituin</strong> (Denotatibo: celestial body na naglalabas ng liwanag; Konotatibo: simbolo ng pangarap o tagumpay)</li>
+        </ul>
+    `;
+});
 
-        <div id="lesson1" class="lesson">
-            <h2>Aralin 1: Mga Pang-ugnay na Hudyat sa Pagsusunod-sunod ng mga Pangyayari</h2>
-            <p><strong>Mga Halimbawa ng Pang-ugnay:</strong></p>
-            <ul>
-                <li><strong>Una</strong>: Ginagamit sa pagsisimula ng isang serye ng mga pangyayari.</li>
-                <li><strong>Pangalawa</strong>: Sumusunod sa unang pangyayari.</li>
-                <li><strong>Pagkatapos</strong>: Nagpapakita ng susunod na hakbang o pangyayari.</li>
-                <li><strong>Sa wakas</strong>: Ginagamit sa pagtatapos ng serye ng mga pangyayari.</li>
-            </ul>
-            <p><strong>Halimbawa ng Pangungusap:</strong></p>
-            <ul class="example">
-                <li><strong>Una</strong>, nagising ako ng maaga.</li>
-                <li><strong>Pangalawa</strong>, naghanda ako ng almusal.</li>
-                <li><strong>Pagkatapos</strong>, pumasok ako sa paaralan.</li>
-                <li><strong>Sa wakas</strong>, natapos ang araw ko ng masaya.</li>
-            </ul>
-            <h3>Konotatibo at Denotatibo</h3>
-            <p><strong>Denotatibo:</strong> Ito ang literal na kahulugan ng isang salita na makikita sa diksyunaryo.</p>
-            <p><strong>Konotatibo:</strong> Ito ang pahiwatig o emosyonal na kahulugan na ikinakabit sa isang salita bukod sa literal na kahulugan nito.</p>
-            <p><strong>Halimbawa:</strong></p>
-            <ul class="example">
-                <li><strong>Puso</strong> (Denotatibo: organ na nagpapadaloy ng dugo sa katawan; Konotatibo: simbolo ng pag-ibig)</li>
-                <li><strong>Bituin</strong> (Denotatibo: celestial body na naglalabas ng liwanag; Konotatibo: simbolo ng pangarap o tagumpay)</li>
-            </ul>
-        </div>
-
-        <div id="lesson2" class="lesson">
-            <h2>Aralin 2: Mga Pagpapahayag ng Sariling Emosyon at Damdamin sa Iba't Ibang Paraan at Pahayag</h2>
+document.getElementById('lesson2').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+        <h2>Aralin 2: Mga Pagpapahayag ng Sariling Emosyon at Damdamin sa Iba't Ibang Paraan at Pahayag</h2>
         <p><strong>Mga Halimbawa ng Pagpapahayag:</strong></p>
         <ul>
             <li><strong>Masaya ako</strong>: Nagpapakita ng kasiyahan.</li>
@@ -102,10 +99,13 @@
             <li><strong>Pagtataka</strong>: "Bakit sila natalo gayong sila ay nakahihigit sa kalaban?"</li>
             <li><strong>Pagkainis</strong>: "Nakakainis talaga ang lugar na mabaho at magulo."</li>
         </ul>
-        </div>
+    `;
+});
 
-        <div id="lesson3" class="lesson">
-            <h2>Aralin 3: Mga Pang-ugnay na Ginagamit sa Pagpapahayag ng Sariling Pananaw</h2>
+
+document.getElementById('lesson3').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+        <h2>Aralin 3: Mga Pang-ugnay na Ginagamit sa Pagpapahayag ng Sariling Pananaw</h2>
         <p>Sa pagpapahayag ng sariling pananaw, ang nagsasalita ay gumagamit ng mga pang-ugnay upang maipakita ang relasyon o kaugnayan ng dalawang salita, dalawang parirala o sugnay na magpapalutang ng diwa ng pagpapahayag.</p>
         <p>Narito ang tatlong uri ng pang-ugnay na ginagamit sa pagpapahayag ng sariling pananaw:</p>
         <ol>
@@ -138,81 +138,49 @@
             <li><strong>Sa palagay ko</strong>: "Sa palagay ko, dapat nating bigyang halaga ang edukasyon."</li>
             <li><strong>Inaakala ko</strong>: "Inaakala ko’y darating siya ngayon, pero wala pa rin siyang paramdam."</li>
         </ul>
-        </div>
-
-        <div id="lesson4" class="lesson">
-            <h2>Aralin 4: Mga Ekspresyong Nagpapahayag ng Katotohanan at Panghihikayat</h2>
+    `;
+});
+document.getElementById('lesson4').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+        <h2>Aralin 4: Mga Ekspresyong Nagpapahayag ng Katotohanan at Panghihikayat</h2>
         <p><strong>Mga Halimbawa ng Ekspresyon:</strong></p>
         <ul>
             <li><strong>Totoo na</strong>: Nagpapakita ng katotohanan.</li>
             <li><strong>Talagang</strong>: Nagpapahayag ng katiyakan.</li>
             <li><strong>Dapat</strong>: Ginagamit sa panghihikayat.</li>
-            <li><strong>Kailangan</strong>: Nagpapakita ng pangangailangan.</li>
+            <li><strong>Kailangang</strong>: Nagpapahayag ng pangangailangan o kahalagahan.</li>
+            <li><strong>Siguradong</strong>: Nagpapahayag ng paniniyak.</li>
         </ul>
         <p><strong>Halimbawa ng Pangungusap:</strong></p>
         <ul class="example">
-            <li><strong>Totoo na</strong> ang balita tungkol sa bagong proyekto.</li>
-            <li><strong>Talagang</strong> magaling siya sa kanyang trabaho.</li>
-            <li><strong>Dapat</strong> tayong mag-recycle upang makatulong sa kalikasan.</li>
-            <li><strong>Kailangan</strong> nating mag-aral ng mabuti para sa ating kinabukasan.</li>
+            <li><strong>Totoo na</strong> mahirap ang buhay sa probinsya, ngunit payapa naman ito.</li>
+            <li><strong>Talagang</strong> dapat nating pahalagahan ang kalikasan para sa susunod na henerasyon.</li>
+            <li><strong>Dapat</strong> kang mag-aral ng mabuti para sa iyong kinabukasan.</li>
+            <li><strong>Kailangang</strong> magtulungan ang bawat isa upang maging maayos ang proyekto.</li>
+            <li><strong>Siguradong</strong> magtatagumpay ka kung hindi ka susuko.</li>
         </ul>
-        <p><strong>Mga Ekspresyon ng Katotohanan:</strong></p>
+        <p><strong>Mga Ekspresyon na Ginagamit sa Panghihikayat:</strong></p>
         <ul class="example">
-            <li><strong>Tunay</strong>: "Tunay na mahalaga ang edukasyon."</li>
-            <li><strong>Siyempre</strong>: "Siyempre, kailangan nating magtulungan."</li>
-            <li><strong>Talaga</strong>: "Talaga bang totoo ang balita?"</li>
-            <li><strong>Sa katunayan</strong>: "Sa katunayan, marami na ang nagtagumpay sa programang ito."</li>
-            <li><strong>Sadya</strong>: "Sadya bang mahirap ang pagsusulit?"</li>
+            <li><strong>Makabubuti kung</strong>: "Makabubuti kung pag-aaralan nating mabuti ang sitwasyon bago gumawa ng desisyon."</li>
+            <li><strong>Hikayatin natin silang</strong>: "Hikayatin natin silang makilahok sa mga proyekto ng ating barangay."</li>
+            <li><strong>Subukin natin</strong>: "Subukin natin ang bagong paraan upang maging mas mabilis ang proseso."</li>
+            <li><strong>Mas mainam kung</strong>: "Mas mainam kung tatalakayin natin ang mga hakbang na dapat gawin."</li>
         </ul>
-        <p><strong>Mga Pahayag na Nagpapahayag ng Katotohanan:</strong></p>
-        <ul class="example">
-            <li><strong>Po at Opo</strong>: "Opo, totoo ang sinabi niya."</li>
-            <li><strong>Totoo</strong>: "Totoo ang lahat ng kanyang sinabi."</li>
-            <li><strong>Dapat</strong>: "Dapat nating sundin ang mga alituntunin."</li>
-            <li><strong>Kailangan</strong>: "Kailangan nating maghanda para sa darating na pagsusulit."</li>
-        </ul>
+    `;
+});
+
+document.getElementById('test1').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+        <div class="board">
+            <div class="frame">
+                <iframe id="mathFrame" src="games/SG/index.html" style="width: 100%; height: 300px; border: none;"></iframe>
+            </div>
         </div>
+    `;
+});
 
-        <div id="test1" class="lesson">
-            <button id="start-quiz">Chapter Test</button>
-        </div>
-        
-        
-    </div>
-    <script>
+// Add more event listeners as needed
+</script>
 
-        function showLesson(lessonId) {
-                    var lessons = document.querySelectorAll('.lesson');
-                    lessons.forEach(function(lesson) {
-                        lesson.classList.remove('active');
-                    });
-                    document.getElementById(lessonId).classList.add('active');
-                }
-        
-                document.getElementById('start-quiz').addEventListener('click', () => {
-                window.location.href = 'quiz1.html'; // Redirect to the flashcard page
-            });
-        
-            function toggleMenu() {
-            const sidebar = document.querySelector('.sidebar');
-            const content = document.querySelector('.content');
-            const menuIcon = document.querySelector('.menu-icon');
-        
-            // Toggle the 'hidden' class on the sidebar
-            sidebar.classList.toggle('hidden');
-        
-            // Adjust the content margin based on sidebar visibility
-            if (sidebar.classList.contains('hidden')) {
-                content.classList.add('shifted');
-                menuIcon.classList.remove('active');
-                menuIcon.style.left = '10px'; // Adjust the top value when the sidebar is hidden
-            } else {
-                content.classList.remove('shifted');
-                menuIcon.classList.add('active');
-                menuIcon.style.left = '250px'; // Adjust the top value when the sidebar is visible
-            }
-        }
-
-    </script>
 </body>
 </html>

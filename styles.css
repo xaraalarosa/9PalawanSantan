@@ -1,8 +1,5 @@
 /* General Styles */
 body {
-    background-image: url("review_bg.jpg");
-    background-size: cover;
-    background-position: center;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -38,19 +35,9 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    font-size: large;
     color: #FFD3B6; /* Light Peach for hover effect */
 }
-
-footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #FFF; /* White text for footer */
-    background-color: rgba(94, 94, 94, 0.8); /* Subtle dark background */
-    padding: 20px;
-}
-
-
 /* Sidebar styles */
 
 .sidebar {
@@ -226,6 +213,7 @@ footer {
     justify-content: center;
     align-items: center; 
     height: auto;
+    flex-direction: column-reverse;
 }
 
 .section h2 {
@@ -239,23 +227,23 @@ footer {
 }
 
 .todo {
-    background-color: #D2042D;
+    background-color: #c7bba8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 50%;
     overflow-y: scroll;     
     margin-bottom: 10px;
-    top: 0;               
+    border-radius: 5%;
+    top: 0;            
 }
+
+.todo::-webkit-scrollbar{
+    display: none;   
+   }
 
 .todo ul li{
     text-decoration: solid;
     list-style-type: none;
 }
-
-.todo ul li ul li{
-    list-style-type: none;
-}
-
 
 .news {
     background-color: #FFF1DC;
@@ -275,6 +263,12 @@ footer {
     font-size: 16px;     
     color: #555;
     line-height: 1.5;    
+}
+
+.news img{
+    max-width: 600px;
+    max-height: 500px;
+    border-radius: 10px;
 }
 
 /* For tablets and smaller screens */
@@ -299,6 +293,11 @@ footer {
     .side{
         width: 100%;
         height: 300px;
+    }
+
+    .news img{
+        max-width: 300px;
+        max-height: 300px;
     }
 }
 
@@ -353,6 +352,16 @@ footer {
     .news p {
         font-size: 14px; /* Adjust paragraph size */
     }
+
+    .news img{
+    max-width: 250px;
+    max-height: 200px;
+    }
+
+    .news img :hover{
+        box-shadow: #000;
+        }
+
     .subject-option {
         padding: 10px; /* Adjust padding for subject options */
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Reduce shadow */
@@ -361,5 +370,9 @@ footer {
         display: flex;
         flex-direction: column; 
         align-items: center;    
+    }
+    .news img{
+        max-width: 600px;
+        max-height: 100px;
     }
 }

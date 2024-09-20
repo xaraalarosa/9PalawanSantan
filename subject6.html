@@ -1,87 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{TITLE}}</title> <!-- Dynamic title -->
-    <link rel="stylesheet" href="sub.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson Layout</title>
+<link rel="stylesheet" href="sub.css">
+  
 </head>
 <body>
+
     <header>
-        <img src="resources/logo.jpg" alt="Logo" class="logo"> <!-- Static logo path -->
-        <h1>REVIEWERS</h1> <!-- Static page title -->
+        <h1>ICT</h1>
+        <div class="navhed">
         <nav>
-            <!-- Static navigation links -->
             <a href="index.html">Home</a>
             <a href="calc.html">Grade Calculator</a>
             <a href="classdir.html">Class Directory</a>
             <a href="lessonmain.html">Reviewer</a>
+        </div>
         </nav>
     </header>
+
+<div class="navbar">
+    <div id="lesson1">Lesson 1</div>
+    <div id="lesson2">Lesson 2</div>
+    <div id="lesson3">Lesson 3</div>
+    <div id="lesson4">Lesson 4</div>
+    <div id="lesson5">Lesson 5</div>
+    <!-- Add more lessons as needed -->
+</div>
+
+<div class="lesson-display" id="mainDisplay">
+    <!-- Content will be loaded here based on the lesson selected -->
+    <h2>Welcome to the Lessons</h2>
+    <p>Select a lesson from the navigation bar to view its content.</p>
+</div>
+
+<script>
+// JavaScript to handle lesson changes
+document.getElementById('lesson1').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+        <h2>Dennis Ritchie</h2>
+        <p><strong>The Creator of the C Programming Language</strong></p>
+        <p>He developed the C programming language at Bell Labs from 1969 to 1973.</p>
+
+        <h2>C Programming Language</h2>
+        <p>It is defined as a general-purpose programming language, which is one of the most widely used languages of all time. It is both an imperative and structured programming language.</p>
+
+        <h3>Advantages of Using C</h3>
+        <ul>
+            <li>It is easy to learn.</li>
+            <li>It is processor-independent.</li>
+            <li>It is a "low-level" high-level language.</li>
+        </ul>
+
+        <h2>Program</h2>
+        <p>A program is a text that you write using a programming language. It contains behaviors that you need a processor to execute. Essentially, a program handles inputs, processes them, and finally produces outputs according to specified behaviors.</p>
+
+        <h2>Machine Language</h2>
+        <p>Machine language is a collection of binary digits or bits that the computer reads and interprets. It is the only language that a computer directly understands.</p>
+
+        <h2>Assembly Language</h2>
+        <p>An assembly language is a type of low-level programming language that is intended to communicate directly with a computer’s hardware. It uses mnemonic instruction codes.</p>
+
+        <h2>High-Level Language</h2>
+        <p>A high-level language is a programming language that allows a programmer to write programs that are independent of a particular type of computer.</p>
+
+        <h2>Compiler</h2>
+        <p>A compiler is a program used to translate a program written in a high-level language into machine language.</p>
+    `;
+});
+
+document.getElementById('lesson2').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+        <h2>1. Define the Problem</h2>
+        <p>Understand the problem thoroughly to avoid confusion later.<br>
+        Identify key inputs and desired outputs.</p>
+
+        <h2>2. Analyze the Problem</h2>
+        <p>Ensure a clear understanding of the problem's requirements.<br>
+        Consider various solutions and choose the best one.</p>
+
+        <h2>3. Develop an Algorithm</h2>
+        <p>An algorithm is a step-by-step method for solving a problem.<br>
+        Three main categories of computer instructions:</p>
+        <ul>
+            <li><strong>Input instructions</strong>: Supply data from the outside world (keyboard, mouse, file, etc.).</li>
+            <li><strong>Processing instructions</strong>: Manipulate data (add, subtract, compare values).</li>
+            <li><strong>Output instructions</strong>: Send information to the outside world (screen, file, etc.).</li>
+        </ul>
+
+        <h2>4. Write the Program</h2>
+        <p>Convert the algorithm into a computer program using a suitable programming language.<br>
+        <strong>Algorithm vs Program</strong>: Algorithms are informal steps, while programs are written in a specific programming language.</p>
+
+        <h2>5. Test and Debug the Program</h2>
+        <p><strong>Testing</strong>: Run the program with test data to ensure expected results.<br>
+        <strong>Debugging</strong>: Correct errors found during testing.</p>
+        <ul>
+            <li><strong>Syntax errors</strong>: Occur when the program violates the rules of the programming language.</li>
+            <li><strong>Logical errors</strong>: Cause the program to produce incorrect results for valid data.</li>
+        </ul>
+
+        <h2>6. Document the Program</h2>
+        <p><strong>Documentation</strong>: Guides future maintenance and usage of the program.</p>
+        <ul>
+            <li><strong>Technical documentation</strong>: For programmers to modify or upgrade the program.</li>
+            <li><strong>User documentation</strong>: For non-technical users to understand how to use the program.</li>
+        </ul>
+
+        <h2>7. Maintain the Program</h2>
+        <p>Programs may need updates due to user feedback, changing requirements, or system upgrades.<br>
+        Well-designed and documented programs are easier to maintain.</p>
+    `;
+});
+
+document.getElementById('lesson3').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = 
     
-    <div class="menu-icon" onclick="toggleMenu()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </div>
+    '<h2>Lesson 3</h2><p>Content for Lesson 3.</p>';
+});
+document.getElementById('lesson4').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = 
+    
+    '<h2>Lesson 4</h2><p>Content for Lesson 4.</p>';
+});
+document.getElementById('lesson5').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = 
+    
+    '<h2>Lesson 5</h2><p>Content for Lesson 5.</p>';
+});
+// Add more event listeners as needed
+</script>
 
-    <section>
-        <div class="sidebar">
-            <br><br><br><br>
-            <h2 class="inbar">Chapter 1</h2> <!-- Dynamic chapter title -->
-            <ol>
-                <!-- Retained static lesson links with onclick events -->
-                <li><a href="#" onclick="showLesson('lesson1')">Aralin 1</a></li>
-            </ol>
-        </div>
-    </section>
-
-    <section>
-        <div class="content">
-            <br><br><br><br>
-            <h2>Chapter 1</h2> <!-- Dynamic term or grading period -->
-
-            <!-- Dynamic lesson sections -->
-
-            <div id="lesson1" class="lesson">
-                <button id="start-quiz">{{QUIZ_BUTTON_TEXT}}</button>
-            </div>
-        </div>
-    </section>
-
-    <script>
-
-        function showLesson(lessonId) {
-                    var lessons = document.querySelectorAll('.lesson');
-                    lessons.forEach(function(lesson) {
-                        lesson.classList.remove('active');
-                    });
-                    document.getElementById(lessonId).classList.add('active');
-                }
-        
-                document.getElementById('start-quiz').addEventListener('click', () => {
-                window.location.href = 'quiz1.html'; // Redirect to the flashcard page
-            });
-        
-            function toggleMenu() {
-            const sidebar = document.querySelector('.sidebar');
-            const content = document.querySelector('.content');
-            const menuIcon = document.querySelector('.menu-icon');
-        
-            // Toggle the 'hidden' class on the sidebar
-            sidebar.classList.toggle('hidden');
-        
-            // Adjust the content margin based on sidebar visibility
-            if (sidebar.classList.contains('hidden')) {
-                content.classList.add('shifted');
-                menuIcon.classList.remove('active');
-                menuIcon.style.left = '10px'; // Adjust the top value when the sidebar is hidden
-            } else {
-                content.classList.remove('shifted');
-                menuIcon.classList.add('active');
-                menuIcon.style.left = '250px'; // Adjust the top value when the sidebar is visible
-            }
-        }
-    </script>
 </body>
 </html>

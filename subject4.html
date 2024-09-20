@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math</title>
+    <title>Filipino</title>
     <link rel="stylesheet" href="sub.css">
 </head>
 <body>
-    <div>
     <header>
         <img src="resources/logo.jpg" alt="Logo" class="logo"> <!-- Updated path -->
-        <h1>REVIEWERS</h1>
+        <h1>MATH</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="calc.html">Grade Calculator</a>
@@ -18,238 +17,197 @@
             <a href="lessonmain.html">Reviewer</a>
         </nav>
     </header>
-    </div>
 
     <div class="menu-icon" onclick="toggleMenu()">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
     </div>
-<div class="main">
-<div>  
+
+<section>
+    <div class="main">
     
-    <br><br><br><br>
-       
-<div class="sidebar active" id="sidebar">
-   <h2 class="inbar">Chapter 1</h2>
-<ol>
-   <li><a href="#" onclick="showLesson('lesson1')">Lesson 1.1: Quadratic Equations</a></li>
-   <li><a href="#" onclick="showLesson('lesson2')">Lesson 1.2: Solving Quadratic Equations by Extracting the Square Roots</a></li>
-   <li><a href="#" onclick="showLesson('lesson3')">Lesson 1.3: Solving Quadratic Equations by Factoring</a></li>
-   <li><a href="#" onclick="showLesson('lesson4')">Lesson 1.4: Solving Quadratic Equations by Completing the Square</a></li>
-   <li><a href="#" onclick="showLesson('lesson5')">Lesson 1.5: The Quadratic Formula</a></li>
-   <li><a href="#" onclick="showLesson('lesson6')">Lesson 1.6: The Discriminant of the Quadratic Equation</a></li>
-   <li><a href="#" onclick="showLesson('lesson7')">Lesson 1.7: Sum and Product of the Roots of a Quadratic Equation</a></li>
-   <li><a href="#" onclick="showLesson('lesson8')">Lesson 1.8: Equations Transformable to Quadratic Equations</a></li>
-   <li><a href="#" onclick="showLesson('lesson9')">Lesson 1.9: Quadratic Inequalities</a></li>
-   <li><a href="#" onclick="showLesson('test1')">Chapter Test</a></li>
-</ol>
-<h2 class="inbar">Chapter 2</h2>
-<ol>
-    <li><a href="#" onclick="showLesson('lesson10')">Lesson 2.1: Quadratic Functions</a></li>
-    <li><a href="#" onclick="showLesson('lesson11')">Lesson 2.2: Graphs of Quadratic Functions</a></li>
-    <li><a href="#" onclick="showLesson('lesson12')">Lesson 2.3: The Vertex Form of Quadratic Functions</a></li>
-    <li><a href="#" onclick="showLesson('lesson13')">Lesson 2.4: The Vertex Form of Quadratic Functions</a></li>
-    <li><a href="#" onclick="showLesson('lesson14')">Lesson 2.5: Equations of Quadratic Functions</a></li>
-    <li><a href="#" onclick="showLesson('lesson15')">Chapter Test</a></li>
-</ol>
+        <br><br><br><br>
+           
+    <div class="sidebar active" id="sidebar">
+
+        <br><br><br><br><br><br><br><br>
+        
+       <h2 class="inbar">Chapter 1</h2>
+    <ol>
+       <li><a href="#" onclick="showLesson('lesson1')">Lesson 1.1: Quadratic Equations</a></li>
+       <li><a href="#" onclick="showLesson('lesson2')">Lesson 1.2: Solving Quadratic Equations by Extracting the Square Roots</a></li>
+       <li><a href="#" onclick="showLesson('lesson3')">Lesson 1.3: Solving Quadratic Equations by Factoring</a></li>
+       <li><a href="#" onclick="showLesson('lesson4')">Lesson 1.4: Solving Quadratic Equations by Completing the Square</a></li>
+       <li><a href="#" onclick="showLesson('lesson5')">Lesson 1.5: The Quadratic Formula</a></li>
+       <li><a href="#" onclick="showLesson('lesson6')">Lesson 1.6: The Discriminant of the Quadratic Equation</a></li>
+       <li><a href="#" onclick="showLesson('lesson7')">Lesson 1.7: Sum and Product of the Roots of a Quadratic Equation</a></li>
+    </ol>
 </div>
-</div>
-<div>
-    <br><br><br><br>
+
     <div class="content">
+
+        <br><br><br><br>
+        <div>
+        <h2>Unang MARKAHAN</h2>
 
         <div id="lesson1" class="lesson">
             <h2>Lesson 1.1: Quadratic Equations</h2>
             <p><strong>Definition:</strong> A quadratic equation is any equation of the form <span class="formula">ax<sup>2</sup> + bx + c = 0</span>, where <em>a ≠ 0</em>.</p>
             <p><strong>Standard Form:</strong> <span class="formula">ax<sup>2</sup> + bx + c = 0</span>.</p>
-            <div class="exercise">
+            
                 <h2>Let's Practice</h2>
                 <p>1. Solve the quadratic equation: \(x^2 - 5x + 6 = 0\)</p>
                 <p class="answer">Answer: \(x = 2, 3\)</p>
         
                 <p>2. Determine if the following equation is quadratic: \(3x^2 + 2x - 1 = 0\)</p>
                 <p class="answer">Answer: Yes, it is a quadratic equation.</p>
-            </div>
+        </div>
         </div>
 
         <div id="lesson2" class="lesson">
-            <h2>Lesson 1.2: Solving Quadratic Equations by Extracting the Square Roots</h2>
-            <p><strong>Method:</strong> Isolate the <em>x<sup>2</sup></em> term and take the square root of both sides.</p>
-            <p><strong>Example:</strong> <span class="formula">x<sup>2</sup> = k ⇒ x = ±√k</span>.</p>
-            <div class="exercise">
-                <h2>Let's Practice</h2>
-                <p>1. Solve for \(x\): \(x^2 = 49\)</p>
-                <p class="answer">Answer: \(x = \pm 7\)</p>
-        
-                <p>2. Solve for \(x\): \(4x^2 = 100\)</p>
-                <p class="answer">Answer: \(x = \pm 5\)</p>
-            </div>
+            <h2>Aralin 2: Mga Pagpapahayag ng Sariling Emosyon at Damdamin sa Iba't Ibang Paraan at Pahayag</h2>
+        <p><strong>Mga Halimbawa ng Pagpapahayag:</strong></p>
+        <ul>
+            <li><strong>Masaya ako</strong>: Nagpapakita ng kasiyahan.</li>
+            <li><strong>Nalulungkot ako</strong>: Nagpapahayag ng kalungkutan.</li>
+            <li><strong>Naiinis ako</strong>: Nagpapakita ng pagkairita.</li>
+            <li><strong>Natutuwa ako</strong>: Nagpapahayag ng tuwa.</li>
+        </ul>
+        <p><strong>Halimbawa ng Pangungusap:</strong></p>
+        <ul class="example">
+            <li><strong>Masaya ako</strong> dahil mataas ang aking marka.</li>
+            <li><strong>Nalulungkot ako</strong> sa pagkawala ng aking alagang hayop.</li>
+            <li><strong>Naiinis ako</strong> sa maingay na kapitbahay.</li>
+            <li><strong>Natutuwa ako</strong> sa bagong laruan na binigay sa akin.</li>
+        </ul>
+        <p><strong>Mga Ekspresyon ng Damdamin:</strong></p>
+        <ul class="example">
+            <li><strong>Paghanga</strong>: "Wow! Napakaganda ng tula."</li>
+            <li><strong>Pagkagulat</strong>: "Ay! Nabasag ang baso."</li>
+            <li><strong>Pagkatakot</strong>: "Naku po! Parang may lumilitaw yata rito."</li>
+            <li><strong>Kasiyahan</strong>: "Yehey! Nanalo kami."</li>
+            <li><strong>Pag-asa</strong>: "Sana nga! Makatapos ka ng pag-aaral."</li>
+            <li><strong>Galit o Inis</strong>: "Ano ba?! Tigilan mo nga ako."</li>
+        </ul>
+        <p><strong>Mga Pahayag na Nagpapahayag ng Damdamin:</strong></p>
+        <ul class="example">
+            <li><strong>Pagtanggi</strong>: "Ayokong sumama sa inyo."</li>
+            <li><strong>Kasiyahan</strong>: "Nakatutuwa at ikaw ay nakapasa sa pagsusulit."</li>
+            <li><strong>Pagtataka</strong>: "Bakit sila natalo gayong sila ay nakahihigit sa kalaban?"</li>
+            <li><strong>Pagkainis</strong>: "Nakakainis talaga ang lugar na mabaho at magulo."</li>
+        </ul>
         </div>
 
         <div id="lesson3" class="lesson">
-            <h2>Lesson 1.3: Solving Quadratic Equations by Factoring</h2>
-            <p><strong>Method:</strong> Express the quadratic equation as a product of two binomials.</p>
-            <p><strong>Example:</strong> <span class="formula">ax<sup>2</sup> + bx + c = 0 ⇒ (mx + n)(px + q) = 0</span>.</p>
+            <h2>Aralin 3: Mga Pang-ugnay na Ginagamit sa Pagpapahayag ng Sariling Pananaw</h2>
+        <p>Sa pagpapahayag ng sariling pananaw, ang nagsasalita ay gumagamit ng mga pang-ugnay upang maipakita ang relasyon o kaugnayan ng dalawang salita, dalawang parirala o sugnay na magpapalutang ng diwa ng pagpapahayag.</p>
+        <p>Narito ang tatlong uri ng pang-ugnay na ginagamit sa pagpapahayag ng sariling pananaw:</p>
+        <ol>
+            <li><strong>Pangatnig</strong> - tawag sa kataga o salitang nag-uugnay ng dalawang salita, parirala, o sugnay na pinagsusunod-sunod sa pangungusap. May dalawang pangkat ng pangatnig:
+                <ol type="a">
+                    <li><strong>Pangatnig na nag-uugnay ng magkatimbang na yunit</strong> - Ito ay pangatnig na nag-uugnay sa mga salita, parirala, at sugnay na magkatimbang o sugnay na makapag-iisa.
+                        <p><strong>Halimbawa:</strong> o, ni, maging, ngunit, subalit, saka, pati, at</p>
+                    </li>
+                    <li><strong>Pangatnig na nag-uugnay ng di magkatimbang na yunit</strong> - Ito ay pangatnig na nag-uugnay sa mga salita, parirala, at sugnay na di magkatimbang.
+                        <p><strong>Halimbawa:</strong> kung, nang, bago, upang, kapag, dahil sa, sapagkat, palibhasa, kaya, kung gayon</p>
+                    </li>
+                </ol>
+            </li>
+            <li><strong>Pang-angkop</strong> - Mga katagang nag-uugnay sa panuring at salitang tinuturingan upang mapaganda ang diwa ng pangungusap.
+                <p><strong>Halimbawa:</strong> na, ng</p>
+            </li>
+            <li><strong>Pang-ukol</strong> - Mga pang-ugnay na ginagamit sa pag-uugnay ng isang pangngalan sa iba pang salita sa pangungusap na ipinahahayag.
+                <p><strong>Halimbawa:</strong> kay, kina, laban sa, ayon sa, para sa, ukol sa, tungkol sa, hinggil sa, alinsunod sa</p>
+            </li>
+        </ol>
+        <p><strong>Mga Ekspresiyong Nagpapahayag ng Pananaw:</strong></p>
+        <ul class="example">
+            <li><strong>Ayon sa</strong>: "Ayon sa aking pag-aaral, mahalaga ang edukasyon sa pag-unlad ng isang bansa."</li>
+            <li><strong>Batay sa</strong>: "Ang aking desisyon ay batay sa kanyang natatanging kakayahan at kahusayan."</li>
+            <li><strong>Alinsunod sa</strong>: "Ang lahat ng empleyado ay dapat kumilos alinsunod sa mga patakaran ng kumpanya."</li>
+            <li><strong>Sang-ayon sa</strong>: "Sang-ayon sa mga nakararami, may magandang dulot ang malasakit sa kapwa."</li>
+            <li><strong>Sa paniniwala</strong>: "Ang kanyang paniniwala sa pagkakapantay-pantay ng lahat ng tao ay nagbigay inspirasyon sa marami."</li>
+            <li><strong>Sa aking pananaw</strong>: "Sa aking pananaw, ang kalikasan ay dapat pangalagaan."</li>
+            <li><strong>Sa tingin ko</strong>: "Sa tingin ko, tama ang kanyang desisyon."</li>
+            <li><strong>Sa palagay ko</strong>: "Sa palagay ko, dapat nating bigyang halaga ang edukasyon."</li>
+            <li><strong>Inaakala ko</strong>: "Inaakala ko’y darating siya ngayon, pero wala pa rin siyang paramdam."</li>
+        </ul>
         </div>
 
         <div id="lesson4" class="lesson">
-            <h2>Lesson 1.4: Solving Quadratic Equations by Completing the Square</h2>
-            <p><strong>Method:</strong> Transform the equation into a perfect square trinomial.</p>
-            <p><strong>Steps:</strong></p>
-            <ol>
-                <li>Move the constant term to the other side.</li>
-                <li>Add and subtract <span class="formula">(\frac{b}{2a})<sup>2</sup></span> inside the equation.</li>
-                <li>Factor the perfect square trinomial.</li>
-                <li>Solve for <em>x</em>.</li>
-            </ol>
-        </div>
-
-        <div id="lesson5" class="lesson">
-            <h2>Lesson 1.5: The Quadratic Formula</h2>
-            <p><strong>Formula:</strong> <span class="formula">x = \frac{-b ± √(b<sup>2</sup> - 4ac)}{2a}</span>.</p>
-            <p><strong>Usage:</strong> Applicable for all quadratic equations.</p>
-        </div>
-
-        <div id="lesson6" class="lesson">
-            <h2>Lesson 1.6: The Discriminant of the Quadratic Equation</h2>
-            <p><strong>Discriminant:</strong> <span class="formula">D = b<sup>2</sup> - 4ac</span>.</p>
-            <p><strong>Interpretation:</strong></p>
-            <ul>
-                <li><span class="formula">D > 0</span>: Two distinct real roots.</li>
-                <li><span class="formula">D = 0</span>: One real root (repeated).</li>
-                <li><span class="formula">D < 0</span>: No real roots (complex roots).</li>
-            </ul>
-        </div>
-
-        <div id="lesson7" class="lesson">
-            <h2>Lesson 1.7: Sum and Product of the Roots of a Quadratic Equation</h2>
-            <p><strong>Sum:</strong> <span class="formula">x<sub>1</sub> + x<sub>2</sub> = -\frac{b}{a}</span>.</p>
-            <p><strong>Product:</strong> <span class="formula">x<sub>1</sub> · x<sub>2</sub> = \frac{c}{a}</span>.</p>
-        </div>
-
-        <div id="lesson8" class="lesson">
-            <h2>Lesson 1.8: Equations Transformable to Quadratic Equations</h2>
-            <p><strong>Method:</strong> Transform non-quadratic equations into quadratic form by substitution or algebraic manipulation.</p>
-        </div>
-
-        <div id="lesson9" class="lesson">
-            <h2>Lesson 1.9: Quadratic Inequalities</h2>
-            <p><strong>Form:</strong> <span class="formula">ax<sup>2</sup> + bx + c > 0</span> or <span class="formula">ax<sup>2</sup> + bx + c < 0</span>.</p>
-            <p><strong>Solution:</strong> Find the roots of the corresponding quadratic equation and determine the intervals where the inequality holds true.</p>
+            <h2>Aralin 4: Mga Ekspresyong Nagpapahayag ng Katotohanan at Panghihikayat</h2>
+        <p><strong>Mga Halimbawa ng Ekspresyon:</strong></p>
+        <ul>
+            <li><strong>Totoo na</strong>: Nagpapakita ng katotohanan.</li>
+            <li><strong>Talagang</strong>: Nagpapahayag ng katiyakan.</li>
+            <li><strong>Dapat</strong>: Ginagamit sa panghihikayat.</li>
+            <li><strong>Kailangan</strong>: Nagpapakita ng pangangailangan.</li>
+        </ul>
+        <p><strong>Halimbawa ng Pangungusap:</strong></p>
+        <ul class="example">
+            <li><strong>Totoo na</strong> ang balita tungkol sa bagong proyekto.</li>
+            <li><strong>Talagang</strong> magaling siya sa kanyang trabaho.</li>
+            <li><strong>Dapat</strong> tayong mag-recycle upang makatulong sa kalikasan.</li>
+            <li><strong>Kailangan</strong> nating mag-aral ng mabuti para sa ating kinabukasan.</li>
+        </ul>
+        <p><strong>Mga Ekspresyon ng Katotohanan:</strong></p>
+        <ul class="example">
+            <li><strong>Tunay</strong>: "Tunay na mahalaga ang edukasyon."</li>
+            <li><strong>Siyempre</strong>: "Siyempre, kailangan nating magtulungan."</li>
+            <li><strong>Talaga</strong>: "Talaga bang totoo ang balita?"</li>
+            <li><strong>Sa katunayan</strong>: "Sa katunayan, marami na ang nagtagumpay sa programang ito."</li>
+            <li><strong>Sadya</strong>: "Sadya bang mahirap ang pagsusulit?"</li>
+        </ul>
+        <p><strong>Mga Pahayag na Nagpapahayag ng Katotohanan:</strong></p>
+        <ul class="example">
+            <li><strong>Po at Opo</strong>: "Opo, totoo ang sinabi niya."</li>
+            <li><strong>Totoo</strong>: "Totoo ang lahat ng kanyang sinabi."</li>
+            <li><strong>Dapat</strong>: "Dapat nating sundin ang mga alituntunin."</li>
+            <li><strong>Kailangan</strong>: "Kailangan nating maghanda para sa darating na pagsusulit."</li>
+        </ul>
         </div>
 
         <div id="test1" class="lesson">
             <button id="start-quiz">Chapter Test</button>
         </div>
+        </div>
         
-        <div id="lesson10" class="lesson">
-            <h2>Lesson 2.1: Quadratic Functions</h2>
-            <p><strong>Definition:</strong> A quadratic function is a polynomial function of degree two, generally expressed as <code>f(x) = ax^2 + bx + c</code>, where <code>a ≠ 0</code>.</p>
-            <p><strong>Standard Form:</strong> <code>f(x) = ax^2 + bx + c</code></p>
-            <p><strong>Vertex Form:</strong> <code>f(x) = a(x - h)^2 + k</code></p>
-            <p><strong>Factored Form:</strong> <code>f(x) = a(x - r1)(x - r2)</code></p>
-        </div>
-    
-        <div id="lesson11" class="lesson">
-            <h2>Lesson 2.2: Graphs of Quadratic Functions</h2>
-            <p><strong>Parabola:</strong> The graph of a quadratic function is a parabola.</p>
-            <p><strong>Vertex:</strong> The highest or lowest point on the graph, given by <code>(h, k)</code> in the vertex form.</p>
-            <p><strong>Axis of Symmetry:</strong> The vertical line that passes through the vertex, <code>x = h</code>.</p>
-            <p><strong>Direction:</strong> The parabola opens upwards if <code>a > 0</code> and downwards if <code>a < 0</code>.</p>
-        </div>
-    
-        <div id="lesson12" class="lesson">
-            <h2>Lesson 2.3: The Vertex Form of Quadratic Functions</h2>
-            <p><strong>Vertex Form:</strong> <code>f(x) = a(x - h)^2 + k</code></p>
-            <p><strong>Vertex:</strong> <code>(h, k)</code></p>
-            <p><strong>Transformations:</strong></p>
-            <ul>
-                <li>Horizontal shifts: <code>h</code></li>
-                <li>Vertical shifts: <code>k</code></li>
-                <li>Reflections: If <code>a</code> is negative, the parabola reflects over the x-axis.</li>
-                <li>Stretching/Shrinking: The value of <code>a</code> determines the width of the parabola.</li>
-            </ul>
-        </div>
-    
-        <div id="lesson13" class="lesson">
-            <h2>Lesson 2.4: The Vertex Form of Quadratic Functions (Continued)</h2>
-            <p><strong>Finding the Vertex:</strong> From the standard form <code>f(x) = ax^2 + bx + c</code>, the vertex can be found using <code>h = -b / 2a</code> and <code>k = f(h)</code>.</p>
-            
-                <p><strong>Example:</strong> Convert <code>f(x) = 2x^2 + 4x + 1</code> to vertex form.</p>
-                <p>Complete the square: <code>f(x) = 2(x^2 + 2x) + 1</code></p>
-                <p><code>f(x) = 2((x + 1)^2 - 1) + 1</code></p>
-                <p><code>f(x) = 2(x + 1)^2 - 2 + 1</code></p>
-                <p><code>f(x) = 2(x + 1)^2 - 1</code></p>
-                <p>Vertex: <code>(-1, -1)</code></p>
-            
-        </div>
-    
-        <div id="lesson14" class="lesson">
-            <h2>Lesson 2.5: Equations of Quadratic Functions</h2>
-            <p><strong>Solving Quadratic Equations:</strong> Methods include factoring, using the quadratic formula, and completing the square.</p>
-            <p><strong>Quadratic Formula:</strong> <code>x = (-b ± √(b^2 - 4ac)) / 2a</code></p>
-            <p><strong>Discriminant:</strong> <code>Δ = b^2 - 4ac</code></p>
-            <ul>
-                <li>If <code>Δ > 0</code>, two real solutions.</li>
-                <li>If <code>Δ = 0</code>, one real solution.</li>
-                <li>If <code>Δ < 0</code>, no real solutions (complex solutions).</li>
-            </ul>
-        </div>
-
-        <div id="lesson15" class="lesson">
-            <button id="start-quiz">Chapter Test</button>
-        </div>
     </div>
-</div>
-</div>
     <script>
 
-function showLesson(lessonId) {
-            var lessons = document.querySelectorAll('.lesson');
-            lessons.forEach(function(lesson) {
-                lesson.classList.remove('active');
+        function showLesson(lessonId) {
+                    var lessons = document.querySelectorAll('.lesson');
+                    lessons.forEach(function(lesson) {
+                        lesson.classList.remove('active');
+                    });
+                    document.getElementById(lessonId).classList.add('active');
+                }
+        
+                document.getElementById('start-quiz').addEventListener('click', () => {
+                window.location.href = 'quiz1.html'; // Redirect to the flashcard page
             });
-            document.getElementById(lessonId).classList.add('active');
+        
+            function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content');
+            const menuIcon = document.querySelector('.menu-icon');
+        
+            // Toggle the 'hidden' class on the sidebar
+            sidebar.classList.toggle('hidden');
+        
+            // Adjust the content margin based on sidebar visibility
+            if (sidebar.classList.contains('hidden')) {
+                content.classList.add('shifted');
+                menuIcon.classList.remove('active');
+                menuIcon.style.left = '10px'; // Adjust the top value when the sidebar is hidden
+            } else {
+                content.classList.remove('shifted');
+                menuIcon.classList.add('active');
+                menuIcon.style.left = '250px'; // Adjust the top value when the sidebar is visible
+            }
         }
 
-        document.getElementById('start-quiz').addEventListener('click', () => {
-        window.location.href = 'quiz1.html'; // Redirect to the flashcard page
-    });
-
-    function toggleMenu() {
-    const sidebar = document.querySelector('.sidebar');
-    const content = document.querySelector('.content');
-    const menuIcon = document.querySelector('.menu-icon');
-
-    // Determine the sidebar width based on screen size
-    const screenWidth = window.innerWidth;
-    const sidebarWidth = screenWidth <= 768 ? 200 : 250;
-
-    // Toggle the 'hidden' class on the sidebar
-    sidebar.classList.toggle('hidden');
-
-    // Adjust the content margin based on sidebar visibility
-    if (sidebar.classList.contains('hidden')) {
-        content.classList.add('shifted');
-        menuIcon.classList.remove('active');
-        menuIcon.style.left = '10px'; // Adjust the left value when the sidebar is hidden
-    } else {
-        content.classList.remove('shifted');
-        menuIcon.classList.add('active');
-        menuIcon.style.left = `${sidebarWidth}px`; // Adjust the left value when the sidebar is visible
-    }
-
-    // Apply the sidebar width
-    sidebar.style.width = `${sidebarWidth}px`;
-    content.style.marginLeft = sidebar.classList.contains('hidden') ? '0' : `${sidebarWidth}px`;
-}
-
-// Adjust layout on window resize
-window.addEventListener('resize', toggleMenu);
-
-// Initial adjustment
-toggleMenu();
     </script>
 </body>
 </html>

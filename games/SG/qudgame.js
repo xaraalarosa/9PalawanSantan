@@ -50,10 +50,10 @@ const story = {
         ]
     },
     door1: {
-        text: "It's Locked",
+        text: "It's Locked there is a note on the floor. Solve 2x² + 3x - 2 = 0",
         image: "lock.jpg",
         choices: [
-            { text: "Enter Password", next: "checkEquationDoor1" }
+            { text: "Enter Password.", next: "checkEquationDoor1" }
         ],
         equation: {
             question: "Solve the quadratic equation: 2x² + 3x - 2 = 0",
