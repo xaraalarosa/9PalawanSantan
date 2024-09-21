@@ -26,7 +26,7 @@
     <div id="lesson2">Lesson 2</div>
     <div id="lesson3">Lesson 3</div>
     <div id="lesson4">Lesson 4</div>
-    <div id="lesson5">Lesson 5</div>
+    <div id="test">Practice Test</div>
     <!-- Add more lessons as needed -->
 </div>
 
@@ -324,12 +324,43 @@ but does not end correctly /*
 document.getElementById('test').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = `
     
-    <iframe src="quiz/icttest1.html" 
-            width="600" 
-            height="400" 
-            style="border: 1px solid #000;">
-        Your browser does not support iframes.
-    </iframe>
+    <style>
+        /* Make iframe responsive */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Optional: Style for small devices */
+        @media (max-width: 600px) {
+            .iframe-container {
+                padding-bottom: 75%; /* Adjust aspect ratio for smaller screens if needed */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="iframe-container">
+        <iframe src="quiz/icttest1.html" 
+                title="Embedded Content">
+            Your browser does not support iframes.
+        </iframe>
+    </div>
+
+</body>
     `;
 });
 // Add more event listeners as needed
