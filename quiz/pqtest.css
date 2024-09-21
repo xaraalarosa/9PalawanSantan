@@ -36,3 +36,18 @@ button:hover {
 #results {
     margin-top: 20px;
 }
+
+.answers {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.answers label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.answers input {
+    margin-right: 10px;
+}

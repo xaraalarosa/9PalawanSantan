@@ -40,6 +40,11 @@
 // JavaScript to handle lesson changes
 document.getElementById('lesson1').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = `
+
+        <object data="resources/Ang-Ama.pdf" type="application/pdf" width="100%" height="500px">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="resources/Ang-Ama.pdf">Download PDF</a>.</p>
+        </object>
+
         <h2>Aralin 1: Mga Pang-ugnay na Hudyat sa Pagsusunod-sunod ng mga Pangyayari</h2>
         <p><strong>Mga Halimbawa ng Pang-ugnay:</strong></p>
         <ul>
@@ -68,6 +73,29 @@ document.getElementById('lesson1').addEventListener('click', function() {
 
 document.getElementById('lesson2').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = `
+    <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <div class="video-container">
+        <iframe width="656" height="369" src="https://www.youtube.com/embed/N3bzYDOxSbo" title="KULTURA: Pamana ng Nakaraan, Regalo ng Kasalukuyan at Buhay ng Kinabukasan ni Pat V. Villafuerte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
         <h2>Aralin 2: Mga Pagpapahayag ng Sariling Emosyon at Damdamin sa Iba't Ibang Paraan at Pahayag</h2>
         <p><strong>Mga Halimbawa ng Pagpapahayag:</strong></p>
         <ul>
@@ -105,6 +133,28 @@ document.getElementById('lesson2').addEventListener('click', function() {
 
 document.getElementById('lesson3').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = `
+        <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <div class="video-container">
+        <iframe width="656" height="369" src="https://www.youtube.com/embed/I-lEiGgVxsI" title="KAY ESTELLA ZEEHANDELAAR (Liham ng Isang Prinsesang Javanese) I SANAYSAY ni Elynia S. Mabanglo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
         <h2>Aralin 3: Mga Pang-ugnay na Ginagamit sa Pagpapahayag ng Sariling Pananaw</h2>
         <p>Sa pagpapahayag ng sariling pananaw, ang nagsasalita ay gumagamit ng mga pang-ugnay upang maipakita ang relasyon o kaugnayan ng dalawang salita, dalawang parirala o sugnay na magpapalutang ng diwa ng pagpapahayag.</p>
         <p>Narito ang tatlong uri ng pang-ugnay na ginagamit sa pagpapahayag ng sariling pananaw:</p>
@@ -142,6 +192,28 @@ document.getElementById('lesson3').addEventListener('click', function() {
 });
 document.getElementById('lesson4').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = `
+            <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <div class="video-container">
+        <iframe width="656" height="369" src="https://www.youtube.com/embed/fqdJBaSK8yg" title="TIYO SIMON Ni NPS Toribio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
         <h2>Aralin 4: Mga Ekspresyong Nagpapahayag ng Katotohanan at Panghihikayat</h2>
         <p><strong>Mga Halimbawa ng Ekspresyon:</strong></p>
         <ul>
@@ -171,11 +243,7 @@ document.getElementById('lesson4').addEventListener('click', function() {
 
 document.getElementById('test1').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = `
-        <div class="board">
-            <div class="frame">
-                <iframe id="mathFrame" src="games/SG/index.html" style="width: 100%; height: 300px; border: none;"></iframe>
-            </div>
-        </div>
+        
     `;
 });
 

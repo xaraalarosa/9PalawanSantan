@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="pqtest.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Quiz</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit</button>
+    </div>
+    <div id="results-container" style="display: none;">
+        <h1>Results</h1>
+        <div id="results"></div>
+        <button id="try-again">Try Again</button>
+    </div>
+    <script>
+        const quizData = [
+            {
+                question: "Ano ang pangunahing tungkulin ng lipunan sa isang indibidwal?",
+                a: "Magbigay ng kalayaan sa bawat tao",
+                b: "Tiyakin ang pag-unlad at dignidad ng bawat kasapi",
+                c: "Pagbigay ng ari-arian",
+                d: "Magtakda ng batas para sa bawat pamilya",
+                correct: "b"
+            },
+            {
+                question: "Ano ang kahulugan ng kultura sa isang lipunan?",
+                a: "Ang pagkakaroon ng teknolohiya",
+                b: "Ang pagsasalita ng iisang wika",
+                c: "Pamumuhay, kaugalian, at paniniwala ng isang grupo ng tao",
+                d: "Ang relihiyong sinasamba",
+                correct: "c"
+            },
+            {
+                question: "Sino ang lumikha ng konsepto ng Utopia?",
+                a: "Kaoru Ishikawa",
+                b: "Sir Thomas More",
+                c: "Allan H. Morgensen",
+                d: "Ben S. Graham",
+                correct: "b"
+            },
+            {
+                question: "Alin sa mga sumusunod ang mga prosesong pang-ekonomiya?",
+                a: "Produksyon, distribusyon, at pagkonsumo ng mga produkto at serbisyo",
+                b: "Pagbuo ng pamahalaan",
+                c: "Pagtuturo at edukasyon ng mga tao",
+                d: "Pagtatayo ng mga negosyo",
+                correct: "a"
+            },
+            {
+                question: "Ano ang ibig sabihin ng Corporate Social Responsibility (CSR)?",
+                a: "Pagpapayaman ng mga kompanya",
+                b: "Pagkakaisa ng mga negosyo at mga mamimili",
+                c: "Pagkilala ng mga negosyo sa kanilang tungkulin sa lipunan at kapaligiran",
+                d: "Pagbigay ng benepisyo sa mga empleyado",
+                correct: "c"
+            },
+            {
+                question: "Ano ang tatlong sangay ng pamahalaan sa Pilipinas?",
+                a: "Ehekutibo, Hudikatura, Konstitusyon",
+                b: "Hudikatura, Ehekutibo, Lehislatibo",
+                c: "Kongreso, Senado, Korte Suprema",
+                d: "Pambansa, Lokal, Pangrehiyon",
+                correct: "b"
+            },
+            {
+                question: "Ano ang ibig sabihin ng prinsipyo ng subsidiarity?",
+                a: "Ang pamahalaan ang may responsibilidad sa lahat ng gawain ng lipunan",
+                b: "Ang mga maliliit na komunidad o organisasyon ay dapat gampanan ang mga responsibilidad na kaya nilang gawin",
+                c: "Ang lahat ng yaman ay dapat ipamahagi nang pantay-pantay",
+                d: "Ang lahat ng tao ay may karapatan sa edukasyon",
+                correct: "b"
+            },
+            {
+                question: "Ano ang pangunahing tungkulin ng estado ayon sa Artikulo II, Seksiyon 5 ng Saligang Batas?",
+                a: "Pangalagaan ang kalikasan",
+                b: "Siguraduhin ang kalayaan ng bawat tao",
+                c: "Pangalagaan ang buhay, kalayaan, at ari-arian",
+                d: "Magbigay ng libreng edukasyon",
+                correct: "c"
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submit');
+        const resultsContainer = document.getElementById('results');
+        const resultsPage = document.getElementById('results-container');
+        const quizPage = document.getElementById('quiz-container');
+        const tryAgainButton = document.getElementById('try-again');
+
+        let currentQuestionIndex = 0;
+        let numCorrect = 0;
+        const incorrectAnswers = [];
+
+        function buildQuiz() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const answers = [];
+            for (letter in currentQuestion) {
+                if (letter !== 'question' && letter !== 'correct') {
+                    answers.push(
+                        `<label>
+                            <input type="radio" name="question" value="${letter}">
+                            ${letter} :
+                            ${currentQuestion[letter]}
+                        </label>`
+                    );
+                }
+            }
+            quizContainer.innerHTML = `
+                <div class="question">${currentQuestion.question}</div>
+                <div class="answers">${answers.join('')}</div>
+            `;
+        }
+
+        function showResults() {
+            const answerContainer = quizContainer.querySelector('.answers');
+            const selector = `input[name=question]:checked`;
+            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+            if (!userAnswer) {
+                alert("Please select an answer before proceeding.");
+                return;
+            }
+
+            if (userAnswer === quizData[currentQuestionIndex].correct) {
+                numCorrect++;
+            } else {
+                incorrectAnswers.push(`Question ${currentQuestionIndex + 1}: ${quizData[currentQuestionIndex].question}`);
+            }
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < quizData.length) {
+                buildQuiz();
+            } else {
+                quizPage.style.display = 'none';
+                resultsPage.style.display = 'block';
+                resultsContainer.innerHTML = `Score: ${numCorrect} out of ${quizData.length}<br><br>Incorrect Answers:<br>${incorrectAnswers.join('<br>')}`;
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            numCorrect = 0;
+            incorrectAnswers.length = 0;
+            quizPage.style.display = 'block';
+            resultsPage.style.display = 'none';
+            buildQuiz();
+        }
+
+        buildQuiz();
+
+        submitButton.addEventListener('click', showResults);
+        tryAgainButton.addEventListener('click', restartQuiz);
+    </script>
+</body>
+</html>
