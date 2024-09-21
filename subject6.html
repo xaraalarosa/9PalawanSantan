@@ -321,10 +321,16 @@ but does not end correctly /*
     `;
 });
 
-document.getElementById('lesson5').addEventListener('click', function() {
-    document.getElementById('mainDisplay').innerHTML = 
+document.getElementById('test').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
     
-    '<h2>Lesson 5</h2><p>Content for Lesson 5.</p>';
+    <iframe src="quiz/icttest1.html" 
+            width="600" 
+            height="400" 
+            style="border: 1px solid #000;">
+        Your browser does not support iframes.
+    </iframe>
+    `;
 });
 // Add more event listeners as needed
 </script>

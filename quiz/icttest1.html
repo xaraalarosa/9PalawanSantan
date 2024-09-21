@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Quiz Example</title>
-    <link rel="stylesheet" type="text/css" href="icttest1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="pqtest.css">
 </head>
 <body>
-    <header>
-        <h1>Quiz Example</h1>
-    </header>
-
-    <main>
-        <section class="questions">
-            <h2>Questions</h2>
-            <!-- Insert quiz questions here -->
-        </section>
-
-        <section class="results">
-            <h2>Results</h2>
-            <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
-            <button id="restart">Restart Quiz</button>
-        </section>
-    </main>
-
+    <div id="quiz-container">
+        <h1>Quiz</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit</button>
+    </div>
+    <div id="results-container" style="display: none;">
+        <h1>Results</h1>
+        <div id="results"></div>
+        <button id="try-again">Try Again</button>
+    </div>
     <script src="icttest1.js"></script>
 </body>
 </html>

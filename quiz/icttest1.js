@@ -1,88 +1,114 @@
-// Define the questions for the quiz
 const quizData = [
     {
-        question: "What is the capital of France?",
-        answers: [
-            { text: "New York", correct: false },
-            { text: "Paris", correct: true },
-            { text: "London", correct: false },
-            { text: "Madrid", correct: false },
-        ],
+        question: "What symbol represents the start or end of a flowchart?",
+        a: "Process",
+        b: "Decision",
+        c: "Terminator",
+        d: "Input/Output",
+        correct: "c"
     },
     {
-        question: "What is the highest mountain in the world?",
-        answers: [
-            { text: "Kilimanjaro", correct: false },
-            { text: "Everest", correct: true },
-            { text: "Denali", correct: false },
-            { text: "Fuji", correct: false },
-        ],
+        question: "Which symbol is used for decisions in a flowchart?",
+        a: "Decision",
+        b: "Process",
+        c: "Flow Line",
+        d: "Terminal",
+        correct: "a"
     },
     {
-        question: "What is the largest country by land area?",
-        answers: [
-            { text: "Russia", correct: true },
-            { text: "China", correct: false },
-            { text: "Canada", correct: false },
-            { text: "USA", correct: false },
-        ],
+        question: "Which escape sequence is used to create a new line in C programming?",
+        a: "\\t",
+        b: "\\n",
+        c: "\\'",
+        d: "\\\"",
+        correct: "b"
     },
+    {
+        question: "What function does every C program start with?",
+        a: "start()",
+        b: "begin()",
+        c: "main()",
+        d: "function()",
+        correct: "c"
+    },
+    {
+        question: "What keyword is used to define an integer variable in C?",
+        a: "int",
+        b: "float",
+        c: "char",
+        d: "double",
+        correct: "a"
+    }
 ];
 
-// Select the HTML elements
-const questionContainer = document.querySelector(".questions");
-const resultsContainer = document.querySelector(".results");
-const restartButton = document.querySelector("#restart");
-const totalSpan = document.querySelector("#total");
-const correctSpan = document.querySelector("#correct");
+const quizContainer = document.getElementById('quiz');
+const submitButton = document.getElementById('submit');
+const resultsContainer = document.getElementById('results');
+const resultsPage = document.getElementById('results-container');
+const quizPage = document.getElementById('quiz-container');
+const tryAgainButton = document.getElementById('try-again');
 
-// Define global variables
 let currentQuestionIndex = 0;
 let numCorrect = 0;
+const incorrectAnswers = [];
 
-// Function to populate the HTML with question and answer options
-function showQuestion() {
+function buildQuiz() {
     const currentQuestion = quizData[currentQuestionIndex];
-    questionContainer.innerHTML = `
-        <p>${currentQuestion.question}</p>
-        <ul>
-            ${currentQuestion.answers.map(answer => `
-                <li>
-                    <button class="answer-btn">${answer.text}</button>
-                </li>
-            `).join("")}
-        </ul>
+    const answers = [];
+    for (letter in currentQuestion) {
+        if (letter !== 'question' && letter !== 'correct') {
+            answers.push(
+                `<label>
+                    <input type="radio" name="question" value="${letter}">
+                    ${letter} :
+                    ${currentQuestion[letter]}
+                </label>`
+            );
+        }
+    }
+    quizContainer.innerHTML = `
+        <div class="question">${currentQuestion.question}</div>
+        <div class="answers">${answers.join('')}</div>
     `;
-    const answerButtons = document.querySelectorAll(".answer-btn");
-    answerButtons.forEach(button => {
-        button.addEventListener("click", checkAnswer);
-    }); 
 }
 
-// Function to check the selected answer and update global variables accordingly
-function checkAnswer(e) {
-    const selectedButton = e.target;
-    const isCorrect = quizData[currentQuestionIndex].answers.find(answer => answer.text === selectedButton.textContent).correct;
-    if (isCorrect) {
-        numCorrect++;
-    }
-    currentQuestionIndex++;
-    if (currentQuestionIndex === quizData.length) {
-        showResults();
-    } else {
-        showQuestion();
-    }
-}
-
-// Function to display the final quiz results
 function showResults() {
-    questionContainer.style.display = "none";
-    resultsContainer.style.display = "block";
-    totalSpan.textContent = quizData.length;
-    correctSpan.textContent = numCorrect;
+    const answerContainer = quizContainer.querySelector('.answers');
+    const selector = `input[name=question]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    if (!userAnswer) {
+        alert("Please select an answer before proceeding.");
+        return;
+    }
+
+    if (userAnswer === quizData[currentQuestionIndex].correct) {
+        numCorrect++;
+    } else {
+        incorrectAnswers.push(`Question ${currentQuestionIndex + 1}: ${quizData[currentQuestionIndex].question}`);
+    }
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < quizData.length) {
+        buildQuiz();
+    } else {
+        quizPage.style.display = 'none';
+        resultsPage.style.display = 'block';
+        resultsContainer.innerHTML = `Score: ${numCorrect} out of ${quizData.length}<br><br>Incorrect Answers:<br>${incorrectAnswers.join('<br>')}`;
+    }
 }
 
-// Add event listener to restart the quiz
-restartButton.addEventListener("click", () => {
-    currentQuestionIndex = 0 
-})
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    numCorrect = 0;
+    incorrectAnswers.length = 0;
+    quizPage.style.display = 'block';
+    resultsPage.style.display = 'none';
+    buildQuiz();
+}
+
+buildQuiz();
+
+submitButton.addEventListener('click', showResults);
+tryAgainButton.addEventListener('click', restartQuiz);

@@ -19,11 +19,6 @@ header {
     position: relative;
 }
 
-.logo {
-    max-width: 100px;
-    height: auto;
-}
-
 h1 {
     margin: 0;
     font-size: 24px;
@@ -33,8 +28,6 @@ nav a {
     font-size: larger;
     color: #FFF;
     text-decoration: none;
-    background-color: #e07c51;
-
 }
 
 nav a:hover {
@@ -64,22 +57,44 @@ nav a:hover {
     margin-top: 20px; 
 }
 
+/* Adjustments for tablets */
 @media (max-width: 1024px) {
-    .logo {
-        max-width: 80px; /* Adjust size for tablets */
+    h1 {
+        font-size: 22px; /* Adjust title size for tablets */
     }
 }
 
 /* For mobile screens */
 @media (max-width: 768px) {
-    .logo {
-        max-width: 60px; /* Adjust size for mobile devices */
+    h1 {
+        font-size: 20px; /* Adjust title size for mobile */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack navigation links vertically on mobile */
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: medium; /* Adjust navigation link size */
+    }
+
+    .lesson-display {
+        padding: 15px; /* Adjust content padding for mobile */
     }
 }
 
 /* For very small mobile screens */
 @media (max-width: 480px) {
-    .logo {
-        max-width: 40px; /* Adjust size for very small screens */
+    h1 {
+        font-size: 18px; /* Smaller title for very small screens */
+    }
+
+    nav a {
+        font-size: small; /* Smaller navigation links */
+    }
+
+    .lesson-display {
+        padding: 10px; /* Reduce padding further */
     }
 }
