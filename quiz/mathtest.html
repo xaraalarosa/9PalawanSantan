@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Example</title>
+    <link rel="stylesheet" href="pqtest.css">
+</head>
+<body>
+    <main>
+        <section class="questions" id="quiz-container">
+            <h2>Questions</h2>
+            <div id="quiz"></div>
+            <button id="submit">Submit</button>
+        </section>
+
+        <section class="results" id="results-container" style="display: none;">
+            <h2>Results</h2>
+            <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
+            <div id="results"></div>
+            <button id="try-again">Restart Quiz</button>
+        </section>
+    </main>
+    <script>
+        const quizData = [
+            {
+                question: "3x^2 + 5x - 2 = 0",
+                options: {
+                    a: "Q",
+                    b: "NQ",
+                },
+                correct: "a"
+            },
+            {
+                question: "x^3 - 4x + 1 = 0",
+                options: {
+                    a: "Q",
+                    b: "NQ",
+                },
+                correct: "b"
+            },
+            {
+                question: "2x^2 + 7 = 0",
+                options: {
+                    a: "Q",
+                    b: "NQ",
+                },
+                correct: "b"
+            },
+            {
+                question: "5x - 9 = 0",
+                options: {
+                    a: "Q",
+                    b: "NQ",
+                },
+                correct: "b"
+            },
+            {
+                question: "x^2 + 4x + 4 = 0",
+                options: {
+                    a: "Q",
+                    b: "NQ",                },
+                correct: "a"
+            },
+            {
+                question: "x^4 - 2x^2 + 1 = 0",
+                options: {
+                    a: "Q",
+                    b: "NQ",
+                },
+                correct: "b"
+            },
+            {
+                question: "x^2 = 0",
+                options: {
+                    a: "Q",
+                    b: "NQ",
+                },
+                correct: "a"
+            },
+            {
+                question: "4x^3 + x^2 - x + 6 = 0",
+                options: {
+                    a: "Q",
+                    b: "NQ",
+                },
+                correct: "b"
+            },
+            {
+                question: "6x^2 - 2x^2 + 3 = 0",
+                options: {
+                    a: "Q",
+                    b: "NQ",
+                },
+                correct: "b"
+            },
+            {
+                question: "Solve the quadratic equation: x^2 - 4x - 5 = 0",
+                options: {
+                    a: "x = 5 or x = -1",
+                    b: "x = 4 or x = -1",
+                    c: "x = 5 or x = -2",
+                    d: "x = 4 or x = -2"
+                },
+                correct: "a"
+            },
+            {
+                question: "Solve the quadratic equation: 2x^2 + 3x - 2 = 0",
+                options: {
+                    a: "x = 1 or x = -2",
+                    b: "x = 0.5 or x = -2",
+                    c: "x = 1 or x = -0.5",
+                    d: "x = 0.5 or x = -1"
+                },
+                correct: "b"
+            },
+            {
+                question: "Solve the quadratic equation: x^2 + 6x + 9 = 0",
+                options: {
+                    a: "x = -3",
+                    b: "x = 3",
+                    c: "x = -6",
+                    d: "x = 6"
+                },
+                correct: "a"
+            },
+            {
+                question: "Solve the quadratic equation: x^2 - 5x + 6 = 0",
+                options: {
+                    a: "x = 2 or x = 3",
+                    b: "x = 1 or x = 6",
+                    c: "x = 2 or x = 6",
+                    d: "x = 1 or x = 3"
+                },
+                correct: "a"
+            },
+            {
+                question: "Solve the quadratic equation: x^2 + 6x + 5 = 0",
+                options: {
+                    a: "x = -1 or x = -5",
+                    b: "x = -1 or x = -6",
+                    c: "x = 1 or x = -5",
+                    d: "x = 1 or x = -6"
+                },
+                correct: "a"
+            },
+            {
+                question: "One number is 3 more than another number. The product of the two numbers is 18. Find the numbers.",
+                options: {
+                    a: "The numbers are 3 and 6 or -6 and -3",
+                    b: "The numbers are 4 and 5 or -4 and -5",
+                    c: "The numbers are 2 and 9 or -2 and -9",
+                    d: "The numbers are 1 and 18 or -1 and -18"
+                },
+                correct: "a"
+            },
+            {
+                question: "One number is 3 more than another number. The sum of their squares is 25. Find the numbers.",
+                options: {
+                    a: "The numbers are 4 and 1 or -4 and -1",
+                    b: "The numbers are 3 and 2 or -3 and -2",
+                    c: "The numbers are 5 and 0 or -5 and 0",
+                    d: "The numbers are 6 and -1 or -6 and 1"
+                },
+                correct: "a"
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submit');
+        const resultsContainer = document.getElementById('results');
+        const resultsPage = document.getElementById('results-container');
+        const quizPage = document.getElementById('quiz-container');
+        const tryAgainButton = document.getElementById('try-again');
+
+        let currentQuestionIndex = 0;
+        let numCorrect = 0;
+        const incorrectAnswers = [];
+
+        function buildQuiz() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const answers = [];
+
+            for (let letter in currentQuestion.options) {
+                answers.push(
+                    `<label>
+                        <input type="radio" name="question${currentQuestionIndex}" value="${letter}">
+                        ${letter} :
+                        ${currentQuestion.options[letter]}
+                    </label>`
+                );
+            }
+
+            quizContainer.innerHTML = `
+                <div class="question">${currentQuestion.question}</div>
+                <div class="answers">${answers.join('')}</div>
+            `;
+        }
+
+        function showResults() {
+            const answerContainer = quizContainer.querySelector('.answers');
+            const selector = `input[name=question${currentQuestionIndex}]:checked`;
+            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+            if (!userAnswer) {
+                alert("Please select an answer before proceeding.");
+                return;
+            }
+
+            if (userAnswer === quizData[currentQuestionIndex].correct) {
+                numCorrect++;
+            } else {
+                incorrectAnswers.push(`Question ${currentQuestionIndex + 1}: ${quizData[currentQuestionIndex].question}`);
+            }
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < quizData.length) {
+                buildQuiz();
+            } else {
+                quizPage.style.display = 'none';
+                resultsPage.style.display = 'block';
+                resultsContainer.innerHTML = `Score: ${numCorrect} out of ${quizData.length}<br><br>Incorrect Answers:<br>${incorrectAnswers.join('<br>')}`;
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            numCorrect = 0;
+            incorrectAnswers.length = 0;
+            quizPage.style.display = 'block';
+            resultsPage.style.display = 'none';
+            buildQuiz();
+        }
+
+        buildQuiz();
+
+        submitButton.addEventListener('click', showResults);
+        tryAgainButton.addEventListener('click', restartQuiz);
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson Layout</title>
+<title>English</title>
 <link rel="stylesheet" href="sub.css">
   
 </head>
@@ -27,6 +27,7 @@
     <div id="lesson3">Lesson 3</div>
     <div id="lesson4">Lesson 4</div>
     <div id="lesson5">Lesson 5</div>
+    <div id="test">Practice Test</div>
     <!-- Add more lessons as needed -->
 </div>
 
@@ -63,15 +64,6 @@ document.getElementById('lesson1').addEventListener('click', function() {
   <li>sent’st — refers to the person addressed</li>
 </ul>
 
-<h2>Questions</h2>
-<ul>
-  <li>Why did he send her a wreath?</li>
-  <li>What did she do to the wreath he gave?</li>
-  <li>How did the speaker take it? What does it say about him?</li>
-  <li>To which two tangible things or actions was love compared?</li>
-  <li>What does the poet ask of Celia?</li>
-</ul>
-
 <h2>Prosodic Features of Speech</h2>
 <ul>
   <li>Stress — emphasis given to a syllable or word</li>
@@ -91,15 +83,6 @@ document.getElementById('lesson2').addEventListener('click', function() {
 
 <h2>Poem</h2>
 <p>When I consider how my light is spent Ere half my days in this dark world and wide, And that one talent which is death to hide Lodged with me useless, though my soul more bent To serve therewith my Maker, and present My true account, lest He returning chide; "Doth God exact day-labor, light denied?" I fondly ask. But Patience, to prevent That murmur, soon replies, "God doth not need Either man's work or his own gifts. Who best Bear his mild yoke, they serve him best. His state is kingly, thousands at his bidding speed And post o'er land and ocean without rest; They also serve who only stand and wait."</p>
-
-<h2>Questions</h2>
-<ul>
-  <li>What is the poem about?</li>
-  <li>What is bothering the speaker in the poem?</li>
-  <li>What does the speaker ask God? Was it answered? By whom?</li>
-  <li>What did Patience say?</li>
-  <li>What "change" happened to the speaker? Did his values change, too?</li>
-</ul>
 
 <h2>Sonnet</h2>
 <p>A sonnet is a 14-line poem written in iambic pentameter (10 syllables per line with alternating unstressed and stressed beats). It originated in Italy and was popularized by poets like Shakespeare. Sonnets typically include a problem and solution or a thematic shift.</p>
@@ -162,7 +145,48 @@ document.getElementById('lesson5').addEventListener('click', function() {
 <p>Prior knowledge refers to information you have learned previously from studies and personal experiences. Brainstorming is an activity that helps activate prior knowledge and encourages the exchange of ideas with others.</p>
 `;
 });
-// Add more event listeners as needed
+
+document.getElementById('test').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+    
+    <style>
+        /* Make iframe responsive */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Optional: Style for small devices */
+        @media (max-width: 600px) {
+            .iframe-container {
+                padding-bottom: 75%; /* Adjust aspect ratio for smaller screens if needed */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="iframe-container">
+        <iframe src="quiz/engquiz.html" 
+                title="Embedded Content">
+            Your browser does not support iframes.
+        </iframe>
+    </div>
+
+</body>`;
+});
 </script>
 
 </body>

@@ -1,213 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filipino</title>
-    <link rel="stylesheet" href="sub.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math</title>
+<link rel="stylesheet" href="sub.css">
+  
 </head>
 <body>
+
     <header>
-        <img src="resources/logo.jpg" alt="Logo" class="logo"> <!-- Updated path -->
-        <h1>MATH</h1>
+        <h1>Math</h1>
+        <div class="navhed">
         <nav>
             <a href="index.html">Home</a>
             <a href="calc.html">Grade Calculator</a>
             <a href="classdir.html">Class Directory</a>
             <a href="lessonmain.html">Reviewer</a>
+        </div>
         </nav>
     </header>
 
-    <div class="menu-icon" onclick="toggleMenu()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </div>
-
-<section>
-    <div class="main">
-    
-        <br><br><br><br>
-           
-    <div class="sidebar active" id="sidebar">
-
-        <br><br><br><br><br><br><br><br>
-        
-       <h2 class="inbar">Chapter 1</h2>
-    <ol>
-       <li><a href="#" onclick="showLesson('lesson1')">Lesson 1.1: Quadratic Equations</a></li>
-       <li><a href="#" onclick="showLesson('lesson2')">Lesson 1.2: Solving Quadratic Equations by Extracting the Square Roots</a></li>
-       <li><a href="#" onclick="showLesson('lesson3')">Lesson 1.3: Solving Quadratic Equations by Factoring</a></li>
-       <li><a href="#" onclick="showLesson('lesson4')">Lesson 1.4: Solving Quadratic Equations by Completing the Square</a></li>
-       <li><a href="#" onclick="showLesson('lesson5')">Lesson 1.5: The Quadratic Formula</a></li>
-       <li><a href="#" onclick="showLesson('lesson6')">Lesson 1.6: The Discriminant of the Quadratic Equation</a></li>
-       <li><a href="#" onclick="showLesson('lesson7')">Lesson 1.7: Sum and Product of the Roots of a Quadratic Equation</a></li>
-    </ol>
+<div class="navbar">
+    <div id="lesson1">Lesson 1</div>
+    <div id="lesson2">Lesson 2</div>
+    <div id="lesson3">Lesson 3</div>
+    <div id="lesson4">Lesson 4</div>
+    <div id="lesson5">Lesson 5</div>
+    <div id="lesson5">Lesson 6</div>
+    <div id="lesson5">Lesson 7</div>
+    <div id="test">Practice Test</div>
 </div>
 
-    <div class="content">
+<div class="lesson-display" id="mainDisplay">
+    <!-- Content will be loaded here based on the lesson selected -->
+    <h2>Welcome to the Lessons</h2>
+    <p>Select a lesson from the navigation bar to view its content.</p>
+</div>
 
-        <br><br><br><br>
-        <div>
-        <h2>Unang MARKAHAN</h2>
+<script>
+// JavaScript to handle lesson changes
+document.getElementById('lesson1').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML =`
+    <h3>What is a Quadratic Equation?</h3>
+<p>A quadratic equation is a type of polynomial equation of degree 2. This means the highest exponent of the variable (usually <em>x</em>) is 2. The general form of a quadratic equation is:</p>
 
-        <div id="lesson1" class="lesson">
-            <h2>Lesson 1.1: Quadratic Equations</h2>
-            <p><strong>Definition:</strong> A quadratic equation is any equation of the form <span class="formula">ax<sup>2</sup> + bx + c = 0</span>, where <em>a ≠ 0</em>.</p>
-            <p><strong>Standard Form:</strong> <span class="formula">ax<sup>2</sup> + bx + c = 0</span>.</p>
-            
-                <h2>Let's Practice</h2>
-                <p>1. Solve the quadratic equation: \(x^2 - 5x + 6 = 0\)</p>
-                <p class="answer">Answer: \(x = 2, 3\)</p>
-        
-                <p>2. Determine if the following equation is quadratic: \(3x^2 + 2x - 1 = 0\)</p>
-                <p class="answer">Answer: Yes, it is a quadratic equation.</p>
-        </div>
-        </div>
+<p><strong>ax<sup>2</sup> + bx + c = 0</strong></p>
 
-        <div id="lesson2" class="lesson">
-            <h2>Aralin 2: Mga Pagpapahayag ng Sariling Emosyon at Damdamin sa Iba't Ibang Paraan at Pahayag</h2>
-        <p><strong>Mga Halimbawa ng Pagpapahayag:</strong></p>
-        <ul>
-            <li><strong>Masaya ako</strong>: Nagpapakita ng kasiyahan.</li>
-            <li><strong>Nalulungkot ako</strong>: Nagpapahayag ng kalungkutan.</li>
-            <li><strong>Naiinis ako</strong>: Nagpapakita ng pagkairita.</li>
-            <li><strong>Natutuwa ako</strong>: Nagpapahayag ng tuwa.</li>
-        </ul>
-        <p><strong>Halimbawa ng Pangungusap:</strong></p>
-        <ul class="example">
-            <li><strong>Masaya ako</strong> dahil mataas ang aking marka.</li>
-            <li><strong>Nalulungkot ako</strong> sa pagkawala ng aking alagang hayop.</li>
-            <li><strong>Naiinis ako</strong> sa maingay na kapitbahay.</li>
-            <li><strong>Natutuwa ako</strong> sa bagong laruan na binigay sa akin.</li>
-        </ul>
-        <p><strong>Mga Ekspresyon ng Damdamin:</strong></p>
-        <ul class="example">
-            <li><strong>Paghanga</strong>: "Wow! Napakaganda ng tula."</li>
-            <li><strong>Pagkagulat</strong>: "Ay! Nabasag ang baso."</li>
-            <li><strong>Pagkatakot</strong>: "Naku po! Parang may lumilitaw yata rito."</li>
-            <li><strong>Kasiyahan</strong>: "Yehey! Nanalo kami."</li>
-            <li><strong>Pag-asa</strong>: "Sana nga! Makatapos ka ng pag-aaral."</li>
-            <li><strong>Galit o Inis</strong>: "Ano ba?! Tigilan mo nga ako."</li>
-        </ul>
-        <p><strong>Mga Pahayag na Nagpapahayag ng Damdamin:</strong></p>
-        <ul class="example">
-            <li><strong>Pagtanggi</strong>: "Ayokong sumama sa inyo."</li>
-            <li><strong>Kasiyahan</strong>: "Nakatutuwa at ikaw ay nakapasa sa pagsusulit."</li>
-            <li><strong>Pagtataka</strong>: "Bakit sila natalo gayong sila ay nakahihigit sa kalaban?"</li>
-            <li><strong>Pagkainis</strong>: "Nakakainis talaga ang lugar na mabaho at magulo."</li>
-        </ul>
-        </div>
+<p>where:</p>
+<ul>
+  <li><em>a</em>, <em>b</em>, and <em>c</em> are constants (with <em>a</em> ≠ 0).</li>
+  <li><em>x</em> is the variable.</li>
+</ul>
 
-        <div id="lesson3" class="lesson">
-            <h2>Aralin 3: Mga Pang-ugnay na Ginagamit sa Pagpapahayag ng Sariling Pananaw</h2>
-        <p>Sa pagpapahayag ng sariling pananaw, ang nagsasalita ay gumagamit ng mga pang-ugnay upang maipakita ang relasyon o kaugnayan ng dalawang salita, dalawang parirala o sugnay na magpapalutang ng diwa ng pagpapahayag.</p>
-        <p>Narito ang tatlong uri ng pang-ugnay na ginagamit sa pagpapahayag ng sariling pananaw:</p>
-        <ol>
-            <li><strong>Pangatnig</strong> - tawag sa kataga o salitang nag-uugnay ng dalawang salita, parirala, o sugnay na pinagsusunod-sunod sa pangungusap. May dalawang pangkat ng pangatnig:
-                <ol type="a">
-                    <li><strong>Pangatnig na nag-uugnay ng magkatimbang na yunit</strong> - Ito ay pangatnig na nag-uugnay sa mga salita, parirala, at sugnay na magkatimbang o sugnay na makapag-iisa.
-                        <p><strong>Halimbawa:</strong> o, ni, maging, ngunit, subalit, saka, pati, at</p>
-                    </li>
-                    <li><strong>Pangatnig na nag-uugnay ng di magkatimbang na yunit</strong> - Ito ay pangatnig na nag-uugnay sa mga salita, parirala, at sugnay na di magkatimbang.
-                        <p><strong>Halimbawa:</strong> kung, nang, bago, upang, kapag, dahil sa, sapagkat, palibhasa, kaya, kung gayon</p>
-                    </li>
-                </ol>
-            </li>
-            <li><strong>Pang-angkop</strong> - Mga katagang nag-uugnay sa panuring at salitang tinuturingan upang mapaganda ang diwa ng pangungusap.
-                <p><strong>Halimbawa:</strong> na, ng</p>
-            </li>
-            <li><strong>Pang-ukol</strong> - Mga pang-ugnay na ginagamit sa pag-uugnay ng isang pangngalan sa iba pang salita sa pangungusap na ipinahahayag.
-                <p><strong>Halimbawa:</strong> kay, kina, laban sa, ayon sa, para sa, ukol sa, tungkol sa, hinggil sa, alinsunod sa</p>
-            </li>
-        </ol>
-        <p><strong>Mga Ekspresiyong Nagpapahayag ng Pananaw:</strong></p>
-        <ul class="example">
-            <li><strong>Ayon sa</strong>: "Ayon sa aking pag-aaral, mahalaga ang edukasyon sa pag-unlad ng isang bansa."</li>
-            <li><strong>Batay sa</strong>: "Ang aking desisyon ay batay sa kanyang natatanging kakayahan at kahusayan."</li>
-            <li><strong>Alinsunod sa</strong>: "Ang lahat ng empleyado ay dapat kumilos alinsunod sa mga patakaran ng kumpanya."</li>
-            <li><strong>Sang-ayon sa</strong>: "Sang-ayon sa mga nakararami, may magandang dulot ang malasakit sa kapwa."</li>
-            <li><strong>Sa paniniwala</strong>: "Ang kanyang paniniwala sa pagkakapantay-pantay ng lahat ng tao ay nagbigay inspirasyon sa marami."</li>
-            <li><strong>Sa aking pananaw</strong>: "Sa aking pananaw, ang kalikasan ay dapat pangalagaan."</li>
-            <li><strong>Sa tingin ko</strong>: "Sa tingin ko, tama ang kanyang desisyon."</li>
-            <li><strong>Sa palagay ko</strong>: "Sa palagay ko, dapat nating bigyang halaga ang edukasyon."</li>
-            <li><strong>Inaakala ko</strong>: "Inaakala ko’y darating siya ngayon, pero wala pa rin siyang paramdam."</li>
-        </ul>
-        </div>
+<h4>Examples of Quadratic Equations</h4>
+<ul>
+  <li>2x<sup>2</sup> + 3x - 2 = 0</li>
+  <li>x<sup>2</sup> - 4x + 4 = 0</li>
+  <li>5x<sup>2</sup> + 6x + 1 = 0</li>
+</ul>`;
+});
+document.getElementById('lesson2').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+    
 
-        <div id="lesson4" class="lesson">
-            <h2>Aralin 4: Mga Ekspresyong Nagpapahayag ng Katotohanan at Panghihikayat</h2>
-        <p><strong>Mga Halimbawa ng Ekspresyon:</strong></p>
-        <ul>
-            <li><strong>Totoo na</strong>: Nagpapakita ng katotohanan.</li>
-            <li><strong>Talagang</strong>: Nagpapahayag ng katiyakan.</li>
-            <li><strong>Dapat</strong>: Ginagamit sa panghihikayat.</li>
-            <li><strong>Kailangan</strong>: Nagpapakita ng pangangailangan.</li>
-        </ul>
-        <p><strong>Halimbawa ng Pangungusap:</strong></p>
-        <ul class="example">
-            <li><strong>Totoo na</strong> ang balita tungkol sa bagong proyekto.</li>
-            <li><strong>Talagang</strong> magaling siya sa kanyang trabaho.</li>
-            <li><strong>Dapat</strong> tayong mag-recycle upang makatulong sa kalikasan.</li>
-            <li><strong>Kailangan</strong> nating mag-aral ng mabuti para sa ating kinabukasan.</li>
-        </ul>
-        <p><strong>Mga Ekspresyon ng Katotohanan:</strong></p>
-        <ul class="example">
-            <li><strong>Tunay</strong>: "Tunay na mahalaga ang edukasyon."</li>
-            <li><strong>Siyempre</strong>: "Siyempre, kailangan nating magtulungan."</li>
-            <li><strong>Talaga</strong>: "Talaga bang totoo ang balita?"</li>
-            <li><strong>Sa katunayan</strong>: "Sa katunayan, marami na ang nagtagumpay sa programang ito."</li>
-            <li><strong>Sadya</strong>: "Sadya bang mahirap ang pagsusulit?"</li>
-        </ul>
-        <p><strong>Mga Pahayag na Nagpapahayag ng Katotohanan:</strong></p>
-        <ul class="example">
-            <li><strong>Po at Opo</strong>: "Opo, totoo ang sinabi niya."</li>
-            <li><strong>Totoo</strong>: "Totoo ang lahat ng kanyang sinabi."</li>
-            <li><strong>Dapat</strong>: "Dapat nating sundin ang mga alituntunin."</li>
-            <li><strong>Kailangan</strong>: "Kailangan nating maghanda para sa darating na pagsusulit."</li>
-        </ul>
-        </div>
+    <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+    }
 
-        <div id="test1" class="lesson">
-            <button id="start-quiz">Chapter Test</button>
-        </div>
-        </div>
-        
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <div class="video-container">
+        <iframe width="656" height="369" src="https://www.youtube.com/embed/hJxyL82pmA0" title="Solving Quadratic Equations By Extracting the Square Root" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
-    <script>
+    `;
+});
+document.getElementById('lesson3').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+       <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+    }
 
-        function showLesson(lessonId) {
-                    var lessons = document.querySelectorAll('.lesson');
-                    lessons.forEach(function(lesson) {
-                        lesson.classList.remove('active');
-                    });
-                    document.getElementById(lessonId).classList.add('active');
-                }
-        
-                document.getElementById('start-quiz').addEventListener('click', () => {
-                window.location.href = 'quiz1.html'; // Redirect to the flashcard page
-            });
-        
-            function toggleMenu() {
-            const sidebar = document.querySelector('.sidebar');
-            const content = document.querySelector('.content');
-            const menuIcon = document.querySelector('.menu-icon');
-        
-            // Toggle the 'hidden' class on the sidebar
-            sidebar.classList.toggle('hidden');
-        
-            // Adjust the content margin based on sidebar visibility
-            if (sidebar.classList.contains('hidden')) {
-                content.classList.add('shifted');
-                menuIcon.classList.remove('active');
-                menuIcon.style.left = '10px'; // Adjust the top value when the sidebar is hidden
-            } else {
-                content.classList.remove('shifted');
-                menuIcon.classList.add('active');
-                menuIcon.style.left = '250px'; // Adjust the top value when the sidebar is visible
-            }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <div class="video-container">
+<iframe width="657" height="369" src="https://www.youtube.com/embed/zAjK0w_j-YU" title="Solving Quadratic Equations By Factoring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
+    `;
+});
+document.getElementById('lesson4').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+       <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <div class="video-container">
+        <iframe width="657" height="369" src="https://www.youtube.com/embed/3Un1b-TdXgE" title="Solving Quadratic Equations By Completing the Square" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    `;
+});
+document.getElementById('lesson5').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `   <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <div class="video-container">
+        <iframe width="657" height="369" src="https://www.youtube.com/embed/MVSnXhNiSC8" title="Solving Quadratic Equations by using the Quadratic Formula" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    `;
+});
+document.getElementById('lesson6').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `   <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <div class="video-container">
+        <iframe width="656" height="369" src="https://www.youtube.com/embed/-_z_FgmSClI" title="Discriminant Of Quadratic Equations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    `;
+});
+document.getElementById('lesson7').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `   <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <div class="video-container">
+        <iframe width="656" height="369" src="https://www.youtube.com/embed/d-23_zouY30" title="The Sum and Product of the Roots Of a Quadratic Equation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    `;
+});
+document.getElementById('test').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+    <style>
+        /* Make iframe responsive */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            height: 0;
+            overflow: hidden;
         }
 
-    </script>
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Optional: Style for small devices */
+        @media (max-width: 600px) {
+            .iframe-container {
+                padding-bottom: 75%; /* Adjust aspect ratio for smaller screens if needed */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="iframe-container">
+        <iframe src="quiz/mathtest.html" 
+                title="Embedded Content">
+            Your browser does not support iframes.
+        </iframe>
+    </div>
+
+</body>`;
+});
+</script>
+
 </body>
 </html>

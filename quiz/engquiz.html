@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="pqtest.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Quiz</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit</button>
+    </div>
+    <div id="results-container" style="display: none;">
+        <h1>Results</h1>
+        <div id="results"></div>
+        <button id="try-again">Try Again</button>
+    </div>
+    <script>
+        const quizData = [
+        {
+        question: "Why did he send her a wreath?",
+        a: "To honor her",
+        b: "To show his love for her",
+        c: "Hoping that she would breathe on it and send it back to him so that he may smell her scent",
+        d: "To show his wealth",
+        correct: "c"
+    },
+    {
+        question: "What did she do to the wreath he gave?",
+        a: "She wore it",
+        b: "She threw it away",
+        c: "She only breathed on the wreath and then sent it back to him",
+        d: "She gave it to someone else",
+        correct: "c"
+    },
+    {
+        question: "How did the speaker take it? What does it say about him?",
+        a: "He was angry that she returned the wreath",
+        b: "He welcomed the wreath back as Celia’s breath made it smell like her",
+        c: "He was indifferent to the wreath",
+        d: "He felt insulted by her actions",
+        correct: "b"
+    },
+    {
+        question: "To which two tangible things or actions was love compared?",
+        a: "Writing letters and singing songs",
+        b: "Drinking wine and sending and receiving a rosy wreath",
+        c: "Dancing and walking together",
+        d: "Traveling and exchanging gifts",
+        correct: "b"
+    },
+    {
+        question: "What does the poet ask of Celia?",
+        a: "To write him a letter",
+        b: "To drink to him with her eyes",
+        c: "To give him a kiss",
+        d: "To marry him",
+        correct: "b"
+    }
+];
+
+const blindQuiz = [
+    {
+        question: "What is the poem about?",
+        a: "Milton's love for nature",
+        b: "Milton's loss of eyesight and his questioning of his worth",
+        c: "Milton's experiences during war",
+        d: "Milton's admiration of God",
+        correct: "b"
+    },
+    {
+        question: "What is bothering the speaker in the poem?",
+        a: "His inability to see his family",
+        b: "His inability to travel",
+        c: "His inability to use his talent due to blindness",
+        d: "His inability to read books",
+        correct: "c"
+    },
+    {
+        question: "What does the speaker ask God? Was it answered? By whom?",
+        a: "He asks if God will give him his sight back, and it was answered by his friends",
+        b: "He asks if God still expects him to work despite his blindness, and the answer comes from his inner patience",
+        c: "He asks if he should retire, and it was answered by his colleagues",
+        d: "He asks if God will help him find a new talent, and it was answered by his family",
+        correct: "b"
+    },
+    {
+        question: "What did Patience say?",
+        a: "God does not need man’s work or gifts but values those who accept their burdens with grace",
+        b: "God expects people to work harder despite their burdens",
+        c: "God only rewards those who do physical labor",
+        d: "God will help those who help themselves",
+        correct: "a"
+    },
+    {
+        question: "What 'change' happened to the speaker? Did his values change, too?",
+        a: "The speaker becomes more frustrated and bitter",
+        b: "The speaker gains acceptance of his blindness and realizes that patient endurance is a form of service",
+        c: "The speaker gives up on his work completely",
+        d: "The speaker decides to leave his faith",
+        correct: "b"
+    }
+];
+
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submit');
+        const resultsContainer = document.getElementById('results');
+        const resultsPage = document.getElementById('results-container');
+        const quizPage = document.getElementById('quiz-container');
+        const tryAgainButton = document.getElementById('try-again');
+
+        let currentQuestionIndex = 0;
+        let numCorrect = 0;
+        const incorrectAnswers = [];
+
+        function buildQuiz() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const answers = [];
+            for (letter in currentQuestion) {
+                if (letter !== 'question' && letter !== 'correct') {
+                    answers.push(
+                        `<label>
+                            <input type="radio" name="question" value="${letter}">
+                            ${letter} :
+                            ${currentQuestion[letter]}
+                        </label>`
+                    );
+                }
+            }
+            quizContainer.innerHTML = `
+                <div class="question">${currentQuestion.question}</div>
+                <div class="answers">${answers.join('')}</div>
+            `;
+        }
+
+        function showResults() {
+            const answerContainer = quizContainer.querySelector('.answers');
+            const selector = `input[name=question]:checked`;
+            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+            if (!userAnswer) {
+                alert("Please select an answer before proceeding.");
+                return;
+            }
+
+            if (userAnswer === quizData[currentQuestionIndex].correct) {
+                numCorrect++;
+            } else {
+                incorrectAnswers.push(`Question ${currentQuestionIndex + 1}: ${quizData[currentQuestionIndex].question}`);
+            }
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < quizData.length) {
+                buildQuiz();
+            } else {
+                quizPage.style.display = 'none';
+                resultsPage.style.display = 'block';
+                resultsContainer.innerHTML = `Score: ${numCorrect} out of ${quizData.length}<br><br>Incorrect Answers:<br>${incorrectAnswers.join('<br>')}`;
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            numCorrect = 0;
+            incorrectAnswers.length = 0;
+            quizPage.style.display = 'block';
+            resultsPage.style.display = 'none';
+            buildQuiz();
+        }
+
+        buildQuiz();
+
+        submitButton.addEventListener('click', showResults);
+        tryAgainButton.addEventListener('click', restartQuiz);
+    </script>
+</body>
+</html>
