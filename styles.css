@@ -188,6 +188,7 @@ nav a:hover {
 
 
 .birthday {
+    margin-top: 25%;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -201,12 +202,13 @@ nav a:hover {
 
 .container {
     display: flex;
+    margin-bottom: 20%;
 }
 
-.section { 
-    background-color: #ddea2a;
+.section {
+    background-color: #FFD3B6;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;             /* Adjusted to fit better on small screens */
+        /* Adjusted to fit better on small screens */
     margin: 0 auto; 
     display: flex;
     flex-direction: column;
@@ -223,17 +225,16 @@ nav a:hover {
 .side {
     display: block;         
     justify-content: space-around;
-    width: 20%;  
 }
 
 .todo {
     background-color: #c7bba8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 50%;
+    height: 100px;
     overflow-y: scroll;     
     margin-bottom: 10px;
-    border-radius: 5%;
-    top: 0;            
+    top: 0;    
+    padding: 10px;        
 }
 
 .todo::-webkit-scrollbar{
@@ -246,7 +247,7 @@ nav a:hover {
 }
 
 .news {
-    background-color: #FFF1DC;
+    background-color: #ecdbc3;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 3%;
     width: 90%;           

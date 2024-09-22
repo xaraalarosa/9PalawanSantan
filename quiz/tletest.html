@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        #quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .answers {
+            margin-bottom: 20px;
+        }
+        .answers label {
+            display: block;
+        }
+        #submit {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #results-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quiz-container">
+        <h1>Entrepreneurship Practice Test</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit</button>
+    </div>
+
+    <div id="results-container">
+        <h2>Results</h2>
+        <p id="results"></p>
+        <button id="try-again" style="display:none;">Try Again</button>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "What do PECs refer to?",
+                a: "Personal Enjoyment Characteristics",
+                b: "Personal Entrepreneurial Competencies",
+                c: "Professional Executive Committees",
+                correct: "b"
+            },
+            {
+                question: "Which of the following is NOT part of the Achievement Cluster?",
+                a: "Opportunity seeking",
+                b: "Persistence",
+                c: "Self-confidence",
+                correct: "c"
+            },
+            {
+                question: "Which cluster includes setting goals and systematic planning?",
+                a: "Power Cluster",
+                b: "Planning Cluster",
+                c: "Achievement Cluster",
+                correct: "b"
+            },
+            {
+                question: "The personal slogan of a successful entrepreneur is ______.",
+                a: "I can",
+                b: "I may",
+                c: "I might",
+                correct: "a"
+            },
+            {
+                question: "Which of the following is a primary source of business ideas?",
+                a: "Library",
+                b: "Interviewing people",
+                c: "Government agencies",
+                correct: "b"
+            },
+            {
+                question: "What does SWOT stand for?",
+                a: "Strength, Weakness, Opportunities, Threats",
+                b: "Science, Work, Operations, Technology",
+                c: "Systematic, Work, Organization, Testing",
+                correct: "a"
+            },
+            {
+                question: "Which of the following is NOT a primary cooking equipment?",
+                a: "Oven",
+                b: "Refrigerator",
+                c: "Steam kettle",
+                correct: "b"
+            },
+            {
+                question: "FATTOM describes the conditions needed for bacterial growth. What does the 'M' stand for?",
+                a: "Moisture",
+                b: "Material",
+                c: "Mass",
+                correct: "a"
+            },
+            {
+                question: "What is the purpose of auxiliary kitchen equipment?",
+                a: "Mainly for cooking",
+                b: "Supports and improves cooking efficiency",
+                c: "Stores food",
+                correct: "b"
+            },
+            {
+                question: "What is the purpose of segregation in maintaining kitchen sanitation?",
+                a: "To separate biodegradable from non-biodegradable",
+                b: "To keep equipment separate",
+                c: "To organize kitchen tools",
+                correct: "a"
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submit');
+        const resultsContainer = document.getElementById('results');
+        const tryAgainButton = document.getElementById('try-again');
+
+        let currentQuestionIndex = 0;
+        let numCorrect = 0;
+
+        function buildQuiz() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const answers = [];
+            for (letter in currentQuestion) {
+                if (letter !== 'question' && letter !== 'correct') {
+                    answers.push(
+                        `<label>
+                            <input type="radio" name="question" value="${letter}">
+                            ${letter} :
+                            ${currentQuestion[letter]}
+                        </label>`
+                    );
+                }
+            }
+            quizContainer.innerHTML = `
+                <div class="question">${currentQuestion.question}</div>
+                <div class="answers">${answers.join('')}</div>
+            `;
+        }
+
+        function showResults() {
+            const answerContainer = quizContainer.querySelector('.answers');
+            const selector = `input[name=question]:checked`;
+            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+            if (!userAnswer) {
+                alert("Please select an answer before proceeding.");
+                return;
+            }
+
+            if (userAnswer === quizData[currentQuestionIndex].correct) {
+                numCorrect++;
+            }
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < quizData.length) {
+                buildQuiz();
+            } else {
+                quizContainer.innerHTML = '';
+                resultsContainer.innerHTML = `You got ${numCorrect} out of ${quizData.length} correct.`;
+                tryAgainButton.style.display = 'block';
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            numCorrect = 0;
+            resultsContainer.innerHTML = '';
+            tryAgainButton.style.display = 'none';
+            buildQuiz();
+        }
+
+        buildQuiz();
+
+        submitButton.addEventListener('click', showResults);
+        tryAgainButton.addEventListener('click', restartQuiz);
+    </script>
+
+</body>
+</html>
