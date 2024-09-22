@@ -25,8 +25,7 @@
     <div id="lesson1">Lesson 1</div>
     <div id="lesson2">Lesson 2</div>
     <div id="lesson3">Lesson 3</div>
-    <div id="lesson4">Lesson 4</div>
-    <div id="lesson5">Lesson 5</div>
+    <div id="test">Practice Test</div>
     <!-- Add more lessons as needed -->
 </div>
 
@@ -213,19 +212,259 @@ document.getElementById('lesson2').addEventListener('click', function() {
 document.getElementById('lesson3').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = 
     
-    '<h2>Lesson 3</h2><p>Content for Lesson 3.</p>';
+    `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetics Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .table th, .table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Genetics</h1>
+    <h2>True or False</h2>
+    <ul>
+        <li>T – Genetics studies how genes bring about the characteristics or traits in living things.</li>
+        <li>T – DNA is found in all our cells.</li>
+        <li>T – DNA in skin cells is different from DNA in your liver.</li>
+        <li>T – Genes are made out of DNA.</li>
+        <li>F – Genes code directly for our traits (Genes instruct proteins that interact with the environment and other genes to shape traits, rather than coding for them directly).</li>
+        <li>T – Your phenotype can change throughout your life.</li>
+        <li>F – Brothers and sisters have IDENTICAL DNA (siblings inherit different combinations of genes, making each one unique).</li>
+        <li>T – Genes pass from 1 generation to the next via chromosomes.</li>
+        <li>T – You have the same genes as your neighbors.</li>
+        <li>T – Genetics is a study of biologically inherited traits determined by elements of heredity transmitted from parents to offspring.</li>
+        <li>T – Inherited elements are Genes.</li>
+        <li>T – Allele is a variant form of a gene.</li>
+    </ul>
+
+    <h2>Definitions</h2>
+    <h3>Genes</h3>
+    <ul>
+        <li>A gene is a piece of DNA that gives instructions for making proteins, which help determine traits in an organism.</li>
+        <li>Also known as Inherited Elements, which can be passed on to the next generation via chromosomes.</li>
+        <li>Is a structure of a chromosome.</li>
+    </ul>
+
+    <h3>Allele</h3>
+    <ul>
+        <li>Pairs of genes that occupy a specific location on a particular chromosome.</li>
+        <li>Contrasting expressions or alternative forms of a trait.</li>
+    </ul>
+
+    <h3>Genetics</h3>
+    <ul>
+        <li>Branch of Biology that studies hereditary information.</li>
+        <li>Studies how genes bring about the characteristics/traits in living things.</li>
+    </ul>
+
+    <h3>Hereditary</h3>
+    <ul>
+        <li>Transmission of characteristics from parents to offspring.</li>
+        <li>All organisms must carry, store, use, and produce more copies of genetic info that can be passed to the next generations. This info allows organisms to grow, develop, reproduce, and survive in their environment.</li>
+    </ul>
+
+    <h2>Gregor Mendel (Father of Genetics)</h2>
+    <p>An Augustinian Monk who performed experiments on the characteristics of a garden pea.</p>
+    <p><strong>Why garden pea?</strong></p>
+    <ul>
+        <li>Presence of Observable traits with contrasting forms.</li>
+        <li>Production of many offspring in one cross.</li>
+        <li>Short life cycle or generation time (fast growth).</li>
+        <li>Ease of Manipulating pollination.</li>
+    </ul>
+
+    <h3>Traits Observed</h3>
+    <ol>
+        <li>Plant height</li>
+        <li>Pod shape</li>
+        <li>Pod color</li>
+        <li>Seed shape</li>
+        <li>Seed color</li>
+        <li>Flower color</li>
+        <li>Flower location</li>
+    </ol>
+
+    <h3>Major Branches of Genetics</h3>
+    <ul>
+        <li>Mendelian or Classical Genetics: Follows the Law of Inheritance.</li>
+        <li>Molecular Genetics: Bio-chemical use in nature.</li>
+        <li>Population Genetics: Gene frequency.</li>
+    </ul>
+
+    <h3>Terms and Definitions</h3>
+    <ul>
+        <li><strong>Variations:</strong> Refers to the difference among individuals that belong to the same species.</li>
+        <li><strong>Dominant Gene:</strong> Masks other genes, preventing them from being shown. Represented by uppercase letters.</li>
+        <li><strong>Recessive Gene:</strong> Masked by the dominant gene. Represented by lowercase letters.</li>
+        <li><strong>Homozygous:</strong> Same code.</li>
+        <li><strong>Heterozygous:</strong> Different code. To assign a code, choose the first letter of the phenotype, e.g., TALL, Gtype: T. Tip: When there’s dominant, it’s dominant!</li>
+        <li><strong>Monohybrid:</strong> Crossing only one trait, e.g., Tall x Short.</li>
+        <li><strong>Dihybrid:</strong> Crossing two or more traits, e.g., Tall x Short x Curly x Straight.</li>
+    </ul>
+
+    <h3>Non-Mendelian Genetics</h3>
+    <p>Some traits don’t follow the dominant/recessive rules that Mendel applied. Traits can be controlled by more than one gene. Some alleles are neither dominant nor recessive.</p>
+
+    <h4>Incomplete Dominance</h4>
+    <p>One allele is not completely dominant over another. The heterozygous phenotype is a blending of two homozygous phenotypes. Example: rr = red x ww = white (parents) results in Rw = pink (offspring).</p>
+
+    <h4>Codominance</h4>
+    <p>Two alleles are both expressed as a dominant phenotype, meaning both traits of the parents are seen in the offspring (no blending). Example: coat color in cows (RR: Red x WW: White results in RW: Roan).</p>
+
+    <h4>Multiple-Allele Series</h4>
+    <p>More than two choices of alleles are present for a trait. Example: ABO blood type has three alleles.</p>
+
+    <h3>Determining Blood Type</h3>
+    <p>Protein molecules found on the surface of RBCs and in the blood plasma determine the blood type of an individual. Antigens are located on the surface of the red blood cells, while antibodies are in the blood plasma.</p>
+
+    <h4>Different Blood Groups</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Blood Group</th>
+                <th>Antigens</th>
+                <th>Antibodies</th>
+                <th>Can give Blood to</th>
+                <th>Can receive blood from</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>AB (universal receiver)</td>
+                <td>A and B</td>
+                <td>None</td>
+                <td>AB</td>
+                <td>AB, A, B, O</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>A</td>
+                <td>B</td>
+                <td>A and AB</td>
+                <td>A and O</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>B</td>
+                <td>A</td>
+                <td>B and AB</td>
+                <td>B and O</td>
+            </tr>
+            <tr>
+                <td>O (universal donor)</td>
+                <td>None</td>
+                <td>A and B</td>
+                <td>AB, A, B, O</td>
+                <td>O</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Rh Factor</h3>
+    <p>Refers to another antigen on red blood cells. The dominant trait is to have the antigen (Rh+), while the recessive trait is not to have it (Rh-). A person with Rh- blood will produce antibodies to Rh+ blood, which can be a problem in pregnancy.</p>
+
+    <h2>Sex-Linked Inheritance Review</h2>
+    <ul>
+        <li>Males have an X and a Y chromosome; females have two X chromosomes.</li>
+        <li>These chromosomes determine sex, so genes located on these chromosomes are known as sex-linked genes.</li>
+        <li>The X chromosome is much larger than the Y, so it carries more genes than the Y chromosome.</li>
+        <li>Disorders that are sex-linked are much more common in males, because they would only need one recessive allele to have the trait; rather than the two recessive alleles the females need.</li>
+    </ul>
+
+    <h3>Disorders</h3>
+    <h4>Hemophilia</h4>
+    <ul>
+        <li>Recessive trait (hh).</li>
+        <li>Disorder where individuals are missing the normal blood clotting protein.</li>
+        <li>Uncontrolled bleeds from minor cuts or bruises.</li>
+        <li>Female genotype: XhXh</li>
+        <li>Male genotype: XhY</li>
+    </ul>
+
+    <h4>Colorblindness</h4>
+    <ul>
+        <li>Recessive (cc).</li>
+        <li>Inability to see certain colors.</li>
+        <li>Female genotype: XcXc</li>
+        <li>Male genotype: XcY</li>
+    </ul>
+
+    <h4>Duchenne Muscular Dystrophy</h4>
+    <ul>
+        <li>Recessive.</li>
+        <li>Progressive weakening and loss of skeletal muscle.</li>
+        <li>Defective version of gene that codes for muscle protein.</li>
+        <li>Female genotype: XdXd</li>
+        <li>Male genotype: XdY</li>
+    </ul>
+</body>
+</html>
+`;
 });
-document.getElementById('lesson4').addEventListener('click', function() {
-    document.getElementById('mainDisplay').innerHTML = 
+document.getElementById('test').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
     
-    '<h2>Lesson 4</h2><p>Content for Lesson 4.</p>';
-});
-document.getElementById('lesson5').addEventListener('click', function() {
-    document.getElementById('mainDisplay').innerHTML = 
+    <style>
+        /* Make iframe responsive */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Optional: Style for small devices */
+        @media (max-width: 600px) {
+            .iframe-container {
+                padding-bottom: 75%; /* Adjust aspect ratio for smaller screens if needed */
+            }
+        }
+    </style>
+</head>
+<body>
     
-    '<h2>Lesson 5</h2><p>Content for Lesson 5.</p>';
+    <div class="iframe-container">
+        <iframe src="quiz/scitest.html" 
+                title="Embedded Content">
+            Your browser does not support iframes.
+        </iframe>
+    </div>
+
+</body>`;
 });
-// Add more event listeners as needed
 </script>
 
 </body>

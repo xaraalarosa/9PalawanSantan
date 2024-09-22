@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="pqtest.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Quiz</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit</button>
+    </div>
+    <div id="results-container" style="display: none;">
+        <h1>Results</h1>
+        <div id="results"></div>
+        <button id="try-again">Try Again</button>
+    </div>
+    <script>
+        const quizData = [
+        {
+        question: "Ano ang pangunahing layunin ng Ekonomiks?",
+        a: "Pag-aaral ng kasaysayan",
+        b: "Pag-aaral ng limitadong yaman",
+        c: "Pag-aaral ng kalikasan",
+        d: "Pag-aaral ng matematika",
+        correct: "b"
+    },
+    {
+        question: "Ano ang trade-off?",
+        a: "Pagkuha ng lahat ng opsyon",
+        b: "Pagsasakripisyo ng isang bagay para sa iba",
+        c: "Paggamit ng lahat ng yaman",
+        d: "Pag-aaral ng alternatibong solusyon",
+        correct: "b"
+    },
+    {
+        question: "Sino ang tinuturing na 'Ama ng Klasikong Ekonomiks'?",
+        a: "John Maynard Keynes",
+        b: "Karl Marx",
+        c: "Adam Smith",
+        d: "David Ricardo",
+        correct: "c"
+    },
+    {
+        question: "Anong sistemang pang-ekonomiya ang nakatuon sa pamahalaan na may ganap na kontrol sa produksyon?",
+        a: "Kapitalismo",
+        b: "Socialismo",
+        c: "Piydalismo",
+        d: "Komunismo",
+        correct: "d"
+    },
+    {
+        question: "Sa alokasyon, ano ang pangunahing layunin?",
+        a: "Magtayo ng mga negosyo",
+        b: "Magbigay ng sapat na produkto at serbisyo",
+        c: "Ipinapakita ang yaman ng bansa",
+        d: "Tamang distribusyon ng yaman",
+        correct: "d"
+    },
+    {
+        question: "Ano ang tawag sa halaga ng isinasakripisyong opsyon?",
+        a: "Trade-off",
+        b: "Opportunity Cost",
+        c: "Pagsusuri",
+        d: "Desisyon",
+        correct: "b"
+    },
+    {
+        question: "Alin sa mga sumusunod ang hindi bahagi ng salik ng produksyon?",
+        a: "Likas na yaman",
+        b: "Renta/Upa",
+        c: "Sahod",
+        d: "Labanan",
+        correct: "d"
+    },
+    {
+        question: "Ano ang pangunahing papel ng entreprenyur sa produksyon?",
+        a: "Magbigay ng trabaho",
+        b: "Lumikha ng mga produkto",
+        c: "Magsagawa ng mga desisyon",
+        d: "Mag-aral ng merkado",
+        correct: "c"
+    },
+    {
+        question: "Alin sa mga sumusunod ang hindi positibong katangian ng sistemang tradisyonal?",
+        a: "Tiyak na tungkulin",
+        b: "Walang pag-unlad",
+        c: "Mabagal na pagbabago",
+        d: "Mataas na inobasyon",
+        correct: "d"
+    },
+    {
+        question: "Ano ang pangunahing layunin ng merkatilismo?",
+        a: "Pagtaas ng kalakalan",
+        b: "Magtamo ng kayamanan sa pamamagitan ng kontrol sa kalakalan",
+        c: "Bawasan ang buwis",
+        d: "Pagsuporta sa mga lokal na produkto",
+        correct: "b"
+    }
+
+];
+
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submit');
+        const resultsContainer = document.getElementById('results');
+        const resultsPage = document.getElementById('results-container');
+        const quizPage = document.getElementById('quiz-container');
+        const tryAgainButton = document.getElementById('try-again');
+
+        let currentQuestionIndex = 0;
+        let numCorrect = 0;
+        const incorrectcorrects = [];
+
+        function buildQuiz() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const corrects = [];
+            for (letter in currentQuestion) {
+                if (letter !== 'question' && letter !== 'correct') {
+                    corrects.push(
+                        `<label>
+                            <input type="radio" name="question" value="${letter}">
+                            ${letter} :
+                            ${currentQuestion[letter]}
+                        </label>`
+                    );
+                }
+            }
+            quizContainer.innerHTML = `
+                <div class="question">${currentQuestion.question}</div>
+                <div class="corrects">${corrects.join('')}</div>
+            `;
+        }
+
+        function showResults() {
+            const correctContainer = quizContainer.querySelector('.corrects');
+            const selector = `input[name=question]:checked`;
+            const usercorrect = (correctContainer.querySelector(selector) || {}).value;
+
+            if (!usercorrect) {
+                alert("Please select an correct before proceeding.");
+                return;
+            }
+
+            if (usercorrect === quizData[currentQuestionIndex].correct) {
+                numCorrect++;
+            } else {
+                incorrectcorrects.push(`Question ${currentQuestionIndex + 1}: ${quizData[currentQuestionIndex].question}`);
+            }
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < quizData.length) {
+                buildQuiz();
+            } else {
+                quizPage.style.display = 'none';
+                resultsPage.style.display = 'block';
+                resultsContainer.innerHTML = `Score: ${numCorrect} out of ${quizData.length}<br><br>Incorrect corrects:<br>${incorrectcorrects.join('<br>')}`;
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            numCorrect = 0;
+            incorrectcorrects.length = 0;
+            quizPage.style.display = 'block';
+            resultsPage.style.display = 'none';
+            buildQuiz();
+        }
+
+        buildQuiz();
+
+        submitButton.addEventListener('click', showResults);
+        tryAgainButton.addEventListener('click', restartQuiz);
+    </script>
+</body>
+</html>

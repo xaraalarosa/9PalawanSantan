@@ -22,11 +22,10 @@
     </header>
 
 <div class="navbar">
-    <div id="lesson1">Lesson 1</div>
-    <div id="lesson2">Lesson 2</div>
-    <div id="lesson3">Lesson 3</div>
-    <div id="lesson4">Lesson 4</div>
-    <div id="lesson5">Lesson 5</div>
+    <div id="music">Music</div>
+    <div id="arts">Arts</div>
+    <div id="pe">PE</div>
+    <div id="health">Health</div>
     <!-- Add more lessons as needed -->
 </div>
 
@@ -38,32 +37,385 @@
 
 <script>
 // JavaScript to handle lesson changes
-document.getElementById('lesson1').addEventListener('click', function() {
-    document.getElementById('mainDisplay').innerHTML =
-    
-    '<h2>Lesson 1</h2><p>Content for Lesson 1.</p>';
+document.getElementById('music').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML =`
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Lessons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #2980b9;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .sub-list {
+            list-style-type: circle;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Lesson 1: Music of the Medieval Period</h1>
+
+<h2>Medieval</h2>
+<ul>
+    <li>Lasted from 5th to 15th century.</li>
+    <li>Also known as the “Middle Ages.”</li>
+    <li>Latin text was used during this period.</li>
+    <li>There was a rise of monasteries that preserved the learning of the ancient world.</li>
+    <li>It is used for rituals and music during the earlier times.</li>
+</ul>
+
+<h2>Chant</h2>
+<ul>
+    <li>A monophonic melody that uses sacred text.</li>
+    <ul class="sub-list">
+        <li>Syllabic</li>
+        <li>Neumatic</li>
+        <li>Melismatic</li>
+    </ul>
+</ul>
+
+<h2>Gregorian Chant</h2>
+<ul>
+    <li>Also known as plainchant or plainsong.</li>
+    <li>It is monophonic in nature.</li>
+    <li>It is free flowing and uses Latin text.</li>
+    <li>The official music of the Roman Catholic Church.</li>
+    <li>Free meter, modal, Latin liturgy, use of neumes notation.</li>
+</ul>
+
+<h2>Elements of Music:</h2>
+<ul>
+    <li><strong>Rhythm:</strong>
+        <ul class="sub-list">
+            <li>Plainsong rhythm.</li>
+            <li>Triple meter for sacred music and free meter for secular.</li>
+            <li>Development of system of notation.</li>
+        </ul>
+    </li>
+    <li><strong>Melody:</strong>
+        <ul class="sub-list">
+            <li>Use recitative tone.</li>
+            <li>Vocal style.</li>
+            <li>Music was primarily vocal. Instruments were used to accompany vocal lines or to improvise instrumental dances.</li>
+        </ul>
+    </li>
+    <li><strong>Harmony:</strong>
+        <ul class="sub-list">
+            <li>Use of organum.</li>
+            <li>Modal.</li>
+        </ul>
+    </li>
+    <li><strong>Texture:</strong>
+        <ul class="sub-list">
+            <li>Monophonic in the early times.</li>
+            <li>Polyphonic texture began to be used in the mid to late Medieval period.</li>
+        </ul>
+    </li>
+    <li><strong>Tone Color:</strong> Instruments were occasionally used.</li>
+</ul>
+
+<h2>Types of Minstrels:</h2>
+<ul>
+    <li>Jongleurs - entertainers (musicians, jugglers, acrobats, and dancers).</li>
+    <li>Troubadors - poet musicians of a superior class.</li>
+    <li>Trouveres.</li>
+    <li>Minnesingers - the German equivalent of the Troubadors.</li>
+    <li>Minstrels - lowly musicians who wandered among the courts and towns.</li>
+</ul>
+
+<h2>Types of Troubadour Music:</h2>
+<ul>
+    <li>Canso - a simple love song, admiring the beauty of a woman.</li>
+    <li>Alba - a morning song for lovers.</li>
+    <li>Canso de crozadas - political content about the crusades.</li>
+    <li>Tenso - sung as a two-voice debate generally over political or ethical matters.</li>
+</ul>
+
+<h1>Lesson 2: Music of the Renaissance Period</h1>
+
+<h2>Renaissance</h2>
+<ul>
+    <li>“Rebirth.”</li>
+    <li>An era of exploration, where Amerigo Vespucci and Ponce de León provided a new picture of the earth.</li>
+    <li>The birth of famous explorers: Christopher Columbus and Ferdinand Magellan.</li>
+</ul>
+
+<h2>Leonardo da Vinci</h2>
+<ul>
+    <li>One of the most famous persons from the Renaissance.</li>
+    <li>His greatest discovery during this period was music printing, published by Ottaviano Petrucci of Venice.</li>
+</ul>
+
+<h2>Characteristics of Music during the Renaissance:</h2>
+<p>Music during this period may be described as having clarity and balance. Vocal polyphony reached its highest peak, referred to as the Golden Age of Polyphony.</p>
+
+<h2>Music Styles that Rose During the Period:</h2>
+<ol>
+    <li>A cappella singing - a chorus without musical accompaniment was the ideal medium.</li>
+    <li>Modality - a type of church mode used in both secular and sacred music.</li>
+    <li>Cantus firmus - a pre-existing melodic line that runs through a musical piece, originally a Gregorian chant sung in long notes by a tenor.</li>
+    <li>Word painting - writing music to reflect the literal meaning of a song.</li>
+    <li>Motet - a piece of plainsong with two or more additional parts with different words written in Latin and French.</li>
+</ol>
+
+<h2>The Renaissance Mass</h2>
+<p>A polyphonic choral composition made up of five sections: Kyrie, Gloria, Credo, Sanctus, and Agnus Dei.</p>
+
+<h2>Secular Chanson</h2>
+<p>Polyphonic songs to enhance popular or courtly poems, typically featuring four voices or three voices with one instrument playing a lower voice.</p>
+
+<h2>Madrigal</h2>
+<p>A form of vocal chamber music based on a poetic form of two or three stanzas with three lines each having 7 or 11 syllables per line.</p>
+
+<h3>Italian Madrigals</h3>
+<ul>
+    <li>Considered the most important secular genre of the 16th century.</li>
+    <li>The word Madrigal is thought to have derived from mandriali (a short pastoral poem) or from matricale (a rustic song), or perhaps madriale (a hymn to the Virgin Mary).</li>
+    <li>Form: single stanza with no refrains or repeated lines, through-composed with new music for each line of poetry.</li>
+    <li>Text: composers often used texts by major poets, with topics including love songs and pastoral scenes.</li>
+    <li>Music: a variety of techniques and textures, with all voices playing an equal role.</li>
+</ul>
+
+<h3>English Madrigals</h3>
+<ul>
+    <li>Started in the late 1500s, tending to be lighter in topic with simpler texts.</li>
+    <li>These simpler texts and humor led to the addition of nonsense words like ‘fa-la-la.’</li>
+    <li>The Roman school brought polyphonic composition to its highest peak, exemplified by composers like Giovanni Pierluigi da Palestrina and Thomas Morley.</li>
+</ul>
+
+<h2>Giovanni Pierluigi da Palestrina</h2>
+<ul>
+    <li>An Italian Renaissance composer of sacred music and a leading figure of the Roman School.</li>
+    <li>Known as the “Prince of Music” and the “Savior of Church Music.”</li>
+    <li>Wrote “Missa Papae Marcelli” to demonstrate the place of polyphony in the Catholic Liturgy.</li>
+    <li>Other notable works include “Missa Aeterna Christi munera” and “Lamentations for Holy Week.”</li>
+</ul>
+
+<h2>Thomas Morley</h2>
+<ul>
+    <li>Contributed significantly to the development of the English Madrigal.</li>
+    <li>Was a pupil of William Byrd and wrote for the Church of England.</li>
+    <li>Best known for his secular songs, including “First Book of Ayres” and “A Plaine and Easie Introduction to Practicall Musick.”</li>
+    <li>Edited “The Triumphes of Oriana,” a significant collection of English Madrigals.</li>
+    <li>Wrote solo songs like “It Was a Lover and His Lasse,” featured in Shakespeare’s “As You Like It.”</li>
+</ul>
+
+</body>
+</html>
+
+    `;
 });
-document.getElementById('lesson2').addEventListener('click', function() {
+document.getElementById('arts').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = 
     
     '<h2>Lesson 2</h2><p>Content for Lesson 2.</p>';
 });
-document.getElementById('lesson3').addEventListener('click', function() {
+document.getElementById('pe').addEventListener('click', function() {
     document.getElementById('mainDisplay').innerHTML = 
     
-    '<h2>Lesson 3</h2><p>Content for Lesson 3.</p>';
-});
-document.getElementById('lesson4').addEventListener('click', function() {
-    document.getElementById('mainDisplay').innerHTML = 
+    `<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2C3E50;
+        }
+        h2 {
+            color: #16A085;
+        }
+        ul {
+            list-style-type: none;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 70%;
+            transform: rotate(270deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>PE Lesson 1: Eating Habits</h1>
     
-    '<h2>Lesson 4</h2><p>Content for Lesson 4.</p>';
-});
-document.getElementById('lesson5').addEventListener('click', function() {
-    document.getElementById('mainDisplay').innerHTML = 
+    <h2>Health - Physical</h2>
+    <p>We are able to do tasks without fatigue through exercise and a balanced diet.<br>
+    <strong>Remember:</strong> Eating healthy food ensures a healthy life.</p>
+
+    <h2>HEALTH MYTHS</h2>
     
-    '<h2>Lesson 5</h2><p>Content for Lesson 5.</p>';
+    <ul>
+        <li><strong>Myth #1:</strong> Eggs are bad for our heart.</li>
+        <p>The cholesterol we eat does not have a huge impact on raising our blood cholesterol. Saturated and trans fats are the main reasons for heart diseases (e.g., mayonnaise, butter, red meat). Limit your cholesterol intake to 2 eggs over the course of a week.</p>
+
+        <li><strong>Myth #2:</strong> Carbohydrates make you fat.</li>
+        <p>Carbohydrates can raise your risk of developing health problems like heart disease and diabetes (e.g., rice, white bread, pasta, donuts). Avoiding grains, beans, fruits, and vegetables makes your body miss out on its main source of fuel, as well as nutrients and fibers.</p>
+
+        <li><strong>Myth #3:</strong> A raw food diet provides enzymes that are essential to healthy digestion.</li>
+        
+        <li><strong>Myth #4:</strong> Calories eaten at night are more fattening than those eaten early in the day.</li>
+        <p>What matters are the total calories consumed.</p>
+
+        <li><strong>Myth #5:</strong> The radiation from microwaves creates dangerous compounds in your food.</li>
+
+        <li><strong>Myth #6:</strong> Microwaves destroy nutrients.</li>
+        <p>It is the heating and length of time you are cooking that affects nutrient losses, not the cooking method.</p>
+
+        <li><strong>Myth #7:</strong> It is important to fast periodically to cleanse toxins from the body.</li>
+
+        <li><strong>Myth #8:</strong> High fructose corn syrup (HFCS) is worse than sugar.</li>
+        <p>Their composition is the same as table sugar.</p>
+    </ul>
+    
+    <h2>Food Pyramid</h2>
+    <p>A pyramid-shaped diagram representing the optimal number of servings to be eaten each day.</p>
+    <img src="resources/pyramid.jpg" alt="Food Pyramid">
+
+    Lesson 2: Lifestyle Diseases
+
+Lifestyle Diseases:
+
+Associated with the way a person or group of people lives.
+Includes heart diseases, stroke, obesity, diabetes, smoking, alcohol, and drug abuse.
+Regular physical activity helps prevent diseases. With a good diet and scheduled exercise routine, a person can live a healthy lifestyle.
+Obesity:
+
+A medical condition where excess body fat has accumulated, which may have a negative effect on our health.
+Most common problem among children and adolescents.
+Eating habits are not guarded.
+Naturally prevalent in children aged 5 to 10, with up to 5.8% being obese or overweight.
+In 2015, obesity was 30% among the fast-growing number of diseases affecting 3 to 10 adults.
+Poor Nutrition:
+
+A problem among the rich.
+Children from rich families gravitate towards fat-saturated foods that are easy to prepare rather than whole and fresh produce, including fruits, vegetables, and cereals.
+Diabetes:
+
+Affects the young generation.
+Happens when islet cells in the pancreas are damaged and do not produce enough insulin.
+Insulin helps our blood sugar level from getting too high or too low.
+Our bodies need fuel to give it energy, and we get this fuel from the foods we eat.
+Other Risks:
+
+Smoking, drinking alcohol, stress and anxiety, and poor lifestyle, which lead to heart diseases, high blood pressure, stroke, and cancer.
+    
+</body>`;
 });
-// Add more event listeners as needed
+document.getElementById('health').addEventListener('click', function() {
+    document.getElementById('mainDisplay').innerHTML = `
+    <h2>Lesson 1: Definition of Community and Community Health</h2>
+
+<h3>Definition of Community</h3>
+<p>A community is a social unit of any size that shares common values and has immediate genealogical ties, situated in a specific geographical area. Communities can include national, international, and virtual groups.</p>
+
+<h3>Community Health</h3>
+<p>A field of public health focused on studying and improving the health characteristics of communities.</p>
+
+<h4>Types of Health Care:</h4>
+<ol>
+  <li><strong>Primary Health Care:</strong> Interventions focused on individuals or families (e.g., hand washing, immunization).</li>
+  <li><strong>Secondary Health Care:</strong> Activities focusing on the environment (e.g., draining standing water, trimming bushes).</li>
+  <li><strong>Tertiary Health Care:</strong> Interventions in hospital settings (e.g., intravenous rehydration, surgery).</li>
+</ol>
+
+<h4>Success Factors:</h4>
+<p>Effective communication from health professionals to the public using various methods.</p>
+
+<h4>Characteristics of a Healthy Community:</h4>
+<ol>
+  <li>Consensus on a vision for a healthy community.</li>
+  <li>Strategic health plan in place.</li>
+  <li>Opportunities for lifelong learning and skill development.</li>
+  <li>High cooperation among member organizations.</li>
+  <li>Ability to meet basic needs.</li>
+  <li>Encouragement of leadership roles.</li>
+  <li>Protection of natural, financial, and social capital.</li>
+  <li>Welcoming of new members.</li>
+  <li>Supportive community relationships.</li>
+  <li>Commitment to environmental sustainability.</li>
+  <li>Strong cultural and spiritual life.</li>
+  <li>Freedom from hazards.</li>
+</ol>
+
+<hr>
+
+<h2>Lesson 2: Pollution</h2>
+
+<h3>Definition of Pollution</h3>
+<p>The introduction of contaminants into the environment, causing adverse changes.</p>
+
+<h4>Forms of Pollution:</h4>
+<ol>
+  <li><strong>Air Pollution:</strong> Release of harmful chemicals and particulates.</li>
+  <li><strong>Light Pollution:</strong> Issues like over-illumination and interference with astronomy.</li>
+  <li><strong>Littering:</strong> Illegal disposal of waste on public/private property.</li>
+  <li><strong>Noise Pollution:</strong> Harmful sounds from various sources affecting health.</li>
+  <li><strong>Soil Contamination:</strong> Chemicals released through spills or leaks.</li>
+  <li><strong>Radioactive Contamination:</strong> From nuclear activities.</li>
+  <li><strong>Thermal Pollution:</strong> Temperature changes in water bodies.</li>
+  <li><strong>Visual Pollution:</strong> Negative visual impacts from infrastructure and waste.</li>
+  <li><strong>Water Pollution:</strong> Contamination from industrial and human waste.</li>
+</ol>
+
+<h4>Causes of Water Pollution:</h4>
+<p>Food and human waste, industrial waste, pesticides, toxic chemicals, and plastic pollution.</p>
+
+<h4>Effects of Pollution on People:</h4>
+<p>Respiratory issues, cancer risks, and other health problems from pollutants like sulfur oxides, carbon monoxide, and nitrogen oxides.</p>
+
+<h4>Effects of Pollution on the Environment:</h4>
+<p>Biomagnification, ocean acidification, global warming, and habitat degradation.</p>
+
+<h4>Environmental Issues:</h4>
+<ol>
+  <li><strong>Improper Waste Disposal:</strong> Leads to various forms of pollution and health risks.</li>
+  <li><strong>Illegal Mining:</strong> Damages land and water, affecting biodiversity.</li>
+  <li><strong>Soil Erosion:</strong> Leads to pollution and sedimentation in water bodies.</li>
+  <li><strong>Cyanide Fishing:</strong> Harms marine ecosystems.</li>
+  <li><strong>Pesticide Drift:</strong> Affects health and the environment.</li>
+  <li><strong>Deforestation:</strong> Leads to habitat loss and climate issues.</li>
+  <li><strong>Oil Spills:</strong> Impact marine life and ecosystems.</li>
+  <li><strong>Coral Reef Degradation:</strong> Caused by pollution and destructive practices.</li>
+  <li><strong>Climate Change:</strong> Long-term changes affecting global weather patterns.</li>
+</ol>
+
+<hr>
+
+<h2>Lesson 3: Environmental Health</h2>
+
+<h3>Overview</h3>
+<p>Environmental health involves preventing diseases related to interactions between people and their environment. It plays a crucial role in enhancing quality of life.</p>
+
+<h4>Key Factors in Environmental Health:</h4>
+<ol>
+  <li><strong>Outdoor Air Quality:</strong> Poor air quality linked to serious health issues.</li>
+  <li><strong>Water Quality:</strong> Importance of protecting drinking and recreational water sources.</li>
+  <li><strong>Toxic Substances:</strong> Ongoing research into health effects and exposure reduction.</li>
+  <li><strong>Homes and Communities:</strong> Maintaining healthy living environments is essential.</li>
+  <li><strong>Infrastructure and Surveillance:</strong> Collaboration among health departments for monitoring hazards.</li>
+  <li><strong>Global Environmental Health:</strong> Improving water quality globally to reduce diseases.</li>
+</ol>
+
+    `;
+});
+
 </script>
 
 </body>

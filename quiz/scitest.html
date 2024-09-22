@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetics Quiz</title>
+    <link rel="stylesheet" href="pqtest.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Genetics True or False Quiz</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit</button>
+    </div>
+    <div id="results-container" style="display: none;">
+        <h1>Results</h1>
+        <div id="results"></div>
+        <button id="try-again">Try Again</button>
+    </div>
+    <script>
+        const quizData = [
+            {
+                question: "Genes are made out of DNA.",
+                a: "True",
+                b: "False",
+                correct: "a"
+            },
+            {
+                question: "DNA is found in all our cells.",
+                a: "True",
+                b: "False",
+                correct: "a"
+            },
+            {
+                question: "Your phenotype can change throughout your life.",
+                a: "True",
+                b: "False",
+                correct: "a"
+            },
+            {
+                question: "Brother and sisters have identical DNA.",
+                a: "True",
+                b: "False",
+                correct: "b"
+            },
+            {
+                question: "Genes pass from one generation to the next via chromosomes.",
+                a: "True",
+                b: "False",
+                correct: "a"
+            },
+            {
+                question: "Your genes are exactly the same as your neighbors.",
+                a: "True",
+                b: "False",
+                correct: "b"
+            },
+            {
+                question: "Genetics is a study of biologically inherited traits.",
+                a: "True",
+                b: "False",
+                correct: "a"
+            },
+            {
+                question: "Alleles are variant forms of a gene.",
+                a: "True",
+                b: "False",
+                correct: "a"
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submit');
+        const resultsContainer = document.getElementById('results');
+        const resultsPage = document.getElementById('results-container');
+        const quizPage = document.getElementById('quiz-container');
+        const tryAgainButton = document.getElementById('try-again');
+
+        let currentQuestionIndex = 0;
+        let numCorrect = 0;
+        const incorrectQuestions = [];
+
+        function buildQuiz() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            quizContainer.innerHTML = `
+                <div class="question">${currentQuestion.question}</div>
+                <label>
+                    <input type="radio" name="question" value="a">
+                    ${currentQuestion.a}
+                </label>
+                <label>
+                    <input type="radio" name="question" value="b">
+                    ${currentQuestion.b}
+                </label>
+            `;
+        }
+
+        function showResults() {
+            const selector = `input[name=question]:checked`;
+            const userAnswer = (quizContainer.querySelector(selector) || {}).value;
+
+            if (!userAnswer) {
+                alert("Please select an answer before proceeding.");
+                return;
+            }
+
+            if (userAnswer === quizData[currentQuestionIndex].correct) {
+                numCorrect++;
+            } else {
+                incorrectQuestions.push(`Question ${currentQuestionIndex + 1}: ${quizData[currentQuestionIndex].question}`);
+            }
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < quizData.length) {
+                buildQuiz();
+            } else {
+                quizPage.style.display = 'none';
+                resultsPage.style.display = 'block';
+                resultsContainer.innerHTML = `Score: ${numCorrect} out of ${quizData.length}<br><br>Incorrect questions:<br>${incorrectQuestions.join('<br>')}`;
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            numCorrect = 0;
+            incorrectQuestions.length = 0;
+            quizPage.style.display = 'block';
+            resultsPage.style.display = 'none';
+            buildQuiz();
+        }
+
+        buildQuiz();
+
+        submitButton.addEventListener('click', showResults);
+        tryAgainButton.addEventListener('click', restartQuiz);
+    </script>
+</body>
+</html>
