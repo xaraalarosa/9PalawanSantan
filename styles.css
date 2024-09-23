@@ -100,21 +100,22 @@ nav a:hover {
 }
 
 /* Gallery/Posting Section */
-.gallery {
-    display: flex;
-    gap: 10px;
-    padding: 20px;
-    overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
-    background: url('resources/gallerybg.jpg') no-repeat center center;
-    background-size: cover;
-}
-
-.gallery img {
+.image-container img {
+    display: none; /* Hide images initially */
     width: 200px;
     height: 200px;
     transition: transform 0.3s ease;
     border-radius: 8px;
-    flex-shrink: 0; /* Prevent images from shrinking in flexbox */
+    flex-shrink: 0;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    overflow-x: auto;
+    background: url('resources/gallerybg.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .gallery img:hover {
